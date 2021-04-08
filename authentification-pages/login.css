@@ -1,0 +1,159 @@
+:root{
+    --black:#2C2B30;
+    --gray:#4f4f51;
+    --white:#d6d6d6;
+    --light-pink:#f2c4ce;
+    --pink:#f58f7c;
+    --blue:#2aa1ff;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  body{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(115deg, var(--gray) 10%, var(--pink) 90%);
+  }
+ 
+  .box{
+    display: flex;
+    position: relative;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    background:var(--light-pink);
+    width: 410px;
+  }
+  .container{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    background:var(--light-pink);
+    width: 410px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+
+  }
+  .close{
+    right:0;
+    top: 0;
+    margin: 0px;
+
+  }
+ .close button{
+   background-color: red;
+   color: var(--black);
+   font-weight: bold;
+   font-size: 20px;
+   padding: 4px;
+   float: right;
+ }
+
+  .container .text{
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .container form{
+    margin-top: -20px;
+  }
+  .container form .data{
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  form .data input{
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 17px;
+    font-style: italic;
+    border: 1px solid var(--gray);
+  }
+  form .data input:focus{
+    border-color: var(--blue);
+    border-bottom-width: 2px;
+  }
+  form .forgot-pass{
+    margin-top: -8px;
+  }
+  form .forgot-pass a{
+    color:var(--blue);
+    text-decoration: none;
+  }
+  form .forgot-pass a:hover{
+    text-decoration: underline;
+  }
+  form .btn{
+    margin: 30px 0;
+    height: 45px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(115deg, var(--blue) 10%, var(--pink) 90%);
+  }
+  form .btn:hover{
+    background: linear-gradient(115deg, var(--blue) 50%, var(--pink) 50%);
+  }
+ 
+  form .btn button{
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  form .signup-link{
+    text-align: center;
+    font-style: italic;
+  }
+  form .signup-link a{
+    color:var(--blue);
+    text-decoration: none;
+  }
+  form .signup-link a:hover{
+    text-decoration: underline;
+  }
+  .github{
+    color:var(--gray);
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  #github-btn{
+
+    background-image: url(github.svg);
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    align-self: center;
+    margin-top: 10px;
+  }
+  @media screen and (max-width: 650px){
+    .box,.container{
+      width: 350px;
+    }
+  }
+
+  @media screen and (max-width: 400px){
+    .box,.container{
+      width: 250px;
+    }
+  }
