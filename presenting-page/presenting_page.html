@@ -42,28 +42,97 @@
     <div class="one-scroll">
     <main>
         <div class="main-presenting">
-            <img src="main.svg" alt="Title">
+            <div class="slider">
+                <img class="slides "src="main1.svg">
+                <img class="slides "src="main2.svg">
+                <img class="slides "src="main3.svg">
+                <img class="slides "src="main4.svg">
+                <img class="slides "src="main5.svg">
+                <img class="slides "src="main6.svg">
+                <img class="slides "src="main7.svg">
+                <img class="slides "src="main8.svg">
+                <img class="slides "src="main9.svg">
+                <img class="slides "src="main10.svg">
+                <img class="slides "src="main11.svg">
+                <img class="slides "src="main12.svg">
+            </div>
+            <div class="container-text">
+                <h1 class="main-title">Level up your skills</h1>
+                <p class="main-subtitle">Dive right into the world of Front-End Development</p>
+                <div class="blocks-button">
+                    <a>Get Started</a>
+                </div>
+            </div>    
         </div>
-        <div class="block1">
-
+        <script>
+            var slideIndex = 0;
+                carousel();
+                
+                function carousel() {
+                  var i;
+                  var x = document.getElementsByClassName("slides");
+                  for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                  }
+                  slideIndex++;
+                  if (slideIndex > x.length) {slideIndex = 1}
+                  x[slideIndex-1].style.display = "block";
+                  setTimeout(carousel, 1000); // Change image every 2 seconds
+                }</script>
+        <div class="space-between">
+            <a href="#learn_practice">
+                <img src="arrow-btn.svg" class="scroll-down-btn">
+            </a>
+    
+        </div>
+        <div class="block1" id="learn_practice">
+            <div class="left-side-block">
+                <h2>Learn & Practice the fun way! </h2>
+                <h3>Learn the basics</h3>
+                <p1> Our lessons make HTML and CSS so easy to be understood.</p1>
+                <h4>Practice makes perfect</h4>
+                <p2> Go through our practice questions for gaining solid knowledge and don't miss the chance to earn some coins.</p2>
+                <div class="blocks-button margin-top">
+                    <a>Level up your skills</a>
+                </div>
+            </div>
+            <div class="right-side-block">
+                <div class="presenting-image">
+                    <img src="computer.svg" >
+                </div>
+            </div>
         </div>
         <div class="space-between">
-            
+            <a href="#play_leaderboard">
+                <img src="arrow-btn.svg" class="scroll-down-btn">
+            </a>
         </div>
-        <div class="block2">
-            
+        <div class="block2" id="play_leaderboard">
+            <div class="left-side-block">
+                <div class="presenting-image">
+                    <img src="computer.svg" >
+                </div>
+            </div>
+            <div class="right-side-block">
+                <h2>Challenge yourself </h2>
+                <h3>Play</h3>
+                <p1>You'll get addicted to the game. Play until you've become an expert.</p1>
+                <h4>Be #1</h4>
+                <p2> Go check the leaderboard and see if you got more XP than your friends.</br> You can use coins for hints.</p2>
+                <div class="blocks-button margin-top margin-bottom">
+                    <a>Let's play</a>
+                </div>
+            </div>
         </div>
         <div class="space-between">
-            
+            <a href="#what_now">
+                <img src="arrow-btn.svg" class="scroll-down-btn">
+            </a>
         </div>
-        <div class="block3">
-            
-        </div>
-        <div class="space-between">
-            
-        </div>
-        <div class="block4">
-            
+        <div class="block3" id="what_now">
+            <div class="start-btn">
+                <a>Get Started</a>
+            </div>
         </div>
     </main>
     <footer>

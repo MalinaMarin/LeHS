@@ -1,5 +1,11 @@
 :root{
     --black:#2C2B30;
+    --gray:#4f4f51;
+    --white:#d6d6d6;
+    --light-pink:#f2c4ce;
+    --pink:#f58f7c;
+    --blue:#2aa1ff;
+
 }
 html,body{
     width:100%;
@@ -54,7 +60,7 @@ header{
   .navbar-buttons a {
 
     display: inline-block;
-    color: #f2c4ce;
+    color:var(--light-pink);
     text-align: center;
     padding: 16px 16px;
     text-decoration: none;
@@ -76,8 +82,7 @@ header{
   }
   main{
       width: 100%;
-      height: auto;
-        
+      height: auto;    
   }
   footer{
       width: 100%;
@@ -87,31 +92,211 @@ header{
   }
 .main-presenting{
     width: 100%;
-    height: 630px;
+    height: 1030px;
     background-color: #4f4f51;
 }
-.block1{
-    width: 100%;
-    height: 430px;
-    background-color: #4f4f51;
+.slider{
+max-height: 55%;
 }
-.block2{
+.container-text{
+    position: relative;
+    margin-top: 0px;
+}
+
+.main-title{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    color: var(--pink);
+    font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+}
+h1{
+    margin-block-end: 0px;
+}
+p{
+    margin-block-start: 0px;
+}
+.main-subtitle{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    color:var(--light-pink);
+    font-size: 50px;
+    text-align: center;
+    font-style: italic;
+}
+.blocks-button{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.blocks-button a{
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 25px;
+}
+.blocks-button a:hover{
+    font-style: italic;
+    color: var(--pink);
+    outline-style: solid;
+    outline-color: var(--pink);
+}
+
+.block1,.block2{
     width: 100%;
     height: 630px;
     background-color: #4f4f51;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-side-block{
+    height: inherit;
+    position: relative;
+    margin-left: 3%;
+    align-items: center;
+    width: 50%;
+}
+h2{
+    font-size: 50px;
+    color: var(--pink);
+}
+h3{
+    font-size: 40px;
+    color: var(--light-pink);
+    margin-block-end: 0.5em;
+}
+h4{
+    font-size: 40px;
+    color: var(--light-pink);
+    margin-block-end: 0.5em;
+}
+p1,p2{
+    font-size: 20px;
+    color: var(--white);
+}
+
+.margin-top{
+    margin-top: 30px;
+}
+.margin-bottom{
+    margin-bottom: 30px;
+}
+.right-side-block{
+    height: inherit;
+    width:50%;
+    position: relative;
+    align-items: center;
+}
+
+.presenting-image{
+    height: 100%;
+    width: 100%;
 }
 .block3{
     width: 100%;
     height: 630px;
-    background-color: #4f4f51;
+    background-image: url(background.svg);
+    background-repeat: no-repeat;
+    background-color: var(--blue);
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 150px;
 }
-.block4{
-    width: 100%;
-    height: 630px;
-    background-color: #4f4f51;
+.start-btn{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.start-btn a{
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-pink);
+    color: var(--gray);
+    font-weight: bold;
+    font-size: 25px;
+}
+.start-btn a:hover{
+    font-style: italic;
+    color: var(--pink);
+    outline-style: solid;
+    outline-color: var(--pink);
 }
 .space-between{
     width: 100%;
     height: 150px;
     background-color: #f58f7c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scroll-down-btn{
+    height: 100px;
+}
+
+@media screen and (max-width: 850px){
+    
+    .block1,.block2{
+        height: fit-content;
+        display: block;
+    }
+
+    .left-side-block{
+        width: 100%;
+        margin-right: 3%;
+    }
+    .right-side-block{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    h2{
+        margin-top: 0px;
+    }
+    h2,h3,h4,p1,p2{
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+    .block3{
+        align-items: flex-end;
+        padding-bottom: 30px;
+    }
+
+}
+@media screen and (max-width: 450px){
+    .main-presenting{
+        height: fit-content;
+    }
+    .main-title{
+        font-size: 60px;
+    }
+    .main-subtitle{
+        font-size: 30px;
+    }
+    .blocks-button a{
+        width: 120px;
+        height: 50px;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
 }
