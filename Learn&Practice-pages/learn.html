@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn module</title>
-    <link rel="stylesheet" href="./test.css">
+    <link rel="stylesheet" href="./learn.css">
 
 </head>
 
@@ -20,22 +20,12 @@
 
 
 
-                <!-- what is this? section -->
-                <aside id="site-aside" role="complementary">
-
-                </aside>
-
-
-
-
                 <h2 class="title-levels">HTML & CSS for beginners</h2>
 
 
-                <input class="title" id="toggle" type="checkbox"><label class="highlight" for="toggle">What is HTML?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">2</span>
+                <input class="title" id="toggle" type="checkbox"><label class="highlight" for="toggle">What is HTML?
         
                 </label>
-
-
 
                 <div class="card" id="slider">
                     <p> HTML is the language in which most websites are written. HTML is used to create pages and make them functional. The code used to make them visually appealing is known as CSS.
@@ -44,9 +34,7 @@
                 </div>
 
 
-                <input class="title" id="toggle2" type="checkbox"><label class="highlight" for="toggle2">What does HTML stand for?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-
-
+                <input class="title" id="toggle2" type="checkbox"><label class="highlight" for="toggle2">What does HTML stand for?</label>
                 <div class="card" id="slider2">
                     <p>It stands for Hyper Text Markup Language.</p>
                     <p> Hypertext means that the document contains links that allow the reader to jump to other places in the document or to another document altogether. The latest version is known as HTML5.</p>
@@ -54,7 +42,7 @@
                 </div>
 
 
-                <input class="title" id="toggle3" type="checkbox"><label class="highlight" for="toggle3">What are Tags and Attributes?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
+                <input class="title" id="toggle3" type="checkbox"><label class="highlight" for="toggle3">What are Tags and Attributes?</label>
                 <div class="card" id="slider3">
                     <p> Tags and attributes are the basis of HTML. They work together but perform different functions.
                         <p>Tags are used to mark up the start of an HTML element and they are usually enclosed in angle brackets.</p>
@@ -67,40 +55,35 @@
                         <p>In this instance, the image source (src) and the alt text (alt) are attributes of the <code> &lt;img&gt; </code> tag.</p>
                 </div>
 
-                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">More things about tags<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
+                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">More things about tags</label>
                 <div class="card" id="slider4">
                     <p>The vast majority of tags must be opened (<code>&lt;tag&gt;</code>) and closed (<code>&lt;/tag&gt;</code>) with the element information such as a title or text resting between the tags.
                     </p>
                     <p>When using multiple tags, the tags must be closed in the order in which they were opened.</p>
-                    <p>For example: <br><br><span style="margin-left: 5em"><code>&lt;strong&gt;&lt;em&gt;This is really important!&lt;/em&gt;&lt;/strong&gt;</code></span></p>
+                    <p>For example: <span style="margin-left: 0em"><code>&lt;strong&gt;&lt;em&gt;This is really important!&lt;/em&gt;&lt;/strong&gt;</code></span></p>
 
                 </div>
 
-                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">Basic construction of an HTML page<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider4">
+                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">Basic construction of an HTML page</label>
+                <div class="card" id="slider5">
                     <p>These tags should be placed underneath each other at the top of every HTML page that you create.</p>
                     <div style="padding-left: 2em">
-                        <p><code>&lt;!DOCTYPE html&gt;</code></a> — This tag specifies the language you will write on the page. In this case, the language is HTML 5.</p>
-                        <p><code>&lt;html&gt;</code></a> — This tag signals that from here on we are going to write in HTML code.</p>
-                        <p><code>&lt;head&gt;</code></a> — This is where all the metadata for the page goes — stuff mostly meant for search engines and other computer programs.</p>
-                        <p><code>&lt;body&gt;</code></a> — This is where the content of the page goes.</p>
+                        <p><code>&lt;!DOCTYPE html&gt;</code> — This tag specifies the language you will write on the page. In this case, the language is HTML 5.</p>
+                        <p><code>&lt;html&gt;</code> — This tag signals that from here on we are going to write in HTML code.</p>
+                        <p><code>&lt;head&gt;</code> — This is where all the metadata for the page goes — stuff mostly meant for search engines and other computer programs.</p>
+                        <p><code>&lt;body&gt;</code> — This is where the content of the page goes.</p>
                     </div>
 
 
                 </div>
 
-                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">Other important tags<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider4">
-                    <p>Inside the <code>&lt;head&gt;</code> tag, there is one tag that is always included: <code>&lt;title&gt;</code>, but there are others that are just as important:</p>
+                <input class="title" id="toggle6" type="checkbox"><label class="highlight" for="toggle6">Other important tags</label>
+                <div class="card" id="slider6">
+                    <p>Inside the <code>&lt;head&gt;</code> tag, there is one tag that is always included: <code>&lt;title&gt;</code>, but there are others that are just as important:
 
-                    <p> <code>&lt;title&gt;</code></p>
+                        <br><br> <code>&lt;title&gt;</code><br><br> This is where we <strong>insert the page name</strong> as it will appear at the top of the browser window or tab.
+                        <br><br> <code>&lt;meta&gt;</code><br><br> This is where information about the document is stored: character encoding, name (page context), description.
 
-                    <p>
-                        This is where we <strong>insert the page name</strong> as it will appear at the top of the browser window or tab.</p>
-                    <p> <code>&lt;meta&gt;</code></p>
-
-                    <p>
-                        This is where information about the document is stored: character encoding, name (page context), description.
                     </p>
                     <p>Here is an example with meta tag:</p>
                     <img src="learn2.png" alt="Example with meta tag">
@@ -110,34 +93,26 @@
 
 
 
-                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">Adding Content<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider4">
+                <input class="title" id="toggle7" type="checkbox"><label class="highlight" for="toggle7">Adding Content</label>
+                <div class="card" id="slider7">
                     <p>The HTML <code>&lt;body&gt;</code> is where we add the content which is designed for viewing by human eyes.</p>
                     <p>This includes <strong>text, images, tables, forms </strong>and everything else that we see on the internet each day.</p>
-                    <p>In HTML, headings are written in the following elements:</p>
-                    <ul>
-                        <li><code>&lt;h1&gt;</code>
-                            <ul>
-                                <li><code>&lt;h2&gt;</code>
-                                    <ul>
-                                        <li><code>&lt;h3&gt;</code>
-                                            <ul>
-                                                <li><code>&lt;h4&gt;</code>
-                                                    <ul>
-                                                        <li><code>&lt;h5&gt;</code>
-                                                            <ul>
-                                                                <li><code>&lt;h6&gt;</code></li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <p>In HTML, headings are written in the following elements:
+
+                        <br>
+                        <code>&lt;h1&gt;</code>
+
+                        <code>&lt;h2&gt;</code>
+
+                        <code>&lt;h3&gt;</code>
+
+                        <code>&lt;h4&gt;</code>
+
+                        <code>&lt;h5&gt;</code>
+
+                        <code>&lt;h6&gt;</code>
+
+                    </p>
                     <p>It's clear that <code>&lt;h1&gt;</code> and <code>&lt;h2&gt;</code> should be used for the most important titles, while the remaining tags should be used for sub-headings and less important text.</p>
 
                     <p>Here is an example, in the next section we'll explain what the p tag is for:</p>
@@ -146,50 +121,121 @@
                 </div>
 
 
+                <input class="title" id="toggle8" type="checkbox"><label class="highlight" for="toggle8">Intro to CSS</label>
+                <div class="card" id="slider8">
+                    <p>A CSS comprises of style rules that are interpreted by the browser and then applied to the corresponding elements in your document. A style rule is made of three parts:</p>
+                    <ul class="list">
+                        <li>
+                            <p><b>Selector</b> − A selector is an HTML tag at which a style will be applied. This could be any tag like &lt;h1&gt; or &lt;table&gt; etc.</p>
+                        </li>
+                        <li>
+                            <p><b>Property</b> − A property is a type of attribute of HTML tag. Put simply, all the HTML attributes are converted into CSS properties. They could be <i>color</i>, <i>border</i> etc.</p>
+                        </li>
+                        <li>
+                            <p><b>Value</b> − Values are assigned to properties. For example, <i>color</i> property can have value either <i>red</i> or <i>#F1F1F1</i> etc.</p>
+                        </li>
+                    </ul>
+                    <p>You can put CSS Style Rule Syntax as follows −</p>
+                    <pre class="code-visualizer">selector { property: value }
+                    </pre>
+                    <img src="csslearn.png" alt="CSS syntax example">
+                </div>
+
 
                 <h2 class="title-levels">HTML & CSS for intermediates</h2>
 
-                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">Adding text in HTML<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider5">
+                <input class="title" id="toggle9" type="checkbox"><label class="highlight" for="toggle9">Adding text in HTML</label>
+                <div class="card" id="slider9">
                     <p>Adding text to our HTML page is simple using an element opened with the tag <code>&lt;p&gt;</code> which creates a new paragraph. We place all of our regular text inside this element.</p>
 
                 </div>
 
 
-                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">How to add links in HTML<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider5">
-                    <p>Links are included in an attribute opened by the <a href="/tags/a/"><strong>&lt;a&gt;</strong></a> tag. This element is the first that we’ve met which uses an attribute and so it <strong>looks different to previously mentioned tags</strong>.</p>
+
+                <input class="title" id="toggle10" type="checkbox"><label class="highlight" for="toggle10">How to add links in HTML</label>
+                <div class="card" id="slider10">
+                    <p>Links are included in an attribute opened by the &lt; a&gt; tag. This element is the first that we’ve met which uses an attribute and so it <strong>looks different to previously mentioned tags</strong>.</p>
                     <p>The &lt;a&gt; (or anchor) opening tag is written in the format:</p>
-                    <div style="padding-left: 2em">
-                        <p><code>&lt;<a href="/attributes/a-href/">a href</a>="https://learnhtmlcss.com/how-to-use-tags/</a>"&gt;Your Link Text Here &lt;/a&gt;</code></p>
+                    <div style="padding-left: 0em">
+                        <p><code>&lt; a href="https://learnhtmlcss.com/how-to-use-tags/"&gt;Your Link Text Here &lt;/a&gt;</code></p>
                     </div>
                     <p>The <strong>first part</strong> of the attribute <strong>points to the page that will open</strong> once the link is clicked.</p>
                     <p>Meanwhile, the <strong>second part</strong> of the attribute contains the <strong>text which will be displayed</strong> to a visitor in order to entice them to click on that link.</p>
                 </div>
 
 
-                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">Adding an image in HTML<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider5">
+                <input class="title" id="toggle11" type="checkbox"><label class="highlight" for="toggle11">Adding an image in HTML</label>
+                <div class="card" id="slider11">
                     <p> The<strong>&lt;img&gt;</strong> tag has everything you need to display images on your site. Much like the &lt;a&gt; anchor element, &lt;img&gt; also contains an attribute.</p>
                     <p>The attribute <em>features information</em> for your computer regarding the <strong>source</strong>, <strong>height</strong>, <strong>width</strong> and <strong>alt text</strong> of the image.</p>
                     <p>Alt text is important to <strong>ensure that your site is ranked correctly</strong> on search sites and also for visually impaired visitors to your site.</p>
                 </div>
 
+                <input class="title" id="toggle12" type="checkbox"><label class="highlight" for="toggle12">Examples of selectors</label>
+                <div class="card" id="slider12">
+                    <p>The type selectors
+                        <br><br>You can define a table border as follows: </p>
+                    <pre class="code-visualizer">table{ border :1px solid #C00; }
+                    </pre>
+                    <p>Here table is a selector and border is a property and given value 1px solid #C00 is the value of that property.</p>
+                    <p>The universal selectors</p>
+                    <p>Rather than selecting elements of a specific type, the universal selector quite simply matches the name of any element type:</p>
+                    <pre class="code-visualizer">* { color: #000000; }
+                    </pre>
+                    <p>The descendant selectors
+
+                        <br><br>Suppose you want to apply a style rule to a particular element only when it lies inside a particular element. As given in the following example, style rule will apply to &lt;em&gt; element only when it lies inside &lt;ul&gt;
+                        tag.
+                    </p>
+
+                    <pre class="code-visualizer">ul em { color: #000000; }
+                    </pre>
+
+                    <p></p>
+
+
+
+                </div>
+
+
                 <h2 class="title-levels">HTML & CSS for experts</h2>
 
-                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">Adding a list in HTML<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider5">
+                <input class="title" id="toggle13" type="checkbox"><label class="highlight" for="toggle13">Adding a list in HTML</label>
+                <div class="card" id="slider13">
 
-                    <p>In web design, there are <strong>3 different types of lists</strong> which you may wish to add to your site.</p>
-                    <pre class="wp-block-code"><code>&lt;ol&gt;
-                        &lt;li&gt;An item &lt;/li&gt;
-                        &lt;li&gt;Another item &lt;/li&gt;
-                        &lt;li&gt;Another goes here &lt;/li&gt;
-                        &lt;/ol&gt;</code></pre>
+                    <p>In web design, there are <strong>3 different types of lists</strong> which you may wish to add to your site: <br><br>unordered list — used to group a set of related items in no particular order<br><br> ordered list — used to group
+                        a set of related items in a specific order<br><br> description list — used to display name/value pairs such as terms and definitions</p>
+
                 </div>
 
 
 
+                <input class="title" id="toggle14" type="checkbox"><label class="highlight" for="toggle14">More CSS selectors</label>
+                <div class="card" id="slider14">
+                    <p>
+                        The Class Selectors <br><br>You can define style rules based on the class attribute of the elements. All the elements having that class will be formatted according to the defined rule.
+                    </p>
+                    <pre class="code-visualizer">
+                    .black {
+                        color: #000000; 
+                     }
+                </pre>
+                    <p>This rule renders the content in black for every element with class attribute set to black in our document. You can make it a bit more particular. For example:</p>
+                    <pre class="code-visualizer">
+                    h1.black {
+                        color: #000000; 
+                     }
+                </pre>
+                    <p>This rule renders the content in black for only h1 elements with class attribute set to black.</p>
+                    <p>The ID Selectors<br><br> You can define style rules based on the id attribute of the elements. All the elements having that id will be formatted according to the defined rule.</p>
+                    <pre class="code-visualizer">
+                   #black {
+                    color: #000000; 
+                 }
+                </pre>
+                </div>
+
+            </div>
         </section>
     </main>
 </body>
