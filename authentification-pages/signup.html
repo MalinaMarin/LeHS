@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn HTML&CSS</title>
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./signup.css">
 </head>
 
 <body>
@@ -14,8 +14,12 @@
                 <button onclick="location.href='/presenting_page.html'">X</button>
         </div>
     <div class="container">
-        <div class="text">Login Form</div>
+        <div class="text">Signup Form</div>
         <form action="#">
+            <div class="data">
+                <label>Email</label>
+                <input type="text" required>
+            </div>
             <div class="data">
                 <label>Username</label>
                 <input type="text" required>
@@ -24,13 +28,14 @@
                 <label>Password</label>
                 <input type="password" required>
             </div>
-            <div class="forgot-pass">
-                <a href="./forgot.html">Forgot Password?</a>
+            <div class="data">
+                <label>Re-type your password</label>
+                <input type="password" required>
             </div>
             <div class="btn">
-                <button type="submit">login</button>
+                <button type="submit">sign up</button>
             </div>
-            <div class="signup-link">Not a member? <a href="./signup.html">Signup now</a></div>
+            <div class="login-link">Already a member? <a href="./login.html">Login now</a></div>
         </form>
         <div class="github">
             <p>- or -</p>

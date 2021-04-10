@@ -22,7 +22,7 @@
   .box{
     display: flex;
     position: relative;
-    height: 600px;
+    height: 750px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -86,16 +86,6 @@
     border-color: var(--blue);
     border-bottom-width: 2px;
   }
-  form .forgot-pass{
-    margin-top: -8px;
-  }
-  form .forgot-pass a{
-    color:var(--blue);
-    text-decoration: none;
-  }
-  form .forgot-pass a:hover{
-    text-decoration: underline;
-  }
   form .btn{
     margin: 30px 0;
     height: 45px;
@@ -120,15 +110,15 @@
     letter-spacing: 1px;
     cursor: pointer;
   }
-  form .signup-link{
+  form .login-link{
     text-align: center;
     font-style: italic;
   }
-  form .signup-link a{
+  form .login-link a{
     color:var(--blue);
     text-decoration: none;
   }
-  form .signup-link a:hover{
+  form .login-link a:hover{
     text-decoration: underline;
   }
   .github{
@@ -148,11 +138,11 @@
     cursor: pointer;
   }
   #github-btn:hover{
-    border-radius: 10px;
-    border-color: var(--gray);
-    background-image: url(github-white.svg);
-    background-color:var(--black);
-}
+      border-radius: 10px;
+      border-color: var(--gray);
+      background-image: url(github-white.svg);
+      background-color:var(--black);
+  }
   @media screen and (max-width: 650px){
     .box,.container{
       width: 350px;
@@ -162,5 +152,10 @@
   @media screen and (max-width: 400px){
     .box,.container{
       width: 250px;
+    }
+  }
+  @media screen and (max-height: 750px){
+    .body{
+        overflow-y: scroll;
     }
   }
