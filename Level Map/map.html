@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn HTML&CSS</title>
     <link rel="stylesheet" href="./map.css">
 </head>
+
 <body>
     <header>
         <div class="navbar-main-page">
@@ -40,60 +42,93 @@
         </div>
     </header>
     <div class="one-scroll">
-    <main>
-    <div id="container" class="container">
-        <script>
-            function generateGrid(){
-                for(var i=1;i<=4;i++){
-                    for(var j=1;j<=7;j++){
-                        var div=document.createElement("DIV");
-                        document.getElementById("container").appendChild(div);
-                        div.setAttribute("id", ("grid_"+i+j));
-                        if((i+j)%2==0){
-                            div.setAttribute("class", "cell even");
+        <main>
+            <div id="container" class="container">
+                <script>
+                    function generateGrid() {
+                        for (var i = 1; i <= 4; i++) {
+                            for (var j = 1; j <= 7; j++) {
+                                var div = document.createElement("DIV");
+                                document.getElementById("container").appendChild(div);
+                                div.setAttribute("id", ("grid_" + i + j));
+                                if ((i + j) % 2 == 0) {
+                                    div.setAttribute("class", "cell even");
+                                }
+                                else {
+                                    div.setAttribute("class", "cell odd");
+                                }
+                            }
                         }
-                        else{
-                            div.setAttribute("class", "cell odd");
-                        }
-                }
-            }
-        }
-            generateGrid();
-            function addContent(i,j,arrow_direction){
-                var button=document.createElement("BUTTON");
-                button.setAttribute("id", "button_"+i+j);
-                button.setAttribute("class", "grid-btn");
-                document.getElementById("grid_"+i+j).appendChild(button);
-                var arrow=document.createElement("IMG");
-                document.getElementById("button_"+i+j).appendChild(arrow);
-                arrow.setAttribute("id", "arrow_"+i+j);
-                arrow.setAttribute("class", "arrow");
-                if(arrow_direction == "right"){
-                    arrow.setAttribute("src", "arrow-right.svg");
-                    
-                }
-                else{
-                    arrow.setAttribute("src", "arrow-down.svg");
-                   
-                }
+                    }
+                    generateGrid();
+                    var noBtn = 0;
+                    function addContent(i, j, arrow_direction) {
+                        noBtn++;
+                        var button = document.createElement("BUTTON");
+                        button.setAttribute("id", "button_" + noBtn);
+                        button.setAttribute("class", "grid-btn");
+                        document.getElementById("grid_" + i + j).appendChild(button);
+                        var arrow = document.createElement("IMG");
+                        document.getElementById("button_" + noBtn).appendChild(arrow);
+                        arrow.setAttribute("id", "arrow_" + i + j);
+                        arrow.setAttribute("class", "arrow");
+                        if (arrow_direction == "right") {
+                            arrow.setAttribute("src", "arrow-right.svg");
 
-            }
-            addContent(1,1,"right");
-            addContent(1,2,"down");
-            addContent(2,2,"right");
-            addContent(2,3,"right");
-            addContent(2,4,"down");
-            addContent(3,4,"right");
-            addContent(3,5,"right");
-            addContent(3,6,"down");
-            addContent(4,6,"right");
-            addContent(4,7,"right");
-        </script>
+                        }
+                        else {
+                            arrow.setAttribute("src", "arrow-down.svg");
+
+                        }
+
+                    }
+                    addContent(1, 1, "right");
+                    addContent(1, 2, "down");
+                    addContent(2, 2, "right");
+                    addContent(2, 3, "right");
+                    addContent(2, 4, "down");
+                    addContent(3, 4, "right");
+                    addContent(3, 5, "right");
+                    addContent(3, 6, "down");
+                    addContent(4, 6, "right");
+                    addContent(4, 7, "right");
+                </script>
+            </div>
+            <div id="hide" class="hide">
+                <div class="level-info">
+                    <div id="level-note"></div>
+                </div>
+                <script>
+                    var note = document.getElementById("hide");
+                    var text = document.getElementById("level-note");
+
+
+                    for (var index = 1; index <= 10; index++) {
+                        var level = document.getElementById("button_" + index);
+                        var para;
+                        level.addEventListener("mouseenter", function () {
+
+                            para = document.createElement("P");
+                            para.innerHTML = "Level: <br> </br> Exp:";
+                            document.getElementById("level-note").appendChild(para);
+                            note.style.display = "block";
+
+                        });
+
+                        level.addEventListener("mouseleave", function () {
+                            para.remove();
+                            note.style.display = "none";
+                        });
+
+                    }
+
+                </script>
+            </div>
+        </main>
+        <footer>
+            I am the stupid footer!!!!!
+        </footer>
     </div>
-    </main>
-    <footer>
-        I am the stupid footer!!!!!
-    </footer>
-</div>
 </body>
+
 </html>
