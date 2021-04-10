@@ -164,13 +164,7 @@ p {
     }
 }
 
-@media (pointer:fine) {
-    .highlight:hover {
-        color: black;
-    }
-}
-
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 830px) {
     img {
         max-width: 1000px;
         max-height: 1000px;

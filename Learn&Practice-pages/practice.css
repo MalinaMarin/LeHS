@@ -17,7 +17,9 @@ main {
 }
 
 .money {
+    display: inline-block;
     margin: 0;
+    max-width: 100%;
 }
 
 .coins-icon {
@@ -26,34 +28,11 @@ main {
     max-width: 26px;
     margin-left: 2em;
     margin-top: -1em;
-    margin-bottom: -0.4em;
+    margin-bottom: -0.57em;
     margin-right: 10px;
 }
 
-img {
-    max-width: 900px;
-    max-height: 1400px;
-    margin-left: 4em;
-    display: block;
-    margin-bottom: 5em;
-}
-
-pre {
-    display: block;
-    padding: 9.5px;
-    margin: 50px 50px 20px;
-    font-size: 13px;
-    line-height: 1.42857;
-    word-break: break-all;
-    word-wrap: break-word;
-    color: #333;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
 .glass {
-    background: rgb(245, 143, 124);
     /* background: linear-gradient(to right bottom, #F2C4CE, #F58F7C ); */
     min-height: 90vh;
     width: 90%;
@@ -76,7 +55,7 @@ pre {
     border-radius: 1rem;
     /* justify-content: space-between; */
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
-    -webkit-transition: all .8s ease-in-out;
+    /* -webkit-transition: all .9s ease-in-out; */
     transition: all .9s ease-in-out;
     background: linear-gradient(to left top, rgba(255, 255, 255, 0.8), rgba(245, 143, 124, 0.5));
     /* color: #2C2B30; */
@@ -88,10 +67,32 @@ pre {
     margin-top: 30px;
 }
 
-p {
-    padding: 2em 2em 2em 2em;
+.card div {
+    padding: 1em 1em 1em 1em;
     /* position: relative; */
     display: block;
+}
+
+.card button {
+    /* position: relative; */
+    background-color: #ffffff;
+    /* Green */
+    border: none;
+    color: rgb(46, 46, 46);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 10px 10px 20px 20px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
+
+.card button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .title {
@@ -123,17 +124,129 @@ p {
 }
 
 #toggle2:checked~#slider2 {
-    max-height: 1500px;
+    max-height: 5000px;
 }
 
 #toggle3:checked~#slider3 {
-    max-height: 1500px;
+    max-height: 5000px;
 }
 
 #toggle4:checked~#slider4 {
-    max-height: 1500px;
+    max-height: 5000px;
 }
 
 #toggle5:checked~#slider5 {
-    max-height: 1500px;
+    max-height: 50000px;
+}
+
+#toggle6:checked~#slider6 {
+    max-height: 50000px;
+}
+
+#toggle7:checked~#slider7 {
+    max-height: 50000px;
+}
+
+#toggle8:checked~#slider8 {
+    max-height: 50000px;
+}
+
+#toggle9:checked~#slider9 {
+    max-height: 50000px;
+}
+
+#toggle10:checked~#slider10 {
+    max-height: 50000px;
+}
+
+#toggle11:checked~#slider11 {
+    max-height: 50000px;
+}
+
+#toggle12:checked~#slider12 {
+    max-height: 50000px;
+}
+
+#toggle13:checked~#slider13 {
+    max-height: 50000px;
+}
+
+#toggle14:checked~#slider14 {
+    max-height: 50000px;
+}
+
+#toggle15:checked~#slider15 {
+    max-height: 50000px;
+}
+
+#toggle16:checked~#slider16 {
+    max-height: 50000px;
+}
+
+#toggle17:checked~#slider17 {
+    max-height: 50000px;
+}
+
+#toggle18:checked~#slider18 {
+    max-height: 50000px;
+}
+
+#toggle19:checked~#slider19 {
+    max-height: 50000px;
+}
+
+#toggle20:checked~#slider20 {
+    max-height: 50000px;
+}
+
+#toggle21:checked~#slider21 {
+    max-height: 50000px;
+}
+
+#toggle22:checked~#slider22 {
+    max-height: 50000px;
+}
+
+#toggle23:checked~#slider23 {
+    max-height: 50000px;
+}
+
+#toggle24:checked~#slider24 {
+    max-height: 50000px;
+}
+
+#toggle25:checked~#slider25 {
+    max-height: 50000px;
+}
+
+@media (pointer:coarse) {
+    .highlight:hover {
+        color: black;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    img {
+        max-width: 1000px;
+        max-height: 1000px;
+        margin-left: 1em;
+        margin-bottom: 1em;
+        margin-right: 1em;
+    }
+    .content {
+        margin-bottom: 16rem;
+        margin: 2rem;
+    }
+    p {
+        padding: 0.5em 0.5em 0.5em 0.5em;
+    }
+    .glass {
+        /* background: linear-gradient(to right bottom, #F2C4CE, #F58F7C ); */
+        min-height: 100vh;
+        width: 100%;
+        border-radius: 0rem;
+    }
+    pre {
+        margin: 20px -50px 20px 5px;
+    }
 }

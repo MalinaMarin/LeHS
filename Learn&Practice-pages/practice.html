@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice module</title>
-    <link rel="stylesheet" href="./test.css">
+    <link rel="stylesheet" href="./practice.css">
 
 </head>
 
@@ -18,193 +18,713 @@
                     <h1 class="title-page">Practice what you have learned with some exercises!</h1>
                 </header>
 
-
-
-                <!-- what is this? section -->
-                <aside id="site-aside" role="complementary">
-
-                </aside>
-
-
-
-
                 <h2 class="title-levels">HTML & CSS exercises for beginners</h2>
 
-
-                <input class="title" id="toggle" type="checkbox"><label class="highlight" for="toggle">What is HTML?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">2</span>
+                <input class="title" id="toggle" type="checkbox"><label class="highlight" for="toggle">Which attribute is used to name an element uniquely?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">10</span>
         
                 </label>
 
-
-
                 <div class="card" id="slider">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A">
+                        <label for="question-1-answers-A">A) dot </label>
                     </div>
+                    <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B">
+                        <label for="question-1-answers-B">B) class</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C">
+                        <label for="question-1-answers-C">C) id</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D">
+                        <label for="question-1-answers-D">D) all of the above</label>
+                    </div>
+
+                    <button type="button" id="submit-question-1">Submit</button>
+
                 </div>
 
 
-
-
-                <input class="title" id="toggle2" type="checkbox"><label class="highlight" for="toggle2">What does HTML stand for?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-
+                <input class="title" id="toggle2" type="checkbox"><label class="highlight" for="toggle2">The # symbol specifies that the selector is?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">15</span>
+        
+                </label>
 
                 <div class="card" id="slider2">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-2-answers" id="question-2-answers-A" value="A">
+                        <label for="question-2-answers-A">A) class </label>
                     </div>
+                    <div>
+                        <input type="radio" name="question-2-answers" id="question-2-answers-B" value="B">
+                        <label for="question-2-answers-B">B) tag</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-2-answers" id="question-2-answers-C" value="C">
+                        <label for="question-2-answers-C">C) first</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-2-answers" id="question-2-answers-D" value="D">
+                        <label for="question-2-answers-D">D) id</label>
+                    </div>
+
+                    <button type="button" id="submit-question-2">Submit</button>
 
                 </div>
 
 
-                <input class="title" id="toggle3" type="checkbox"><label class="highlight" for="toggle3">What are Tags and Attributes?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
+                <input class="title" id="toggle3" type="checkbox"><label class="highlight" for="toggle3">What is the correct CSS syntax for making all the span elements bold?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">10</span>
+        
+                </label>
+
                 <div class="card" id="slider3">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-3-answers" id="question-3-answers-A" value="A">
+                        <label for="question-3-answers-A">A) span {text-size: bold} </label>
                     </div>
+                    <div>
+                        <input type="radio" name="question-3-answers" id="question-3-answers-B" value="B">
+                        <label for="question-3-answers-B">B) span {font-weight: bold}</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-3-answers" id="question-3-answers-C" value="C">
+                        <label for="question-3-answers-C">C) &lt;span style="font-size: bold"&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-3-answers" id="question-3-answers-D" value="D">
+                        <label for="question-3-answers-D">D) &lt;span style="text-size: bold"&gt;</label>
+                    </div>
+
+                    <button type="button" id="submit-question-3">Submit</button>
+
                 </div>
 
-                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">More things about tags<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
+                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">In CSS, what is the property used to set the background color of an image?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">10</span>
+        
+                </label>
+
                 <div class="card" id="slider4">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-4-answers" id="question-4-answers-A" value="A">
+                        <label for="question-4-answers-A">A) color </label>
                     </div>
+                    <div>
+                        <input type="radio" name="question-4-answers" id="question-4-answers-B" value="B">
+                        <label for="question-4-answers-B">B) background-color</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-4-answers" id="question-4-answers-C" value="C">
+                        <label for="question-4-answers-C">C) background:color</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-4-answers" id="question-4-answers-D" value="D">
+                        <label for="question-4-answers-D">D) color:background</label>
+                    </div>
+
+                    <button type="button" id="submit-question-4">Submit</button>
 
                 </div>
 
-                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">Basic construction of an HTML page<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider4">
+                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">The _____ character tells browsers to stop tagging the text<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">15</span>
+        
+                </label>
+
+                <div class="card" id="slider5">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-5-answers" id="question-5-answers-A" value="A">
+                        <label for="question-5-answers-A">A) > </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-5-answers" id="question-5-answers-B" value="B">
+                        <label for="question-5-answers-B">B) ?</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-5-answers" id="question-5-answers-C" value="C">
+                        <label for="question-5-answers-C">C) %</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-5-answers" id="question-5-answers-D" value="D">
+                        <label for="question-5-answers-D">D) /</label>
                     </div>
 
-
-                </div>
-
-                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">Other important tags<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider4">
-                    <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
-                    </div>
-
-
-                </div>
-
-
-
-                <input class="title" id="toggle4" type="checkbox"><label class="highlight" for="toggle4">Adding Content<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider4">
-                    <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
-                    </div>
+                    <button type="button" id="submit-question-5">Submit</button>
 
                 </div>
 
 
+
+
+
+
+
+                <input class="title" id="toggle6" type="checkbox"><label class="highlight" for="toggle6">What does vlink attribute mean?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">15</span>
+        
+                </label>
+
+                <div class="card" id="slider6">
+
+                    <div>
+                        <input type="radio" name="question-6-answers" id="question-6-answers-A" value="A">
+                        <label for="question-6-answers-A">A) active link </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-6-answers" id="question-6-answers-B" value="B">
+                        <label for="question-6-answers-B">B) very good link</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-6-answers" id="question-6-answers-C" value="C">
+                        <label for="question-6-answers-C">C) visited link</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-6-answers" id="question-6-answers-D" value="D">
+                        <label for="question-6-answers-D">D) virtual link</label>
+                    </div>
+
+                    <button type="button" id="submit-question-6">Submit</button>
+
+                </div>
+
+
+                <input class="title" id="toggle7" type="checkbox"><label class="highlight" for="toggle7">Which tag allows you to add a row in a table?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">15</span>
+        
+                </label>
+
+                <div class="card" id="slider7">
+
+                    <div>
+                        <input type="radio" name="question-7-answers" id="question-7-answers-A" value="A">
+                        <label for="question-7-answers-A">A) &lt;th&gt; and &lt;/th&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-7-answers" id="question-7-answers-B" value="B">
+                        <label for="question-7-answers-B">B) &lt;tr&gt; and &lt;/tr&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-7-answers" id="question-7-answers-C" value="C">
+                        <label for="question-7-answers-C">C) &lt;cr&gt; and &lt;/cr&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-7-answers" id="question-7-answers-D" value="D">
+                        <label for="question-7-answers-D">D) &lt;td&gt; and &lt;/td&gt;</label>
+                    </div>
+
+                    <button type="button" id="submit-question-7">Submit</button>
+
+                </div>
+
+
+                <input class="title" id="toggle8" type="checkbox"><label class="highlight" for="toggle8">Which of the following is not a style tag?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">15</span>
+        
+                </label>
+
+                <div class="card" id="slider8">
+
+                    <div>
+                        <input type="radio" name="question-8-answers" id="question-8-answers-A" value="A">
+                        <label for="question-8-answers-A">A) &lt;tt&gt; </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-8-answers" id="question-8-answers-B" value="B">
+                        <label for="question-8-answers-B">B) &lt;i&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-8-answers" id="question-8-answers-C" value="C">
+                        <label for="question-8-answers-C">C) &lt;b&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-8-answers" id="question-8-answers-D" value="D">
+                        <label for="question-8-answers-D">D) All of the above are style tags</label>
+                    </div>
+
+                    <button type="button" id="submit-question-8">Submit</button>
+
+                </div>
 
                 <h2 class="title-levels">HTML & CSS exercises for intermediates</h2>
 
-                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">Adding text in HTML<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider5">
+
+                <input class="title" id="toggle9" type="checkbox"><label class="highlight" for="toggle9">HTML documents are saved in<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">20</span>
+        
+                </label>
+
+                <div class="card" id="slider9">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-9-answers" id="question-9-answers-A" value="A">
+                        <label for="question-9-answers-A">A) Special binary format </label>
                     </div>
+                    <div>
+                        <input type="radio" name="question-9-answers" id="question-9-answers-B" value="B">
+                        <label for="question-9-answers-B">B) Machine language codes</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-9-answers" id="question-9-answers-C" value="C">
+                        <label for="question-9-answers-C">C) ASCII text</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-9-answers" id="question-9-answers-D" value="D">
+                        <label for="question-9-answers-D">D) None of the above</label>
+                    </div>
+
+                    <button type="button" id="submit-question-9">Submit</button>
+
+                </div>
+
+                <input class="title" id="toggle10" type="checkbox"><label class="highlight" for="toggle10">What is the correct sequence of HTML tags for starting a webpage?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">20</span>
+        
+                </label>
+
+                <div class="card" id="slider10">
+
+                    <div>
+                        <input type="radio" name="question-10-answers" id="question-10-answers-A" value="A">
+                        <label for="question-10-answers-A">A) HTML, title, head </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-10-answers" id="question-10-answers-B" value="B">
+                        <label for="question-10-answers-B">B) head, title, HTML</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-10-answers" id="question-10-answers-C" value="C">
+                        <label for="question-10-answers-C">C) HTML, head, title</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-10-answers" id="question-10-answers-D" value="D">
+                        <label for="question-10-answers-D">D) title, head, HTML</label>
+                    </div>
+
+                    <button type="button" id="submit-question-10">Submit</button>
 
                 </div>
 
 
-                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">How to add links in HTML<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider5">
+
+                <input class="title" id="toggle11" type="checkbox"><label class="highlight" for="toggle11">What is the purpose of using div tags in HTML?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">20</span>
+        
+                </label>
+
+                <div class="card" id="slider11">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-11-answers" id="question-11-answers-A" value="A">
+                        <label for="question-11-answers-A">A) For adding titles </label>
                     </div>
+                    <div>
+                        <input type="radio" name="question-11-answers" id="question-11-answers-B" value="B">
+                        <label for="question-11-answers-B">B) For adding headings</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-11-answers" id="question-11-answers-C" value="C">
+                        <label for="question-11-answers-C">C) For creating different sections</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-11-answers" id="question-11-answers-D" value="D">
+                        <label for="question-11-answers-D">D) For creating different styles</label>
+                    </div>
+
+                    <button type="button" id="submit-question-11">Submit</button>
 
                 </div>
 
 
-                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">Adding an image in HTML<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider5">
+
+
+                <input class="title" id="toggle12" type="checkbox"><label class="highlight" for="toggle12">Which among the following is the correct way in HTML to insert an image?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">25</span>
+        
+                </label>
+
+                <div class="card" id="slider12">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-12-answers" id="question-12-answers-A" value="A">
+                        <label for="question-8-answers-A">A) &lt;img src=“https://bit.ly/3QhwnAz” alt=“LearnHtmlCss”&gt; </label>
                     </div>
+                    <div>
+                        <input type="radio" name="question-12-answers" id="question-12-answers-B" value="B">
+                        <label for="question-12-answers-B">B) &lt;img url=“https://bit.ly/3QhwnAz”&gt;LearnHtmlCss&lt;/img&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-12-answers" id="question-12-answers-C" value="C">
+                        <label for="question-8-answers-C">C) &lt;image src=“https://bit.ly/3QhwnAz” alt=“LearnHtmlCss”&gt;&lt;/image&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-12-answers" id="question-12-answers-D" value="D">
+                        <label for="question-12-answers-D">D) &lt;img href=“https://bit.ly/3QhwnAz” alt=“LearnHtmlCss”&gt;&lt;/img&gt;</label>
+                    </div>
+
+                    <button type="button" id="submit-question-12">Submit</button>
+
+                </div>
+
+
+                <input class="title" id="toggle13" type="checkbox"><label class="highlight" for="toggle13">Which among the following is correct HTML code for making a checkbox?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">25</span>
+        
+                </label>
+
+                <div class="card" id="slider13">
+
+                    <div>
+                        <input type="radio" name="question-13-answers" id="question-13-answers-A" value="A">
+                        <label for="question-13-answers-A">A) &lt;input type="check"&gt; </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-13-answers" id="question-13-answers-B" value="B">
+                        <label for="question-13-answers-B">B) &lt;check&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-13-answers" id="question-13-answers-C" value="C">
+                        <label for="question-13-answers-C">C) &lt;checkbox&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-13-answers" id="question-13-answers-D" value="D">
+                        <label for="question-13-answers-D">D) &lt;input type="checkbox"&gt;</label>
+                    </div>
+
+                    <button type="button" id="submit-question-13">Submit</button>
+
+                </div>
+
+
+
+                <input class="title" id="toggle14" type="checkbox"><label class="highlight" for="toggle14">How do you display hyperlinks without an underline?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">30</span>
+        
+                </label>
+
+                <div class="card" id="slider14">
+
+                    <div>
+                        <input type="radio" name="question-14-answers" id="question-14-answers-A" value="A">
+                        <label for="question-8-answers-A">A) A {text-decoration:none} </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-14-answers" id="question-14-answers-B" value="B">
+                        <label for="question-8-answers-B">B) A {text-decoration:no underline}</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-14-answers" id="question-14-answers-C" value="C">
+                        <label for="question-8-answers-C">C) A {decoration:no underline}</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-14-answers" id="question-14-answers-D" value="D">
+                        <label for="question-14-answers-D">D) A {underline:none} </label>
+                    </div>
+
+                    <button type="button" id="submit-question-14">Submit</button>
+
+                </div>
+
+
+                <input class="title" id="toggle15" type="checkbox"><label class="highlight" for="toggle15">How do you make the text bold in CSS?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">20</span>
+        
+                </label>
+
+                <div class="card" id="slider15">
+
+                    <div>
+                        <input type="radio" name="question-15-answers" id="question-15-answers-A" value="A">
+                        <label for="question-15-answers-A">A) font-weight:bold </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-15-answers" id="question-15-answers-B" value="B">
+                        <label for="question-15-answers-B">B) style:bold</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-15-answers" id="question-15-answers-C" value="C">
+                        <label for="question-15-answers-C">C) font:b</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-15-answers" id="question-15-answers-D" value="D">
+                        <label for="question-15-answers-D">D) None of the above are correct </label>
+                    </div>
+
+                    <button type="button" id="submit-question-15">Submit</button>
+
+                </div>
+
+                <input class="title" id="toggle16" type="checkbox"><label class="highlight" for="toggle16">How do you make a list that lists its items with squares? <img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">30</span>
+        
+                </label>
+
+                <div class="card" id="slider16">
+
+                    <div>
+                        <input type="radio" name="question-16-answers" id="question-16-answers-A" value="A">
+                        <label for="question-16-answers-A">A) type: square </label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-16-answers" id="question-16-answers-B" value="B">
+                        <label for="question-16-answers-B">B) list-type: square</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-16-answers" id="question-16-answers-C" value="C">
+                        <label for="question-16-answers-C">C) type: 2</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-16-answers" id="question-16-answers-D" value="D">
+                        <label for="question-16-answers-D">D) list-style-type: square</label>
+                    </div>
+
+                    <button type="button" id="submit-question-16">Submit</button>
+
+                </div>
+
+                <input class="title" id="toggle17" type="checkbox"><label class="highlight" for="toggle17">Where in an HTML document is the correct place to refer to an external style sheet? <img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">25</span>
+        
+                </label>
+
+                <div class="card" id="slider17">
+
+                    <div>
+                        <input type="radio" name="question-17-answers" id="question-17-answers-A" value="A">
+                        <label for="question-17-answers-A">A) In the head section</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-17-answers" id="question-17-answers-B" value="B">
+                        <label for="question-17-answers-B">B) At the end of the document</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-17-answers" id="question-17-answers-C" value="C">
+                        <label for="question-17-answers-C">C) At the top of the document</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-17-answers" id="question-17-answers-D" value="D">
+                        <label for="question-17-answers-D">D) In the body section</label>
+                    </div>
+
+                    <button type="button" id="submit-question-17">Submit</button>
+
                 </div>
 
                 <h2 class="title-levels">HTML & CSS exercises for experts</h2>
 
-                <input class="title" id="toggle5" type="checkbox"><label class="highlight" for="toggle5">Adding a list in HTML<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">5</span></label>
-                <div class="card" id="slider5">
+
+                <input class="title" id="toggle18" type="checkbox"><label class="highlight" for="toggle18">In an unordered list, which selector will target only the last list item? <img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">35</span>
+        
+                </label>
+
+                <div class="card" id="slider18">
+
                     <div>
-                        <h3>question</h3>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 1</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 2</label>
-                        <label>
-                          <input type="checkbox" class="radio" value="1" name="answer[1][]" />answer 3</label>
+                        <input type="radio" name="question-18-answers" id="question-18-answers-A" value="A">
+                        <label for="question-18-answers-A">A) ul li:last-child</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-18-answers" id="question-18-answers-B" value="B">
+                        <label for="question-18-answers-B">B) ul:last-child li</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-18-answers" id="question-18-answers-C" value="C">
+                        <label for="question-18-answers-C">C) ul:last-child(li)</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-18-answers" id="question-18-answers-D" value="D">
+                        <label for="question-18-answers-D">D) None of the above are correct</label>
                     </div>
 
+                    <button type="button" id="submit-question-18">Submit</button>
 
                 </div>
+
+
+
+                <input class="title" id="toggle19" type="checkbox"><label class="highlight" for="toggle19">What is the correct syntax for writing comments in CSS? <img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">30</span>
+        
+                </label>
+
+                <div class="card" id="slider19">
+
+                    <div>
+                        <input type="radio" name="question-19-answers" id="question-19-answers-A" value="A">
+                        <label for="question-19-answers-A">A) // comment</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-19-answers" id="question-19-answers-B" value="B">
+                        <label for="question-19-answers-B">B) /* comment */</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-19-answers" id="question-19-answers-C" value="C">
+                        <label for="question-19-answers-C">C) &lt;!-- comment --&gt;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-19-answers" id="question-19-answers-D" value="D">
+                        <label for="question-19-answers-D">D) All options are valid</label>
+                    </div>
+
+                    <button type="button" id="submit-question-19">Submit</button>
+
+                </div>
+
+                <input class="title" id="toggle20" type="checkbox"><label class="highlight" for="toggle20">Which of these CSS properties isn't real?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">40</span>
+        
+                </label>
+
+                <div class="card" id="slider20">
+
+                    <div>
+                        <input type="radio" name="question-20-answers" id="question-20-answers-A" value="A">
+                        <label for="question-20-answers-A">A) object-fit</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-20-answers" id="question-20-answers-B" value="B">
+                        <label for="question-20-answers-B">B) pointer-events</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-20-answers" id="question-20-answers-C" value="C">
+                        <label for="question-20-answers-C">C) font-smoothing</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-20-answers" id="question-20-answers-D" value="D">
+                        <label for="question-20-answers-D">D) text-opacity</label>
+                    </div>
+
+                    <button type="button" id="submit-question-20">Submit</button>
+
+                </div>
+
+                <input class="title" id="toggle21" type="checkbox"><label class="highlight" for="toggle21">Which of these answers contains invalid CSS?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">45</span>
+        
+                </label>
+
+                <div class="card" id="slider21">
+
+                    <div>
+                        <input type="radio" name="question-21-answers" id="question-21-answers-A" value="A">
+                        <label for="question-21-answers-A">A) margin: 10px 8px 5px;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-21-answers" id="question-21-answers-B" value="B">
+                        <label for="question-21-answers-B">B) margin: -20px;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-21-answers" id="question-21-answers-C" value="C">
+                        <label for="question-21-answers-C">C) margin: auto;</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-21-answers" id="question-21-answers-D" value="D">
+                        <label for="question-21-answers-D">D) All answers are valid</label>
+                    </div>
+
+                    <button type="button" id="submit-question-21">Submit</button>
+
+                </div>
+
+                <input class="title" id="toggle22" type="checkbox"><label class="highlight" for="toggle22">How can you make a list that lists the items without bullets or numbers?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">35</span>
+
+                </label>
+
+                <div class="card" id="slider22">
+
+                    <div>
+                        <input type="radio" name="question-22-answers" id="question-22-answers-A" value="A">
+                        <label for="question-22-answers-A">A) ol</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-22-answers" id="question-22-answers-B" value="B">
+                        <label for="question-22-answers-B">B) ui</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-22-answers" id="question-22-answers-C" value="C">
+                        <label for="question-22-answers-C">C) di</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-22-answers" id="question-22-answers-D" value="D">
+                        <label for="question-22-answers-D">D) Lists always have numbers or bullets</label>
+                    </div>
+
+                    <button type="button" id="submit-question-22">Submit</button>
+
+                </div>
+
+                <input class="title" id="toggle23" type="checkbox"><label class="highlight" for="toggle23">Which of the following is NOT a valid CSS length unit?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">35</span>
+        
+                </label>
+
+                <div class="card" id="slider23">
+
+                    <div>
+                        <input type="radio" name="question-23-answers" id="question-23-answers-A" value="A">
+                        <label for="question-23-answers-A">A) cm</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-23-answers" id="question-23-answers-B" value="B">
+                        <label for="question-23-answers-B">B) dm</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-8-answers" id="question-23-answers-C" value="C">
+                        <label for="question-23-answers-C">C) em</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-23-answers" id="question-23-answers-D" value="D">
+                        <label for="question-23-answers-D">D) mm</label>
+                    </div>
+
+                    <button type="button" id="submit-question-23">Submit</button>
+
+                </div>
+
+
+                <input class="title" id="toggle24" type="checkbox"><label class="highlight" for="toggle24">What is the ideal order of the following pseudo-class selectors in a stylesheet?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">40</span>
+        
+                </label>
+
+                <div class="card" id="slider24">
+
+                    <div>
+                        <input type="radio" name="question-24-answers" id="question-24-answers-A" value="A">
+                        <label for="question-24-answers-A">A) :active</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-24-answers" id="question-24-answers-B" value="B">
+                        <label for="question-24-answers-B">B) :hover</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-24-answers" id="question-24-answers-C" value="C">
+                        <label for="question-24-answers-C">C) :link</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-24-answers" id="question-24-answers-D" value="D">
+                        <label for="question-24-answers-D">D) :visited</label>
+                    </div>
+
+                    <button type="button" id="submit-question-24">Submit</button>
+
+                </div>
+
+
+                <input class="title" id="toggle25" type="checkbox"><label class="highlight" for="toggle25">Which of the following is NOT a valid border-style property value?<img class="coins-icon" src="coins.svg" alt="coins icon"><span class="money">45</span>
+        
+                </label>
+
+                <div class="card" id="slider25">
+
+                    <div>
+                        <input type="radio" name="question-25-answers" id="question-25-answers-A" value="A">
+                        <label for="question-25-answers-A">A) dotted</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-25-answers" id="question-25-answers-B" value="B">
+                        <label for="question-25-answers-B">B) inset</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-25-answers" id="question-25-answers-C" value="C">
+                        <label for="question-25-answers-C">C) glazed</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="question-25-answers" id="question-25-answers-D" value="D">
+                        <label for="question-25-answers-D">D) groove</label>
+                    </div>
+
+                    <button type="button" id="submit-question-25">Submit</button>
+
+                </div>
+
+            </div>
 
 
 
