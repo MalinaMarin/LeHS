@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+
+        EXERCISE 1
+        Print the squares of the numbers 1 - 10. Each number should be on a separate line, next to it the number 2 superscripted, an equal sign and the result.
+        Hint 1: Look up <sup> tag. What does it do?
+        Hint 2: You should use the <br> tag for line breaks.
+
+        Input code:
+
+        <body>
+
+        </body>
+
+
+
+
+
+    EXERCISE 2
+
+    Display an image that when clicked will link to the Google search engine(should be opened in a new window).
+    The source for the image is: /images/ex2.jpg 
+    Hint 1: What attributes does the <a> tag have? We'll definitely need the href one.
+    Hint 2: Look up the target attribute.
+    Hint 3: You should use the alt attributte as it's good practice.
+
+    Input code:
+
+    <body>
+
+    </body>
+
+    <p>
+    Click on the image to be taken to the Google search engine.
+    </p>
+
+
+    EXERCISE 3
+
+
+        Display three different images. Skip two lines between each image. Each image should have a title.
+        The sources for the images are:
+        /images/ex3_1.jpg
+        /images/ex3_2.jpg
+        /images/ex3_3.jpg
+
+
+    Hint 1: You can insert an image with the img tag.
+    Hint 2: This tag has two required attributes: src - specifies the path to the image, alt - specifies an alternate 
+    text for the image, if the image cannot be displayed for some reason.
+    Hint 3: You should use the alt attribute in every img tag, it's good practice!
+    Hint 4: You can skip lines with the <br> tag, you have to do it twice though.
+    Hint 5: Title attribute needs to be specified for each image.  
+
+
+    Input code:
+
+    <body>
+
+    </body>
+
+
+
+    EXERCISE 4
+
+    Use the correct HTML attribute to make the second TH element span two rows.
+        No hints this time!
+
+        Input code:
+
+    <table>
+  <tr>
+    <th>Name</th>
+    <td>John Doe</td>
+  </tr>
+  <tr>
+    <th                           >Phone</th>
+    <td>0762986114</td>
+  </tr>
+  <tr>
+    <td>0786400892</td>
+  </tr>
+</table>
+
+
+    EXERCISE 5
+
+
+        Troubleshooting HTML
+        Someone messed up this webpage! Analyze this code and fix the errors.
+
+	    Hint : The first two items in this list are formatted correctly.
+
+        <body>
+    
+		<h2>The greatest bunnies</h2> 
+
+		<p>
+		    <strong>The first bunny</strong> (<em>Colour</em>, white)
+		</p>
+		<p>
+		    <strong>The second bunny</strong> (Meteor misses earth; <em>Colour</em>: black)
+		</p>
+		<p>
+		    <sstrong>The third bunny</strong> (<em>Colour</em>: grey)    
+		</p>
+		<p>
+		    <strong><a href="https://en.wikipedia.org/wiki/Rabbit">Bunnies are cute, here you'll find information about them</strong> (<em>Colour<em>: any)
+		</p>
+		<p>
+		    <strong>‘Bye-bye!’ (Last message; <em>No colour this time</em>, sorry)
+		</p>
+    </body>
+
+
+    EXERCISE 6
+
+    Display an image that has a border of size 5, a width of 400, and a height of 350.
+    The source for the image is /images/ex6.jpg
+
+    Hint 1: Use border, width and height attributes. We should place them in the <img> tag.
+    Hint 2: Don't forget about the alt attribute, it's good practice!
+
+    <body>
+   
+    </body>
+
+    EXERCISE 7
+    Specify that the transition of the <div> element should have a "ease-in-out" speed curve.
+
+Hint: Use the transition-timing-function property.
+
+<head>
+<style> 
+div {
+  width: 150px;
+  height: 150px;
+  background: black;
+  transition: width 3s;
+}
+
+div:hover {
+  width: 350px;
+}
+</style>
+</head>
+
+<body>
+
+<div></div>
+
+<p>Hover over the div element.</p>
+
+</body>
+
+
+
+
+    EXERCISE 8
+    Remove the transparency of the <img> element when the user hovers over it with the mouse pointer.
+
+    Hint: Set the opacity property to 1.0.
+
+
+<head>
+<style>
+img {
+  opacity: 0.4;
+}
+</style>
+</head>
+<body>
+
+<img src="/images/ex8.jpg" width="280" height="280">
+
+</body>
+
+
+
+    EXERCISE 9
+
+    Add the following 5 steps to the animation "example":
+
+0% - Set background color to "purple", left position to "0px", top position to: "0px"
+25% - Set background color to "blue", left position to "0px", top position to: "200px"
+50% - Set background color to "purple", left position to "200px", top position to: "200px"
+75% - Set background color to "blue", left position to "200px", top position to: "0px"
+100% - Set background color to "purple", left position to "0px", top position to: "0px"
+
+Hint: The % values represents the different stages of the animation. 0% is the start, and 100% is the end.
+
+
+<head>
+<style> 
+div {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  background-color: black;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+
+}
+</style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+
+
+    EXERCISE 10
+    Specify that the animation of the <div> element should alternate between running forwards and backwards.
+
+    Hint: Use the animation-direction property.
+    <head>
+    <style> 
+    div {
+    animation-name: example;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+ 
+
+@keyframes example {
+  0%   {background-color: purple; left:0px; top:0px;}
+  25%  {background-color: blue; left:0px; top:200px;}
+  50%  {background-color: purple; left:200px; top:200px;}
+  75%  {background-color: blue; left:200px; top:0px;}
+  100% {background-color: purple; left:0px; top:0px;}
+}
+</style>
+</head>
+<body>
+
+<div></div>
+
+</body>
+
+    -->
+
+
+
+
+
+</body>
+
+</html>
