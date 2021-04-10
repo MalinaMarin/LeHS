@@ -1,0 +1,259 @@
+
+:root{
+    --black: #2C2B30;
+    --light-gray: #4F4F51;
+    --white: #D6D6D6;
+    --light-pink: #F2C4CE;
+    --pink: #F58F7C;
+ }
+
+body{
+    font-family: serif;
+    background-color: var(--light-gray);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+.header{
+    height: 10%;
+}
+.nav-container{
+    background-color: var(--black);
+    margin:auto;
+}
+
+.nav-row{
+    display: block;  
+}
+
+.nav-start{
+    height:100%;
+    float:left;
+    margin-left: 1%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: auto;
+    width: 50px;
+    margin-right: 100px;
+    float:left;
+    position: relative;
+    display: inline;
+}
+.nav-right{
+    display:flex;
+}
+
+.nav-center{
+    float:left;
+    position: relative;
+    display: inline;
+    padding: 0 15px;
+}
+
+.nav-center ul li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.nav-center ul li a{
+    display: block;
+    color: var(--light-pink);
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: all 0.5s ease;
+}
+
+.active{
+    background: var(--pink);
+    border-radius: 3px;    
+}
+
+.nav-center a.active{
+    color: var(--black);
+}
+
+.nav-end{
+    
+    float: right;
+    margin-left: auto; 
+    margin-right: 3%;;   
+    display: inline;
+    position: relative;
+    align-items: center;
+    padding: 0 15px;
+    transition: all 0.5s ease;
+}
+
+.nav-end a {
+    display: block;
+    color: var(--light-pink);
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: all 0.5s ease;
+}
+.sub-menu{
+    display:none;
+}
+
+.nav-end:hover .sub-menu{
+    display:block;
+    position: absolute;
+    background: var(--black);
+    margin-top: 0;
+    margin-left: -15px;
+    border-radius: 3px;
+}
+
+.nav-end:hover .sub-menu a{
+       display:block;
+       margin: 10px;
+}
+
+.nav-center a:hover ,.nav-end a:hover{
+   background: var(--pink);
+   border-radius: 3px;
+}
+
+.nav-toggler{
+    height: 34px;
+    width: 44px;
+    background-color: var(--light-pink);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: none;
+}
+.nav-toggler-submenu{
+    height: 34px;
+    width: 44px;
+    background-color: var(--pink);
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: none;
+}
+.nav-toggler:focus,.nav-toggler-submenu:focus{
+    outline: none;
+    box-shadow: 0 0 5px var(--light-pink);
+}
+
+.nav-toggler span,.nav-toggler-submenu span{
+    height: 2px;
+    width: 20px;
+    background-color: var(--black);
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
+.nav-toggler span::before,.nav-toggler span::after,
+.nav-toggler-submenu span::before,.nav-toggler-submenu span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+}
+
+.nav-toggler span::before,.nav-toggler-submenu span::before{
+    transform: translateY(-6px);
+}
+
+.nav-toggler span::after,.nav-toggler-submenu span::after{
+    transform: translateY(6px);
+}
+.nav-toggler.active span::before{
+    transform: rotate(45deg);
+}
+.nav-toggler.active span{
+    background-color: transparent;
+}
+.nav-toggler.active span::after{
+    transform: rotate(135deg);
+}
+
+@media(max-width: 780px){
+    .nav-toggler{
+        display: block;
+        float: right;
+        margin-right: 3%;
+        margin-top: 1.5%;
+    }
+    .nav-toggler-submenu{
+        display:block;
+        margin: auto;
+    }
+
+    .nav-right{
+        width: 100%;
+        display:flex;
+        padding: 0;        
+        overflow: hidden;
+        visibility: hidden;
+        flex-flow: column wrap;
+        align-content: center;
+        border-top: 1px solid var(--light-pink);
+        margin-top: 12px;
+        max-height: 0px;
+        transition:all 0.5s ease;
+    }
+    .nav-end{
+        width: 100%;
+        display:inline-flex;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--pink);
+        margin-top: 12px;        
+        transition:all 0.5s ease;
+    }
+    
+    .nav-end button{
+        margin-right: -8px;
+    }
+
+    .nav-end a:hover{
+        background-color: var(--black);
+    }
+    .sub-menu{
+        overflow: hidden;
+        visibility: hidden;
+        max-height: 0px;
+    }
+    .sub-menu.open{
+        visibility: visible;
+    }
+    .nav-right.open{
+        visibility: visible;
+    }
+    .nav-center ul li {
+        display: block;
+        margin: 0;
+    }
+   
+    .sub-menu{
+        width: 100%;
+        
+    }
+  }
+
+

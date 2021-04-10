@@ -1,0 +1,146 @@
+:root{
+    --black:#2C2B30;
+    --gray:#4f4f51;
+    --white:#d6d6d6;
+    --light-pink:#f2c4ce;
+    --pink:#f58f7c;
+    --blue:#2aa1ff;
+
+}
+html,body{
+    width:100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    overflow: hidden;
+}
+
+header{
+    height:10%;
+    background-color: var(--black);
+}
+.navbar-main-page {
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    display: inline-block; 
+  }
+.logo {
+    height: auto;
+    width: 50px;
+    margin-right: 100px;
+    float:left;
+    position: relative;
+    display: inline;
+    cursor: pointer;
+
+}
+.left-side-navbar{
+    height:100%;
+    float:left;
+    margin-left: 1%;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+.navbar-buttons{
+    float:left;
+    position: relative;
+    display: inline;
+}
+.authentification-navbar{
+    height: 100%;
+    float: right;
+    display: flex;
+    position: relative;
+    align-items: center;
+
+ }
+ 
+  .navbar-buttons a {
+
+    display: inline-block;
+    color:var(--light-pink);
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .navbar-buttons a:hover{
+    background: var(--pink);
+    border-radius: 3px;
+ }
+  .authentification-navbar a{
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  #login-btn{
+    color:var(--blue);
+}
+#login-btn:hover{
+    color:var(--pink);
+    background: var(--blue);
+    border-radius: 3px;
+}
+  #signup-btn{
+      color:var(--pink);
+  }
+  #signup-btn:hover{
+    color:var(--blue);
+    background: var(--pink);
+    border-radius: 3px;
+}
+  .one-scroll{
+    overflow-y: scroll;
+    width: 100%;
+    height: 90%;
+  }
+  main{
+      width: 100%;
+      height: auto;
+      background-color: var(--gray);  
+  }
+  .container{
+      width: 1050px;
+      height: 600px;
+      display: grid;
+      grid-template-columns: repeat(7, auto);
+      padding: 30px;
+  }
+  .cell{
+    border: 1px solid var(--blue);
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .even{
+    background-color: var(--light-pink);
+  }
+  .odd{
+    background-color: var(--pink);
+  }
+  .grid-btn{
+    height: 100px;
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+    background-color: var(--gray);
+    cursor: pointer;
+  }
+  /* .arrow{
+    
+  } */
+  footer{
+      width: 100%;
+      height: 22%;
+      background-color: #2C2B30;
+
+  }
