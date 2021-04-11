@@ -90,7 +90,7 @@ a{
 }
 
 .nav-end{
-    
+     
     float: right;
     margin-left: auto; 
     margin-right: 3%;;   
@@ -112,6 +112,7 @@ a{
 }
 .sub-menu{
     display:none;
+    background-color: var(--black);
 }
 
 .nav-end a:hover .sub-menu{
@@ -193,7 +194,7 @@ a{
     transform: rotate(135deg);
 }
 
-@media(max-width: 780px){
+@media(max-width: 1000px){
     .nav-toggler{
         display: block;
         float: right;
@@ -242,6 +243,7 @@ a{
         border-top: 1px solid var(--pink);
         margin-top: 12px;        
         transition:all 0s ease;
+        background-color: var(--black);
     }
     
     .nav-end button{
@@ -258,27 +260,32 @@ a{
         margin-left: -15px;
         border-radius: 3px;
     }
+    .header{
+        block-size: fit-content;
+    }
     #menu-btn:hover{
         background-color: var(--black);
     }
     .nav-end.open{
         visibility: visible;
+        
     }
     .nav-right.open{
         visibility: visible;
         width: 100%;
         display:block;
-        
+       
         transition:all 0.5s ease;
     }
     .nav-right.open .nav-center{
         display: block;
         width: 100%;
-    }
+            }
     .nav-right.open .nav-center a{
         
         align-content: center;
         align-items: center;
+        
     }
     
     .sub-menu.open {
@@ -316,7 +323,9 @@ a{
         overflow: hidden;
 
     } */
-
+    .nav-container{
+        background-color: var(--black);
+    }
    
     .sub-menu.open ul li{
         display: block;
