@@ -108,7 +108,7 @@ header{
     display: flex;
     flex-direction: column;
     float: none;
-    width: 30%;
+    width: 35%;
     height: 200px;
     background-color: var(--black);
     align-self: center;
@@ -116,7 +116,7 @@ header{
 }
 .responsive a{
     text-align: center;
-    height: 30px;
+    height: 50px;
 }
   .one-scroll{
     overflow-y: scroll;
