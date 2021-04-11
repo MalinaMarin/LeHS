@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body{
-    line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
-}
+ 
 
 :root{
    --black: #2C2B30;
@@ -25,7 +22,10 @@ html,body{
     overflow: hidden;
 }
 
-
+footer,header{
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
 
 
 .logo {
