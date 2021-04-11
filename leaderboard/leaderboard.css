@@ -1,0 +1,370 @@
+:root{
+    --black:#2C2B30;
+    --gray:#4f4f51;
+    --white:#d6d6d6;
+    --light-pink:#f2c4ce;
+    --pink:#f58f7c;
+    --blue:#2aa1ff;
+
+}
+html,body{
+    width:100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    overflow: hidden;
+}
+
+header{
+    height:10%;
+    background-color: var(--black);
+}
+.navbar-main-page {
+    height: 10%;
+    width: 100%;
+    position: fixed;
+    display: inline-block; 
+  }
+.logo {
+    height: 50px;
+    width: 50px;
+    margin-right: 100px;
+    float:left;
+    position: relative;
+    display: inline;
+    cursor: pointer;
+}
+
+.left-side-navbar{
+    height:100%;
+    float:left;
+    margin-left: 1%;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+.navbar-buttons{
+    float:left;
+    position: relative;
+    display: inline;
+}
+.authentification-navbar{
+    height: 100%;
+    float: right;
+    display: flex;
+    position: relative;
+    align-items: center;
+
+ }
+ 
+  .navbar-buttons a {
+
+    display: inline-block;
+    color:var(--light-pink);
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  .navbar-buttons a:hover{
+    background: var(--pink);
+    border-radius: 3px;
+ }
+  .authentification-navbar a{
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  #login-btn{
+    color:var(--blue);
+}
+#login-btn:hover{
+    color:var(--pink);
+    background: var(--blue);
+    border-radius: 3px;
+}
+  #signup-btn{
+      color:var(--pink);
+  }
+  #signup-btn:hover{
+    color:var(--blue);
+    background: var(--pink);
+    border-radius: 3px;
+}
+  .one-scroll{
+    overflow-y: scroll;
+    width: 100%;
+    height: 90%;
+  }
+  main{
+      width: 100%;
+      height: auto;    
+  }
+  .container{
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(65deg, var(--gray) 10%, var(--light-pink) 90%);
+      display: flex;
+      justify-content: space-between;
+  }
+  .left-block,.right-block{
+      height: 100%;
+      width: 50%;
+  }
+  .left-block{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  #leaderboard{
+      height: 90%;
+      width: 60%;
+      background-color: var(--light-pink);
+  }
+  .title{
+      width: 100%;
+      height: 10%;
+      background-color: var(--blue);
+      color:var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+  }
+  .leaders{
+      width: 100%;
+      height: 90%;
+  }
+  .section{
+    width: auto;
+    height: 9.5%;
+    padding:0px;
+    border:solid 1px var(--white); 
+}
+.section:hover{
+    background-color: var(--pink);
+}
+.username{
+    float:left;
+    margin-left: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.score{
+    float: right;
+    margin-right: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.right-block{
+    display: block;
+
+}
+.right-section{
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#progress,#coins{
+    width:50%;
+    height: auto;
+    margin: 20px;
+    background-color: var(--white);
+    border-radius: 4px;
+}
+#coins,#xp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#progress{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.progress-circle{
+    position: relative;
+    align-self: center;
+    width: 150px;
+    height: 150px;
+}
+svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    stroke:var(--black);
+    transform: translate(5px, 5px);
+}
+svg circle{
+    width: 150px;
+    height: 150px;
+    fill:none;
+    stroke-width: 10;
+    stroke:#000;
+    transform: translate(5px, 5px);
+    stroke-dasharray: calc(2*3.14*60); /* 2*PI*radius */
+}
+svg circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke:var(--light-pink);
+} 
+svg circle:nth-child(2){
+    stroke-dasharray: calc(2*3.14*60*90/100); /* 2*PI*radius*percentage*/
+    stroke:var(--pink);
+}
+.percentage{
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray);
+}
+.percentage h2{
+    font-size: 40px;
+}
+.percentage span{
+    font-size: 15px;
+}
+#coins-label,#progress-label,#xp-label{
+    text-align: left;
+}
+
+#coins-number,#xp-number{
+    margin: 20px;
+    color: var(--gray);
+    font-size: 20px;
+    text-align: center;
+}
+#progress-label,#coins-label,#xp-label{
+    margin-left:10px;
+    color: var(--gray);
+    font-size: 20px;
+}
+#xp{
+    display: flex;
+
+}
+#xp-number{
+    justify-self: center;
+}
+#line{
+    position: relative;
+    height: 20px;
+    width: 300px;
+    justify-self: center;
+    align-self: center;
+    background: linear-gradient(90deg, var(--pink) 80%, var(--light-pink) 20%);
+}
+.stat-pic{
+    height: 30%;
+}
+
+
+#container1, #container2{
+    height: 40%;
+
+}
+#container3{
+    height: 20%;
+}
+#container1{
+    display: flex;
+    justify-content: space-between;
+}
+#container2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#xp{
+    height: 100%;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 4px;
+    margin: 20px;
+}
+#get-stats{
+    margin:20px;
+}
+#xp:hover,#coins:hover,#progress:hover{
+    background-color: var(--blue);
+}
+#get-stats{
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    border:1px solid var(--white);
+    background-color: var(--pink);
+    font-weight: bold;
+    color: var(--white);
+}
+#get-stats:hover{
+    font-style: italic;
+    color: var(--blue);
+}
+
+  footer{
+      width: 100%;
+      height: 22%;
+      background-color: #2C2B30;
+  }
+
+  @media screen and (max-width:850px){
+    .left-block,.right-block{
+        height: 600px;
+        width:100%;
+    }
+      .container{
+        flex-direction:column;
+        height: fit-content;
+    }
+
+  }
+  @media screen and (max-width:450px){
+    .left-block{
+        height: 600px;
+        width:100%;
+    }
+    .right-block{
+        height: fit-content;
+        width:100%;
+    }
+      .container{
+        flex-direction:column;
+        height: fit-content;
+    }
+
+    #line{
+        width: 80%;
+    }
+    .stat-pic{
+        width: 30%;
+    }
+
+    #container1{
+        flex-direction: column;
+    }
+    #progress,#coins{
+        width: 70%;
+        height: 50%;
+    }
+    .stat-pic{
+        align-self: center;
+    }
+  }
+  
