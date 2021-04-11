@@ -1,0 +1,132 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML&CSS</title>
+    <link rel="stylesheet" href="./leaderboard.css">
+</head>
+
+<body>
+    <header>
+        <div class="navbar-main-page">
+            <div class="left-side-navbar">
+                <div class="logo">
+                    <img id="logo" src="logo.svg" alt="Logo">
+                </div>
+                <div class="navbar-buttons">
+                    <a id="learn-btn">
+                        Learn
+                    </a>
+                    <a id="practice-btn">
+                        Practice
+                    </a>
+                    <a id="play-btn">
+                        Play
+                    </a>
+                    <a id="leaderboard-btn">
+                        Leaderboard
+                    </a>
+
+                </div>
+            </div>
+            <div class="authentification-navbar">
+                <a id="login-btn" href="./login.html">
+                    Login
+                </a>
+                <a id="signup-btn" href="./signup.html">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="one-scroll">
+        <main>
+            <div class="container">
+                <div class="left-block">
+                    <div id="leaderboard">
+                        <div class="title">Leaderboard</div>
+                        <div class="leaders">
+                            <div id="1" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="2" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="3" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="4" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="5" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="6" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="7" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="8" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="9" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                            <div id="10" class="section">
+                                <div class="username">{getUsername}</div>
+                                <div class="score">{getXP}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-block">
+                    <div id="container1" class="right-section">
+                        <div id="progress" class="stats">
+                            <label id="progress-label">My Progress</label>
+                            <div class="progress-circle">
+                                <svg>
+                                  <circle cx="70" cy="70" r="60"></circle>
+                                  <circle cx="70" cy="70" r="60"></circle>
+                                </svg>
+                                <div class="percentage">
+                                  <h2 id="progress-number">90<span>%</span></h2>
+                                </div>
+                              </div>
+                        </div>
+                        <div id="coins" class="stats">
+                            <label id="coins-label">My Coins</label>
+                            <img class="stat-pic" src="coins.svg" alt="coins">
+                            <label id="coins-number">{getCoins}</label>
+                        </div>
+                    </div>
+                    <div id="container2" class="right-section">
+                        <div id="xp" class="stats">
+                            <label id="xp-label">My XP</label>
+                            <div id="line"></div>
+                            <label id="xp-number">{getXP}</label>
+                        </div>
+                    </div>
+                    <div id="container3" class="right-section">
+                        <button id="get-stats">Get more statistics</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            I am the stupid footer!!!!!
+        </footer>
+    </div>
+</body>
+
+</html>

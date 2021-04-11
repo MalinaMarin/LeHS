@@ -26,15 +26,15 @@ header{
     display: inline-block; 
   }
 .logo {
-    height: auto;
+    height: 50px;
     width: 50px;
     margin-right: 100px;
     float:left;
     position: relative;
     display: inline;
     cursor: pointer;
-
 }
+
 .left-side-navbar{
     height:100%;
     float:left;
@@ -58,7 +58,7 @@ header{
 
  }
  
-  .navbar-buttons a {
+  .navbar-buttons a,.responsive a {
 
     display: inline-block;
     color:var(--light-pink);
@@ -68,7 +68,7 @@ header{
     font-size: 17px;
     cursor: pointer;
   }
-  .navbar-buttons a:hover{
+  .navbar-buttons a:hover, .responsive a:hover{
     background: var(--pink);
     border-radius: 3px;
  }
@@ -95,6 +95,28 @@ header{
     color:var(--blue);
     background: var(--pink);
     border-radius: 3px;
+}
+#submenu-btn{
+    background-image: url(submenu.svg);
+    display: none;
+}
+#submenu{
+    display: none;
+}
+.responsive{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    float: none;
+    width: 30%;
+    height: 200px;
+    background-color: var(--black);
+    align-self: center;
+    padding-top: 35px; 
+}
+.responsive a{
+    text-align: center;
+    height: 30px;
 }
   .one-scroll{
     overflow-y: scroll;
@@ -302,6 +324,18 @@ p1,p2{
     .block3{
         align-items: flex-end;
         padding-bottom: 30px;
+    }
+    .navbar-buttons,#login-btn,#signup-btn{
+        display: none;
+    }
+    #submenu-btn{
+        display: block;
+        position: relative;
+        float: right;
+        margin-right: 10px;
+        height: 40px;
+        width: 40px;
+        margin-top:15px;
     }
 
 }
