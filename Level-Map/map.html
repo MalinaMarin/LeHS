@@ -7,43 +7,52 @@
     <title>Learn HTML&CSS</title>
     <link rel="stylesheet" href="./map.css">
     <link rel="stylesheet" href="../Navbar&footer/footer.css">
+    <link rel="stylesheet" href="../Navbar&footer/header.css">
 
 </head>
 
 <body>
-    <header>
-        <div class="navbar-main-page">
-            <div class="left-side-navbar">
-                <div class="logo">
-                    <img src="../resources/logo.svg" alt="Logo">
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-row">
+                <div class="nav-start">
+                    <div class="logo">
+                        <img src="../resources/logo.svg"  alt="Logo">
+                    </div>
                 </div>
-                <div class="navbar-buttons">
-                    <a id="learn-btn">
-                        Learn
-                    </a>
-                    <a id="practice-btn">
-                        Practice
-                    </a>
-                    <a id="play-btn">
-                        Play
-                    </a>
-                    <a id="leaderboard-btn">
-                        Leaderboard
-                    </a>
-
+                <button type="button" class="nav-toggler active">
+                    <span></span>
+                </button>
+                <div class="nav-right open" style="max-height: fit-content;">
+                    <div class="nav-center">
+                        <ul>
+                            <li><a href="../Learn&Practice-pages/learn.html" > Learn </a></li>
+                            <li><a href="../Learn&Practice-pages/practice.html"> Practice </a></li>
+                            <li><a href="../Level-Map/map.html"> Play </a></li>
+                            <li><a href="../leaderboard/leaderboard.html"> Leaderboard </a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-end" id="navend">
+                        <a id="menu-btn" >
+                            Username
+                        </a>
+                        <button type="button" class="nav-toggler-submenu active">
+                            <span></span>
+                        </button>
+                        <div class="sub-menu open" id="submenu" style="max-height: fit-content;">
+                            <ul>
+                                <li><a id="exp"> Experience </a></li>
+                                <li><a id="coins"> Coins </a></li>
+                                <li><a href="../presenting-page/presenting_page.html" id="logout.btn"> Log out </a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="authentification-navbar">
-                <a id="login-btn" href="./login.html">
-                    Login
-                </a>
-                <a id="signup-btn" href="./signup.html">
-                    Sign Up
-                </a>
-            </div>
+            <script src="../Navbar&footer/script.js"></script>
         </div>
     </header>
-    <div class="one-scroll">
+        <div class="one-scroll">
         <main>
             <div id="container" class="container">
                 <script>
