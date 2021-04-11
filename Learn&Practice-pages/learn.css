@@ -46,6 +46,7 @@ pre {
 }
 
 .content {
+	display: flex;
     margin-bottom: 16rem;
     margin: 8rem;
     display: flex;
@@ -55,17 +56,13 @@ pre {
 
 .card {
     position: relative;
-    /* display: flex; */
+    
     margin: 2rem 0rem;
     border-radius: 1rem;
-    /* justify-content: space-between; */
     box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
-    /* -webkit-transition: all .9s ease-in-out; */
+    -webkit-transition: all .9s ease-in-out;
     transition: all .9s ease-in-out;
     background: linear-gradient(to left top, rgba(255, 255, 255, 0.8), rgba(245, 143, 124, 0.5));
-    /* color: #2C2B30; */
-    /* width: 1000px; */
-    /* height: 800px; */
     width: 95%;
     max-height: 0;
     overflow-y: hidden;
@@ -74,7 +71,6 @@ pre {
 
 p {
     padding: 2em 2em 2em 2em;
-    /* position: relative; */
     display: block;
 }
 
