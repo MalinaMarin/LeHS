@@ -4,12 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="footerpages.css" >
+    <link rel="stylesheet" href="../Navbar&footer/header.css">
+    <link rel="stylesheet" href="footerpages.css" >    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>About us</title>
 </head>
 <body>
-    <header></header>
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-row">
+                <div class="nav-start">
+                    <div class="logo">
+                        <img src="../resources/logo.svg"  alt="Logo">
+                    </div>
+                </div>
+                <button type="button" class="nav-toggler active">
+                    <span></span>
+                </button>
+                <div class="nav-right open" style="max-height: fit-content;">
+                    <div class="nav-center">
+                        <ul>
+                            <li><a href="../Learn&Practice-pages/learn.html" > Learn </a></li>
+                            <li><a href="../Learn&Practice-pages/practice.html"> Practice </a></li>
+                            <li><a href="../Level Map/map.html"> Play </a></li>
+                            <li><a href="../leaderboard/leaderboard.html"> Leaderboard </a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-end" id="navend">
+                        <a id="menu-btn" >
+                            Username
+                        </a>
+                        <button type="button" class="nav-toggler-submenu active">
+                            <span></span>
+                        </button>
+                        <div class="sub-menu open" id="submenu" style="max-height: fit-content;">
+                            <ul>
+                                <li><a id="exp"> Experience </a></li>
+                                <li><a id="coins"> Coins </a></li>
+                                <li><a href="../presenting-page/presenting_page.html" id="logout.btn"> Log out </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="../Navbar&footer/script.js"></script>
 
     <div class="one-scroll">
         <main>
@@ -18,7 +58,7 @@
             <article>            
                 <div class="card">
                     <div class="card-text">
-                        <span>Privacy policy</span>
+                        <span>About us</span>
                         <h3></h3>
                         <p> </p>
 
