@@ -32,38 +32,44 @@ function submenuToggle() {
 
 
 
-// var menu=document.getElementById("menu-btn");
-// var xsubmenu=document.getElementById("submenu");
-// menu.addEventListener("mouseover", function (){const submenu=document.getElementById("submenu");
-// submenu.style.display="block";
-// xsubmenu.addEventListener("mouseover", function (){var submenu=document.getElementById("submenu");
-// submenu.style.display="block";});
-// xsubmenu.addEventListener("mouseleave", function (){var submenu=document.getElementById("submenu");
-// submenu.style.display="none";});
-// menu.addEventListener("mouseleave", function (){var submenu=document.getElementById("submenu");
-// submenu.style.display="none";
-// });
-// });
+var menu = document.getElementById("menu-btn");
+var xsubmenu = document.getElementById("submenu");
+menu.addEventListener("mouseover", function () {
+    const submenu = document.getElementById("submenu");
+    submenu.style.display = "block";
+    xsubmenu.addEventListener("mouseover", function () {
+        var submenu = document.getElementById("submenu");
+        submenu.style.display = "block";
+    });
+    xsubmenu.addEventListener("mouseleave", function () {
+        var submenu = document.getElementById("submenu");
+        submenu.style.display = "none";
+    });
+    menu.addEventListener("mouseleave", function () {
+        var submenu = document.getElementById("submenu");
+        submenu.style.display = "none";
+    });
+});
 
 var menu = document.getElementById("menu-btn");
 var xsubmenu = document.getElementById("submenu");
 menu.addEventListener("mouseover", function () {
     const submenu = document.getElementById("submenu");
     submenu.style.display = "block";
-    document.getElementById("hint").style.display="none";
+    document.getElementById("hint").style.display = "none";
     xsubmenu.addEventListener("mouseover", function () {
         var submenu = document.getElementById("submenu");
         submenu.style.display = "block";
-        document.getElementById("hint").style.display="none";
+        document.getElementById("hint").style.display = "none";
     });
     xsubmenu.addEventListener("mouseleave", function () {
         var submenu = document.getElementById("submenu");
         submenu.style.display = "none";
-        document.getElementById("hint").style.display="block";
+       document.getElementById("hint").style.display = "block";
     });
     menu.addEventListener("mouseleave", function () {
         var submenu = document.getElementById("submenu");
         submenu.style.display = "none";
-        document.getElementById("hint").style.display="block";
+     document.getElementById("hint").style.display = "block";
     });
 });
