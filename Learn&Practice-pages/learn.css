@@ -24,7 +24,7 @@ main {
     justify-content: center;
 }
 
-img {
+.image {
     max-width: 900px;
     max-height: 1400px;
     margin-left: 4em;
@@ -169,7 +169,7 @@ p {
 }
 
 @media screen and (max-width: 830px) {
-    img {
+    .image {
         max-width: 1000px;
         max-height: 1000px;
         margin-left: 1em;
