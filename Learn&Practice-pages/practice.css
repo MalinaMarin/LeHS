@@ -39,7 +39,6 @@ main {
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(245, 143, 124, 0.9));
     border-radius: 2rem;
 }
-
 .content {
     margin-bottom: 16rem;
     margin: 8rem;
