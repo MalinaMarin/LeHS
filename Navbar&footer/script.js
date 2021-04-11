@@ -24,28 +24,24 @@ function submenuToggle() {
        submenu.style.maxHeight = submenu.scrollHeight + "px";
    }
    else{
-        submenu.removeAttribute("style");
+         submenu.removeAttribute("style");
    }
 } 
 
-// var menu=document.getElementById("menu-btn");
-// var onclick=true;
-// menu.addEventListener("click", function (onclick){var submenu=document.getElementById("submenu");
-// console.log(onclick);
-// if(onclick){
-// submenu.style.display="block";
-// onclick=false;
-// }
-// else{
-//     submenu.style.display="none";
-//     onclick=true; 
-// }
-// });
 
-// var menu=document.getElementById("navend");
-// menu.addEventListener("mouseenter", function (){var submenu=document.getElementById("submenu");
-// submenu.style.display="block";
-// });
-// menu.addEventListener("mouseleave", function (){var submenu=document.getElementById("submenu");
-// submenu.style.display="none";
-// });
+
+
+
+var menu=document.getElementById("menu-btn");
+var xsubmenu=document.getElementById("submenu");
+menu.addEventListener("mouseover", function (){const submenu=document.getElementById("submenu");
+submenu.style.display="block";
+xsubmenu.addEventListener("mouseover", function (){var submenu=document.getElementById("submenu");
+submenu.style.display="block";});
+xsubmenu.addEventListener("mouseleave", function (){var submenu=document.getElementById("submenu");
+submenu.style.display="none";});
+menu.addEventListener("mouseleave", function (){var submenu=document.getElementById("submenu");
+submenu.style.display="none";
+});
+});
+

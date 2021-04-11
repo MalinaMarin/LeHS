@@ -8,8 +8,16 @@
     font-weight: bold;
 }
 
+.scroll{
+
+    overflow-y: scroll;
+    width: 100%;
+    height: 90%;
+
+}
+
 main {
-    min-height: 100vh;
+    min-height: 100vh; 
     background: linear-gradient(to right top, #4F4F51, #2C2B30);
     display: flex;
     align-items: center;
@@ -179,7 +187,7 @@ p {
         padding: 0.5em 0.5em 0.5em 0.5em;
     }
     .glass {
-        /* background: linear-gradient(to right bottom, #F2C4CE, #F58F7C ); */
+       
         min-height: 100vh;
         width: 100%;
         border-radius: 0rem;

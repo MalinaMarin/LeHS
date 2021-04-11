@@ -9,7 +9,7 @@
 
 body{
     font-family: serif;
-    background-color: var(--light-gray);
+    background-color: var(--black);
 }
 
 *{
@@ -115,7 +115,7 @@ a{
     background-color: var(--black);
 }
 
-.nav-end a:hover .sub-menu{
+.nav-end #menu-btn:hover .sub-menu{
     display:block;
     position: absolute;
     background: var(--black);
@@ -124,7 +124,7 @@ a{
     border-radius: 3px;
 }
 
-.nav-end a:hover .sub-menu a{
+.nav-end #menu-btn:hover .sub-menu a{
        display:block;
        margin: 10px;
 }
