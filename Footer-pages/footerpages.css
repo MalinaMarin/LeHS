@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --black: #2C2B30;
+    --light-gray: #4F4F51;
+    --white: #D6D6D6;
+    --light-pink: #F2C4CE;
+    --pink: #F58F7C;
+ }
+ * {
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: .005em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+ html,body{
+    width:100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    overflow: hidden;
+}
+.glass {
+    min-height: 90vh;
+    width: 90%;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.5), rgba(245, 143, 124, 0.9));
+    border-radius: 2rem;
+}
+
+.content {
+    margin-bottom: 16rem;
+    margin: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.one-scroll{
+    overflow-y: scroll;
+    width: 100%;
+    height: 90%;
+  }
+  main {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #4F4F51, #2C2B30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  footer{
+      width: 100%;
+      height: 22%;
+      background-color: var(--black);
+
+  }
+ section{
+     display: block;
+     background-color: #4F4F51;
+     margin:auto;
+     box-sizing: border-box;
+ }
+ section .card{
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+    margin-right: 2em;
+    position: relative;
+
+ }
+
+ .card .card-text{
+     position: relative;
+     margin-top: 2em;
+     margin-bottom: 2em;
+     margin-left: 3em;
+     margin-right: 3em;
+     color: var(--black);
+     padding: 0 15px;
+ }
+ .card-text span{
+    font-size: 30px;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+    text-align: center;
+    margin-bottom: 1em;
+ }
+
+h3{
+    margin-right: 2em;
+    margin-top: 3em;
+    font-size: 20px;
+}
+
+p{
+    font-size: 15px;
+    margin-top: 1em;
+}
+ 
+@media(max-width: 850px){
+    section .card{
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        position: relative;
+    
+     }
+    
+     .card .card-text{
+         position: relative;
+         margin-top: 1em;
+         margin-bottom: 1em;
+         margin-left: 0;
+         margin-right: 0;
+         color: var(--black);
+         padding: 0 15px;
+     }
+     
+}
+
+ 
+ 
