@@ -114,7 +114,7 @@ a{
     display:none;
 }
 
-.nav-end:hover .sub-menu{
+.nav-end a:hover .sub-menu{
     display:block;
     position: absolute;
     background: var(--black);
@@ -123,7 +123,7 @@ a{
     border-radius: 3px;
 }
 
-.nav-end:hover .sub-menu a{
+.nav-end a:hover .sub-menu a{
        display:block;
        margin: 10px;
 }
@@ -207,53 +207,127 @@ a{
 
     .nav-right{
         width: 100%;
-        display:flex;
+        flex-direction: column;
+        display:block;
         padding: 0;        
         overflow: hidden;
         visibility: hidden;
-        flex-flow: column wrap;
         align-content: center;
         border-top: 1px solid var(--light-pink);
         margin-top: 12px;
         max-height: 0px;
         transition:all 0.5s ease;
     }
+    .sub-menu{
+        width: 100%;
+        flex-direction: column;
+        display:block;
+        padding: 0;        
+        /* overflow: hidden;
+        visibility: hidden; */
+        align-content: center;
+        border-top: 1px solid var(--light-pink);
+        margin-top: 12px;
+        max-height: 0px;
+        transition:all 0s ease;
+    }
+    .nav-center{
+        display: none;
+    }
+    
     .nav-end{
         width: 100%;
         display:inline-flex;
         flex-wrap: wrap;
         border-top: 1px solid var(--pink);
         margin-top: 12px;        
-        transition:all 0.5s ease;
+        transition:all 0s ease;
     }
     
     .nav-end button{
         margin-right: -8px;
     }
-
-    .nav-end a:hover{
+    /* .nav-end a:hover .sub-menu{
+        visibility: hidden;
+    } */
+    #menu-btn:hover .sub-menu{
+        display:block;
+        position: absolute;
+        background: var(--black);
+        margin-top: 0;
+        margin-left: -15px;
+        border-radius: 3px;
+    }
+    #menu-btn:hover{
         background-color: var(--black);
     }
-    .sub-menu{
-        overflow: hidden;
-        visibility: hidden;
-        max-height: 0px;
-    }
-    .sub-menu.open{
+    .nav-end.open{
         visibility: visible;
     }
     .nav-right.open{
         visibility: visible;
+        width: 100%;
+        display:block;
+        
+        transition:all 0.5s ease;
+    }
+    .nav-right.open .nav-center{
+        display: block;
+        width: 100%;
+    }
+    .nav-right.open .nav-center a{
+        
+        align-content: center;
+        align-items: center;
+    }
+    
+    .sub-menu.open {
+        visibility: visible;
+        width: 100%;
+        display: block;
+        height: fit-content;
+        
+    }
+    /* .nav-end:hover a,.nav-end:hover .sub-menu.open
+    {
+        visibility: hidden;
+        overflow: hidden; 
+        pointer-events: none;
+        
+    } */
+    /* .sub-menu:hover{
+        visibility: hidden;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    .sub-menu:hover a{
+        visibility: hidden;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    .sub-menu a:hover{
+        pointer-events: none;
+        visibility: hidden;
+        overflow: hidden;
+    }
+    .sub-menu:hover{
+        pointer-events: none;
+        visibility: hidden;
+        overflow: hidden;
+
+    } */
+
+   
+    .sub-menu.open ul li{
+        display: block;
+        justify-content: center;
     }
     .nav-center ul li {
         display: block;
         margin: 0;
     }
    
-    .sub-menu{
-        width: 100%;
-        
-    }
-  }
+   
+   }
 
 
