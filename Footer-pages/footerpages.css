@@ -49,12 +49,12 @@
     align-items: center;
     justify-content: center;
 }
-  footer{
+  /* footer{
       width: 100%;
       height: 22%;
       background-color: var(--black);
 
-  }
+  } */
  section{
      display: block;
      background-color: #4F4F51;

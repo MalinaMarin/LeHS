@@ -1,10 +1,13 @@
-<html lang="en">
+<!DOCTYPE html>
 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn HTML&CSS</title>
     <link rel="stylesheet" href="./leaderboard.css">
+    <link rel="stylesheet" href="../Navbar&footer/footer.css">
+
 </head>
 
 <body>
@@ -12,7 +15,7 @@
         <div class="navbar-main-page">
             <div class="left-side-navbar">
                 <div class="logo">
-                    <img id="logo" src="logo.svg" alt="Logo">
+                    <img id="logo" src="../resources/logo.svg" alt="Logo">
                 </div>
                 <div class="navbar-buttons">
                     <a id="learn-btn">
@@ -106,7 +109,7 @@
                         </div>
                         <div id="coins" class="stats">
                             <label id="coins-label">My Coins</label>
-                            <img class="stat-pic" src="coins.svg" alt="coins">
+                            <img class="stat-pic" src="../resources/coins.svg" alt="coins">
                             <label id="coins-number">{getCoins}</label>
                         </div>
                     </div>
@@ -123,8 +126,41 @@
                 </div>
             </div>
         </main>
-        <footer>
-            I am the stupid footer!!!!!
+        <footer class="footer">
+            <div class="conatiner">
+                <div class="row">
+                    <div class="footer-col">
+                        <a class="logo" >
+                            <img src="../resources/logo.svg" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">    
+                    <div class="footer-col">
+                        <h3> Support </h3>
+                        <ul>
+                            <li><a  href="../Footer-pages/FAQ.html" id="questions-btn" > FAQ </a></li>                         
+                            <li> <a href="../Footer-pages/FAQ.html" id="about-btn"> About us </a></li>  
+                            <li><a  href="../raport.html" id="report-btn" > Report </a></li>                                                                                                                            
+                            <li> <a  href="../Footer-pages/privacy.html" id="privacy-btn"> Privacy policy </a></li>                        
+                            <li><a  href="../Footer-pages/terms.html" id="terms-btn"> Terms of Service </a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3> Follow </h3>
+                            <ul>
+                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook </a></li>
+                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram </a></li>
+                                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> Youtube </a></li>
+                            </ul>    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="footer-copyright">
+                        <span> © 2021 LeHS. All rights reserved. </span>
+                    </div>
+                </div>
+            </div>                
         </footer>
     </div>
 </body>

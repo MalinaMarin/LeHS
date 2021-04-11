@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn HTML&CSS</title>
     <link rel="stylesheet" href="./map.css">
+    <link rel="stylesheet" href="../Navbar&footer/footer.css">
+
 </head>
 
 <body>
@@ -13,7 +15,7 @@
         <div class="navbar-main-page">
             <div class="left-side-navbar">
                 <div class="logo">
-                    <img src="112-installing.svg" alt="Logo">
+                    <img src="../resources/logo.svg" alt="Logo">
                 </div>
                 <div class="navbar-buttons">
                     <a id="learn-btn">
@@ -73,11 +75,11 @@
                         arrow.setAttribute("id", "arrow_" + i + j);
                         arrow.setAttribute("class", "arrow");
                         if (arrow_direction == "right") {
-                            arrow.setAttribute("src", "arrow-right.svg");
+                            arrow.setAttribute("src", "../resources/arrow-right.svg");
 
                         }
                         else {
-                            arrow.setAttribute("src", "arrow-down.svg");
+                            arrow.setAttribute("src", "../resources/arrow-down.svg");
 
                         }
 
@@ -92,6 +94,37 @@
                     addContent(3, 6, "down");
                     addContent(4, 6, "right");
                     addContent(4, 7, "right");
+
+                    document.getElementById("button_1").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level1.html";
+                    });
+                    document.getElementById("button_2").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level2.html";
+                    });
+                    document.getElementById("button_3").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level3.html";
+                    });
+                    document.getElementById("button_4").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level4.html";
+                    });
+                    document.getElementById("button_5").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level5.html";
+                    });
+                    document.getElementById("button_6").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level6.html";
+                    });
+                    document.getElementById("button_7").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level7.html";
+                    });
+                    document.getElementById("button_8").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level8.html";
+                    });
+                    document.getElementById("button_9").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level9.html";
+                    });
+                    document.getElementById("button_10").addEventListener("click",function(){
+                        location.href="../Play-page/Play-level10.html";
+                    });
                 </script>
             </div>
             <div id="hide" class="hide">
@@ -109,7 +142,7 @@
                         level.addEventListener("mouseenter", function () {
 
                             para = document.createElement("P");
-                            para.innerHTML = "Level: <br> </br> Exp:";
+                            para.innerHTML = "Level: <br>  Exp:";
                             document.getElementById("level-note").appendChild(para);
                             note.style.display = "block";
 
@@ -125,8 +158,41 @@
                 </script>
             </div>
         </main>
-        <footer>
-            I am the stupid footer!!!!!
+        <footer class="footer">
+            <div class="conatiner">
+                <div class="row">
+                    <div class="footer-col">
+                        <a class="logo" >
+                            <img src="../resources/logo.svg" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">    
+                    <div class="footer-col">
+                        <h3> Support </h3>
+                        <ul>
+                            <li><a  href="../Footer-pages/FAQ.html" id="questions-btn" > FAQ </a></li>                         
+                            <li> <a href="../Footer-pages/FAQ.html" id="about-btn"> About us </a></li>  
+                            <li><a  href="../raport.html" id="report-btn" > Report </a></li>                                                                                                                            
+                            <li> <a  href="../Footer-pages/privacy.html" id="privacy-btn"> Privacy policy </a></li>                        
+                            <li><a  href="../Footer-pages/terms.html" id="terms-btn"> Terms of Service </a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3> Follow </h3>
+                            <ul>
+                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook </a></li>
+                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram </a></li>
+                                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> Youtube </a></li>
+                            </ul>    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="footer-copyright">
+                        <span> © 2021 LeHS. All rights reserved. </span>
+                    </div>
+                </div>
+            </div>                
         </footer>
     </div>
 </body>
