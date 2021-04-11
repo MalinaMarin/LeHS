@@ -11,7 +11,7 @@
 <body>
     <div class="box">
         <div class="close">
-                <button onclick="location.href='/presenting_page.html'">X</button>
+                <button onclick="location.href='../presenting-page/presenting_page.html'">X</button>
         </div>
     <div class="container">
         <div class="text">Signup Form</div>
@@ -33,13 +33,43 @@
                 <input type="password" required>
             </div>
             <div class="btn">
-                <button type="submit">sign up</button>
+                <button onclick="goToPage();">sign up</button>
+                <script>
+                    function goToPage() {
+                            //console.log("i am here");
+                            //const {whereTo} = require('../presenting_page/presenting_page.js');
+                            var whereTo=3;//by default goes to map now, will redirect diferently in backend
+                            switch (whereTo) {
+                                case 1: {
+                                    location.href = "../Learn&Practice-pages/learn.html";
+                                    break;
+                                }
+                                case 2: {
+                                    location.href = "../Learn&Practice-pages/practice.html";
+                                    break;
+                                }
+                                case 3: {
+                                    location.href = "../Level Map/map.html";
+                                    break;
+                                }
+                                case 4: {
+                                    location.href = "../leaderboard/leaderboard.html";
+                                    break;
+                                }
+                                default: {
+                                    location.href = "../Level Map/map.html";
+                                    break;
+                                }
+
+                            }
+                        }
+                </script>
             </div>
             <div class="login-link">Already a member? <a href="./login.html">Login now</a></div>
         </form>
         <div class="github">
             <p>- or -</p>
-            <button id="github-btn" action="#" ></button>
+            <button id="github-btn"></button>
         </div>
     </div>
 </div>
