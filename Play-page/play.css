@@ -57,12 +57,14 @@ main {
   #instructuions{
       position: absolute;
       left:1em;
+      margin-right: 1em;
       width: 70%;      
   }
 #hint{
     right: 1em;
+    margin-left: 1em;
     position: absolute;
-
+    z-index: 1;
 
 }
   pre {
@@ -216,6 +218,9 @@ main {
     }
     .editor,.result{
         margin-left: 0em;
+    }
+    #instructuions{
+      width: 50%;
     }
 
   }

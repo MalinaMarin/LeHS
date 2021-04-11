@@ -231,6 +231,9 @@ a{
         margin-top: 12px;
         max-height: 0px;
         transition:all 0s ease;
+        z-index: 100;
+        position: relative;
+        
     }
     .nav-center{
         display: none;
