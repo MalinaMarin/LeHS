@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./play.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Level 9</title>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <div class="one-scroll">
+    <main>
+        <section class="glass">
+        <h1 class="level"> Level 9 </h1>
+        <div class="instructuions-row">
+             
+            <p id="instructions">Add the following 5 steps to the animation "example":
+                <br>    
+                0% - Set background color to "purple", left position to "0px", top position to: "0px"
+                <br>25% - Set background color to "blue", left position to "0px", top position to: "200px"
+                <br> - Set background color to "purple", left position to "200px", top position to: "200px"
+                <br>75% - Set background color to "blue", left position to "200px", top position to: "0px"
+                <br>100% - Set background color to "purple", left position to "0px", top position to: "0px"</p>
+            <button id="hint"><i class="fas fa-lightbulb"></i></button> 
+            <p class="hidden"  id="text-hint">Hint :The % values represents the different stages of the animation. 0% is the start, and 100% is the end.</p>
+        </div>
+        <div class="middle">
+            <div class="editor">
+                <div id="css">
+                    <div class="line-numbers">
+                       1
+                       <br>
+                       2
+                       <br>
+                       3
+                       <br>
+                       4
+                       <br>
+                       5
+                       <br>
+                       6
+                       <br>
+                       7
+                       <br>
+                       8
+                       <br>
+                       9
+                       <br>
+                       10
+                       <br>
+                       11
+                       <br>
+                       12
+                       <br>
+                       13
+                       <br>
+                       14
+                       <br>
+                    </div>
+                    <pre id="before">&lthead&gt
+&ltstyle&gt 
+div {
+  width: 180px; height: 180px;
+  position: relative;
+  background-color: black;
+  animation-name: example;
+  animation-duration: 4s;
+}
+@keyframes example {</pre>
+                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 24px;"></textarea>
+                    <pre id="after">}
+&lt/style&gt
+&lt/head&gt
+&ltbody&gt
+&ltdiv&gt&lt/div&gt
+&lt/body&gt                    </pre>
+                    <button id="run" >Run</button>
+                </div>
+                
+            </div>
+            <div class="result">
+               <a>  </a>
+            </div>
+        </div>
+        <div class="end-btn">
+        <button type="submit"  id="submit">Submit</button>
+
+</div>
+
+    </section>
+    </main>
+</div>
+    <footer>
+
+    </footer>
+
+    <script src="./play.js"></script>
+</body>
+</html>

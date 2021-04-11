@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./play.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Level 10</title>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <div class="one-scroll">
+    <main>
+        <section class="glass">
+        <h1 class="level"> Level 10 </h1>
+        <div class="instructuions-row">
+             
+            <p id="instructions">Specify that the animation of the <div> element should alternate between running forwards and backwards.
+                </p>
+            <button id="hint"><i class="fas fa-lightbulb"></i></button> 
+            <p class="hidden"  id="text-hint">Hint : Use the animation-direction property.</p>
+        </div>
+        <div class="middle">
+            <div class="editor">
+                <div id="css">
+                    <div class="line-numbers">
+                       1
+                       <br>
+                       2
+                       <br>
+                       3
+                       <br>
+                       4
+                       <br>
+                       5
+                       <br>
+                       6
+                       <br>
+                       7
+                       <br>
+                       8
+                       <br>
+                       9
+                       <br>
+                       10
+                       <br>
+                       11
+                       <br>
+                       12
+                       <br>
+                       13
+                       <br>
+                       14
+                       <br>
+                    </div>
+                    <pre id="before"></pre>
+                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 24px;"><head>
+<style> 
+div {
+animation-name: example;
+position: relative;
+width: 150px;
+height: 150px;
+background-color: black;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+}                 
+@keyframes example {
+0%   {background-color: purple; left:0px; top:0px;}
+25%  {background-color: blue; left:0px; top:200px;}
+50%  {background-color: purple; left:200px; top:200px;}
+75%  {background-color: blue; left:200px; top:0px;}
+100% {background-color: purple; left:0px; top:0px;}
+}
+ </style>
+ </head>
+ <body>
+ <div></div>
+ </body></textarea>
+                    <pre id="after">
+                    </pre>
+                    <button id="run" >Run</button>
+                </div>
+                
+            </div>
+            <div class="result">
+               <a>  </a>
+            </div>
+        </div>
+        <div class="end-btn">
+        <button type="submit"  id="submit">Submit</button>
+
+</div>
+
+    </section>
+    </main>
+</div>
+    <footer>
+
+    </footer>
+
+    <script src="./play.js"></script>
+</body>
+</html>

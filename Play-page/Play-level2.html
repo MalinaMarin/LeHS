@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./play.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Level 2</title>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <div class="one-scroll">
+    <main>
+        <section class="glass">
+        <h1 class="level"> Level 2 </h1>
+        <div class="instructuions-row">
+             
+            <p id="instructions">Display an image that when clicked will link to the Google search engine(should be opened in a new window).
+                <br>
+                The source for the image is: /images/ex2.jpg </p>
+            <button id="hint"><i class="fas fa-lightbulb"></i></button> 
+            <p class="hidden"  id="text-hint">Hint : What attributes does the &lta&gt tag have? We'll definitely need the href one.</p>
+        </div>
+        <div class="middle">
+            <div class="editor">
+                <div id="css">
+                    <div class="line-numbers">
+                       1
+                       <br>
+                       2
+                       <br>
+                       3
+                       <br>
+                       4
+                       <br>
+                       5
+                       <br>
+                       6
+                       <br>
+                       7
+                       <br>
+                       8
+                       <br>
+                       9
+                       <br>
+                       10
+                       <br>
+                       11
+                       <br>
+                       12
+                       <br>
+                       13
+                       <br>
+                       14
+                       <br>
+                    </div>
+                    <pre id="before">&ltbody&gt</pre>
+                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 24px;"></textarea>
+                    <pre id="after">&lt/body&gt
+&ltp&gt
+    Click on the image to be taken to the Google search engine.
+&lt/p&gt
+                    </pre>
+                    <button id="run" >Run</button>
+                </div>
+                
+            </div>
+            <div class="result">
+               <a>  </a>
+            </div>
+        </div>
+        <div class="end-btn">
+        <button type="submit"  id="submit">Submit</button>
+
+</div>
+
+    </section>
+    </main>
+</div>
+    <footer>
+
+    </footer>
+
+    <script src="./play.js"></script>
+</body>
+</html>
