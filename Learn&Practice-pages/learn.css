@@ -187,7 +187,7 @@ p {
         padding: 0.5em 0.5em 0.5em 0.5em;
     }
     .glass {
-        /* background: linear-gradient(to right bottom, #F2C4CE, #F58F7C ); */
+       
         min-height: 100vh;
         width: 100%;
         border-radius: 0rem;
