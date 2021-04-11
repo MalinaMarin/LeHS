@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="./style1.css">
 </head>
 <body>
-    <header>
+    <header id="header">
         <div class="navbar-main-page">
             <div class="left-side-navbar">
                 <div class="logo">
-                    <img src="112-installing.svg" alt="Logo">
+                    <img id="logo" src="logo.svg" alt="Logo">
                 </div>
                 <div class="navbar-buttons">
                     <a id="learn-btn">
@@ -36,6 +36,31 @@
                 <a id="signup-btn" href="./signup.html">
                     Sign Up
                 </a>
+            </div>
+                <button id="submenu-btn" class="icon" onclick="navResponsive();">
+                    <script>
+                        let click=1;
+                        function navResponsive(){
+                            if(click==1){
+                            document.getElementById("header").style.height="50%";
+                            document.getElementById("submenu").style.display="flex";
+                            click=2;
+                        }
+                        else{
+                            document.getElementById("header").style.height="10%";
+                            document.getElementById("submenu").style.display="none";
+                            click=1;
+                        }
+                    }
+                    </script>
+                </button>
+            <div id="submenu" class="responsive">
+                    <a href=" " > Learn </a>
+                    <a href=" "> Practice </a>
+                    <a href=" "> Play </a>
+                    <a href=" "> Leaderboard </a>
+                    <a href=" "> Login </a>
+                    <a href=" "> Sing up</a>
             </div>
         </div>
     </header>
