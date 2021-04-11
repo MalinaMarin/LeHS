@@ -139,7 +139,7 @@
   }
   #github-btn{
 
-    background-image: url(github.svg);
+    background-image: url(../resources/github.svg);
     background-repeat: no-repeat;
     width: 80px;
     height: 80px;
@@ -150,7 +150,7 @@
   #github-btn:hover{
     border-radius: 10px;
     border-color: var(--gray);
-    background-image: url(github-white.svg);
+    background-image: url(../resources/github-white.svg);
     background-color:var(--black);
 }
   @media screen and (max-width: 650px){
