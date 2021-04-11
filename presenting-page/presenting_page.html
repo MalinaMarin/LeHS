@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn HTML&CSS</title>
     <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="../Navbar&footer/footer.css">
 </head>
+
 <body>
     <header id="header">
         <div class="navbar-main-page">
             <div class="left-side-navbar">
                 <div class="logo">
-                    <img id="logo" src="logo.svg" alt="Logo">
+                    <img id="logo" src="../resources/logo.svg" alt="Logo">
                 </div>
                 <div class="navbar-buttons">
                     <a id="learn-btn">
@@ -26,143 +29,223 @@
                     <a id="leaderboard-btn">
                         Leaderboard
                     </a>
+                    <script>
+                        /** whereTo:
+                         * 1 - learn page
+                         * 2 - practice page
+                         * 3 - map page = default
+                         * 4 - leaderboard page
+                        */
+                        var whereTo = 3; //default
 
+                        document.getElementById("learn-btn").addEventListener("click", function () {
+                            whereTo = 1;
+                            location.href = "../authentification-pages/login.html";
+                        });
+                        document.getElementById("practice-btn").addEventListener("click", function () {
+                            whereTo = 2;
+                            location.href = "../authentification-pages/login.html";
+                        });
+                        document.getElementById("play-btn").addEventListener("click", function () {
+                            whereTo = 3;
+                            location.href = "../authentification-pages/login.html";
+                        });
+                        document.getElementById("leaderboard-btn").addEventListener("click", function () {
+                            whereTo = 4;
+                            location.href = "../authentification-pages/login.html";
+                        });
+                    </script>
                 </div>
             </div>
             <div class="authentification-navbar">
-                <a id="login-btn" href="./login.html">
+                <a id="login-btn" href="../authentification-pages/login.html">
                     Login
                 </a>
-                <a id="signup-btn" href="./signup.html">
+                <a id="signup-btn" href="../authentification-pages/signup.html">
                     Sign Up
                 </a>
             </div>
-                <button id="submenu-btn" class="icon" onclick="navResponsive();">
-                    <script>
-                        let click=1;
-                        function navResponsive(){
-                            if(click==1){
-                            document.getElementById("header").style.height="50%";
-                            document.getElementById("submenu").style.display="flex";
-                            click=2;
+            <button id="submenu-btn" class="icon" onclick="navResponsive();">
+                <script>
+                    let click = 1;
+                    function navResponsive() {
+                        if (click == 1) {
+                            document.getElementById("header").style.height = "50%";
+                            document.getElementById("submenu").style.display = "flex";
+                            click = 2;
                         }
-                        else{
-                            document.getElementById("header").style.height="10%";
-                            document.getElementById("submenu").style.display="none";
-                            click=1;
+                        else {
+                            document.getElementById("header").style.height = "10%";
+                            document.getElementById("submenu").style.display = "none";
+                            click = 1;
                         }
                     }
-                    </script>
-                </button>
+                </script>
+            </button>
             <div id="submenu" class="responsive">
-                    <a href=" " > Learn </a>
-                    <a href=" "> Practice </a>
-                    <a href=" "> Play </a>
-                    <a href=" "> Leaderboard </a>
-                    <a href=" "> Login </a>
-                    <a href=" "> Sing up</a>
+                <a id="learn-responsive"> Learn </a>
+                <a id="practice-responsive"> Practice </a>
+                <a id="play-responsive"> Play </a>
+                <a id="leaderboard-responsive"> Leaderboard </a>
+                <a href="../authentification-pages/login.html"> Login </a>
+                <a href="../authentification-pages/signup.html"> Sign up</a>
+                <script>
+                    document.getElementById("learn-responsive").addEventListener("click", function () {
+                        whereTo = 1;
+                        location.href = "../authentification-pages/login.html";
+                    });
+                    document.getElementById("practice-responsive").addEventListener("click", function () {
+                        whereTo = 2;
+                        location.href = "../authentification-pages/login.html";
+                    });
+                    document.getElementById("play-responsive").addEventListener("click", function () {
+                        whereTo = 3;
+                        location.href = "../authentification-pages/login.html";
+                    });
+                    document.getElementById("leaderboard-responsive").addEventListener("click", function () {
+                        whereTo = 4;
+                        location.href = "../authentification-pages/login.html";
+                    });
+                </script>
             </div>
         </div>
     </header>
     <div class="one-scroll">
-    <main>
-        <div class="main-presenting">
-            <div class="slider">
-                <img class="slides "src="main1.svg">
-                <img class="slides "src="main2.svg">
-                <img class="slides "src="main3.svg">
-                <img class="slides "src="main4.svg">
-                <img class="slides "src="main5.svg">
-                <img class="slides "src="main6.svg">
-                <img class="slides "src="main7.svg">
-                <img class="slides "src="main8.svg">
-                <img class="slides "src="main9.svg">
-                <img class="slides "src="main10.svg">
-                <img class="slides "src="main11.svg">
-                <img class="slides "src="main12.svg">
-            </div>
-            <div class="container-text">
-                <h1 class="main-title">Level up your skills</h1>
-                <p class="main-subtitle">Dive right into the world of Front-End Development</p>
-                <div class="blocks-button">
-                    <a href="./signup.html">Get Started</a>
+        <main>
+            <div class="main-presenting">
+                <div class="slider">
+                    <img class="slides" src="../resources/main1.svg" alt="image slide">
+                    <img class="slides" src="../resources/main2.svg" alt="image slide">
+                    <img class="slides" src="../resources/main3.svg" alt="image slide">
+                    <img class="slides" src="../resources/main4.svg" alt="image slide">
+                    <img class="slides" src="../resources/main5.svg" alt="image slide">
+                    <img class="slides" src="../resources/main6.svg" alt="image slide">
+                    <img class="slides" src="../resources/main7.svg" alt="image slide">
+                    <img class="slides" src="../resources/main8.svg" alt="image slide">
+                    <img class="slides" src="../resources/main9.svg" alt="image slide">
+                    <img class="slides" src="../resources/main10.svg" alt="image slide">
+                    <img class="slides" src="../resources/main11.svg" alt="image slide">
+                    <img class="slides" src="../resources/main12.svg" alt="image slide">
                 </div>
-            </div>    
-        </div>
-        <script>
-            var slideIndex = 0;
+                <div class="container-text">
+                    <h1 class="main-title">Level up your skills</h1>
+                    <p class="main-subtitle">Dive right into the world of Front-End Development</p>
+                    <div class="blocks-button">
+                        <a href="../authentification-pages/signup.html">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var slideIndex = 0;
                 carousel();
-                
+
                 function carousel() {
-                  var i;
-                  var x = document.getElementsByClassName("slides");
-                  for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                  }
-                  slideIndex++;
-                  if (slideIndex > x.length) {slideIndex = 1}
-                  x[slideIndex-1].style.display = "block";
-                  setTimeout(carousel, 1000); // Change image every 2 seconds
+                    var i;
+                    var x = document.getElementsByClassName("slides");
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > x.length) { slideIndex = 1 }
+                    x[slideIndex - 1].style.display = "block";
+                    setTimeout(carousel, 1000); // Change image every 2 seconds
                 }</script>
-        <div class="space-between">
-            <a href="#learn_practice">
-                <img src="arrow-btn.svg" class="scroll-down-btn">
-            </a>
+            <div class="space-between">
+                <a href="#learn_practice">
+                    <img src="../resources/arrow-btn.svg" class="scroll-down-btn" alt="Arrow Down">
+                </a>
+
+            </div>
+            <div class="block1" id="learn_practice">
+                <div class="left-side-block">
+                    <h2>Learn & Practice the fun way! </h2>
+                    <h3>Learn the basics</h3>
+                    <p> Our lessons make HTML and CSS so easy to be understood.</p>
+                    <h4>Practice makes perfect</h4>
+                    <p> Go through our practice questions for gaining solid knowledge and don't miss the chance to earn
+                        some coins.</p>
+                    <div class="blocks-button margin-top">
+                        <a href="../authentification-pages/signup.html">Level up your skills</a>
+                    </div>
+                </div>
+                <div class="right-side-block">
+                    <div class="presenting-image">
+                        <img src="../resources/computer-new.svg" alt="Computer">
+                    </div>
+                </div>
+            </div>
+            <div class="space-between">
+                <a href="#play_leaderboard">
+                    <img src="../resources/arrow-btn.svg" class="scroll-down-btn" alt="Arrow Down">
+                </a>
+            </div>
+            <div class="block2" id="play_leaderboard">
+                <div class="left-side-block">
+                    <div class="presenting-image">
+                        <img src="../resources/computer-new.svg" alt="Computer">
+                    </div>
+                </div>
+                <div class="right-side-block">
+                    <h2>Challenge yourself </h2>
+                    <h3>Play</h3>
+                    <p>You'll get addicted to the game. Play until you've become an expert.</p>
+                    <h4>Be #1</h4>
+                    <p> Go check the leaderboard and see if you got more XP than your friends.<br> You can use coins
+                        for hints. </p>
+                    <div class="blocks-button margin-top margin-bottom">
+                        <a href="../authentification-pages/signup.html">Let's play</a>
+                    </div>
+                </div>
+            </div>
+            <div class="space-between">
+                <a href="#what_now">
+                    <img src="../resources/arrow-btn.svg" class="scroll-down-btn" alt="Arrow Down">
+                </a>
+            </div>
+            <div class="block3" id="what_now">
+                <div class="start-btn blocks-button">
+                    <a href="../authentification-pages/signup.html">Get Started</a>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="conatiner">
+                <div class="row">
+                    <div class="footer-col">
+                        <a class="logo" >
+                            <img src="../resources/logo.svg" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">    
+                    <div class="footer-col">
+                        <h3> Support </h3>
+                        <ul>
+                            <li><a  href="../Footer-pages/FAQ.html" id="questions-btn" > FAQ </a></li>                         
+                            <li> <a href="../Footer-pages/FAQ.html" id="about-btn"> About us </a></li>  
+                            <li><a  href="../raport.html" id="report-btn" > Report </a></li>                                                                                                                            
+                            <li> <a  href="../Footer-pages/privacy.html" id="privacy-btn"> Privacy policy </a></li>                        
+                            <li><a  href="../Footer-pages/terms.html" id="terms-btn"> Terms of Service </a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3> Follow </h3>
+                            <ul>
+                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook </a></li>
+                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram </a></li>
+                                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> Youtube </a></li>
+                            </ul>    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="footer-copyright">
+                        <span> © 2021 LeHS. All rights reserved. </span>
+                    </div>
+                </div>
+            </div>                
+        </footer>
     
-        </div>
-        <div class="block1" id="learn_practice">
-            <div class="left-side-block">
-                <h2>Learn & Practice the fun way! </h2>
-                <h3>Learn the basics</h3>
-                <p1> Our lessons make HTML and CSS so easy to be understood.</p1>
-                <h4>Practice makes perfect</h4>
-                <p2> Go through our practice questions for gaining solid knowledge and don't miss the chance to earn some coins.</p2>
-                <div class="blocks-button margin-top">
-                    <a href="./signup.html">Level up your skills</a>
-                </div>
-            </div>
-            <div class="right-side-block">
-                <div class="presenting-image">
-                    <img src="computer.svg" >
-                </div>
-            </div>
-        </div>
-        <div class="space-between">
-            <a href="#play_leaderboard">
-                <img src="arrow-btn.svg" class="scroll-down-btn">
-            </a>
-        </div>
-        <div class="block2" id="play_leaderboard">
-            <div class="left-side-block">
-                <div class="presenting-image">
-                    <img src="computer.svg" >
-                </div>
-            </div>
-            <div class="right-side-block">
-                <h2>Challenge yourself </h2>
-                <h3>Play</h3>
-                <p1>You'll get addicted to the game. Play until you've become an expert.</p1>
-                <h4>Be #1</h4>
-                <p2> Go check the leaderboard and see if you got more XP than your friends.</br> You can use coins for hints.</p2>
-                <div class="blocks-button margin-top margin-bottom">
-                    <a href="./signup.html">Let's play</a>
-                </div>
-            </div>
-        </div>
-        <div class="space-between">
-            <a href="#what_now">
-                <img src="arrow-btn.svg" class="scroll-down-btn">
-            </a>
-        </div>
-        <div class="block3" id="what_now">
-            <div class="start-btn blocks-button">
-                <a href="./signup.html">Get Started</a>
-            </div>
-        </div>
-    </main>
-    <footer>
-        I am the stupid footer!!!!!
-    </footer>
-</div>
+    </div>
 </body>
+
 </html>
