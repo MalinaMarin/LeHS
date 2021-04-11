@@ -46,10 +46,10 @@ a{
     align-items: center;
 }
 
-.logo {
+.logo img{
     height: auto;
     width: 50px;
-    margin-right: 100px;
+    
     float:left;
     position: relative;
     display: inline;
