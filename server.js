@@ -1,26 +1,72 @@
 const http = require('http')
 const fs = require('fs')
+const https = require('https');
+const url = require('url');
+const path = require('path');
 require('dotenv').config()
 require('./helpers/init_mongodb')
 
 const { verifyAccessToken } = require('./helpers/jwt_helper')
 require('./helpers/init_redis')
 
-const AuthRoute = require('./routes/user_credentials')
 
-const server = http.createServer((req, res) => {
+const hostname = 'localhost';
+const registerPath = 'register';
+
+const AuthRoute = require('./routes/user_credentials');
+const AuthController = require('./controllers/Auth.Controller');
+
+const server = http.createServer(async function (req, res) {
     res.statusCode = 200
     res.setHeader('Content-Type', 'text/html')
+    let parsedURL = url.parse(req.url, true);
+    let requestPath = parsedURL.pathname;
+    requestPath = requestPath.replace(/^\/+|\/+$/g, "");
+    let queryString = parsedURL.query;
+    let headers = req.headers;
+    let method = req.method;
+    let data = {
+        requestPath: requestPath,
+        headers: headers,
+        method: method,
+        queryString: queryString,
+        buffer: '',
+        request: req
+    }
+
+    if (requestPath.startsWith(registerPath)) {
+        requestPath = requestPath.substr(registerPath.length + 1);
+        if (data.method === 'POST') {
+            data.buffer = await getData(req);
+            AuthController.register(req, res)
+            return;
+        }
+    }
+})
+
+function getData(req) {
+    return new Promise(function(rez, rej) {
+        let buffer = '';
+        req.on('data', chunk => {
+            buffer += chunk.toString(); 
+            console.log(chunk.toString())
+        });
+        req.on('end', () => {
+            rez(buffer);
+        });
+    })
+}
+
+
+
     // const routeMap = {
         
 	// 	'login': 'login.html',
 		// 'about': 'about.html',
 		// 'services': 'index.html'
 	// }
-     res.write('<h1>Hello</h1>')
-     res.end()
     //render(res, routeMap[req.url.slice(1)]);
-})
+// })
 
 // function render(res, htmlFile) {
 //     fs.stat(`./${htmlFile}`,  (err, stats) => {
