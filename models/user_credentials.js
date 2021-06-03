@@ -4,16 +4,16 @@ const Schema = mongoose.Schema;
 var uuid = require('uuid-random');
 
 const UsersCredentialsSchema = new Schema({
-  // id: {
-  //   type: uuid(),
-  //   unique:true,
-  //   required: true
-  // },
-  // username: {
-  //   type: String,
-  //   unique:true,
-  //   required: true
-  // },
+  id: {
+    type: mongoose.Types.ObjectId,
+    unique:true,
+    required: true
+  },
+  username: {
+    type: String,
+    unique:true,
+    required: true
+  },
   email: {
     type: String,
     unique:true,
@@ -23,11 +23,11 @@ const UsersCredentialsSchema = new Schema({
     type: String,
     required: true
   },
-  // role: {
-  //   type: String,
-  //   enum:[ADMIN, USER],
-  //   required: true
-  // }
+  role: {
+    type: String,
+    enum:["ADMIN", "USER"],
+    required: true
+  }
 });
 
 UsersCredentialsSchema.pre('save', async function (next) {

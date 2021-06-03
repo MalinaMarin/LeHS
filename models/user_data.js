@@ -5,7 +5,7 @@ var uuid = require('uuid-random');
 
 const UsersDataSchema = new Schema({
   id: {
-    type: uuid(),
+    type: mongoose.Types.ObjectId,
     unique:true,
     required: true
   },
