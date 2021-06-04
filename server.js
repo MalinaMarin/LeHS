@@ -16,33 +16,63 @@ const registerPath = 'register';
 const AuthRoute = require('./routes/user_credentials');
 const AuthController = require('./controllers/Auth.Controller');
 
-const server = http.createServer(async function (req, res) {
-    res.statusCode = 200
-    res.setHeader('Content-Type', 'text/html')
-    let parsedURL = url.parse(req.url, true);
-    let requestPath = parsedURL.pathname;
-    requestPath = requestPath.replace(/^\/+|\/+$/g, "");
-    let queryString = parsedURL.query;
-    let headers = req.headers;
-    let method = req.method;
-    let data = {
-        requestPath: requestPath,
-        headers: headers,
-        method: method,
-        queryString: queryString,
-        buffer: '',
-        request: req
-    }
+ 
+const { getAllUserCredentials, createUserCredentials} = require('./controllers/Try.Controller')
 
-    if (requestPath.startsWith(registerPath)) {
-        requestPath = requestPath.substr(registerPath.length + 1);
-        if (data.method === 'POST') {
-            data.buffer = await getData(req);
-            AuthController.register(req, res)
-            return;
-        }
+const server = http.createServer((req, res) => {
+    if(req.method === 'GET') {
+        getAllUserCredentials(req, res)
+    } else if(req.method === 'POST') {
+        createUserCredentials(req, res)
+    } else {
+        res.writeHead(404, { 'Content-Type': 'application/json' })
+        res.end(JSON.stringify({ message: 'Route Not Found' }))
     }
 })
+
+
+
+// const {getPostData} = require('../helpers/utils_fct');
+
+// async function getAllUserCredentials(req, res) {
+//     try {
+//         const credentials = await UserCredentials.findAll()
+
+//         res.writeHead(200, { 'Content-Type': 'application/json' })
+//         res.end(JSON.stringify(credentials))
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
+
+// const server = http.createServer(async function (req, res) {
+//     res.statusCode = 200
+//     res.setHeader('Content-Type', 'text/html')
+//     let parsedURL = url.parse(req.url, true);
+//     let requestPath = parsedURL.pathname;
+//     requestPath = requestPath.replace(/^\/+|\/+$/g, "");
+//     let queryString = parsedURL.query;
+//     let headers = req.headers;
+//     let method = req.method;
+//     let data = {
+//         requestPath: requestPath,
+//         headers: headers,
+//         method: method,
+//         queryString: queryString,
+//         buffer: '',
+//         request: req
+//     }
+
+//     if (requestPath.startsWith(registerPath)) {
+//         requestPath = requestPath.substr(registerPath.length + 1);
+//         if (data.method === 'POST') {
+//             data.buffer = await getData(req);
+//             AuthController.register(req, res)
+//             return;
+//         }
+//     }
+// })
 
 function getData(req) {
     return new Promise(function(rez, rej) {

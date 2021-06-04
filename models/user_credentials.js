@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema;
+const { v4: uuidv4 } = require('uuid')
 var uuid = require('uuid-random');
-
+let credentials = require('../helpers/data.json')
+const { writeDataToFile } = require('../helpers/utils_fct')
 const UsersCredentialsSchema = new Schema({
   id: {
     type: mongoose.Types.ObjectId,
@@ -75,3 +77,28 @@ module.exports = UserCredentials;
   
 //   client.close();
 // });
+
+
+
+function findAll() {
+  return new Promise((resolve, reject) => {
+      resolve(credentials)
+  })
+}
+
+
+function create(user) {
+  return new Promise((resolve, reject) => {
+      const newUser = {id: uuidv4(), ...user}
+      credentials.push(newUser)
+      if (process.env.NODE_ENV !== 'test') {
+          writeDataToFile('./helpers/data.json', credentials);
+      }
+      resolve(newUser)
+  })
+}
+
+module.exports = {
+  findAll,
+  create
+}
