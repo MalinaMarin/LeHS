@@ -15,15 +15,21 @@ var mongoDB = 'mongodb://localhost';
 //Bind connection to error event (to get notification of connection errors)
 //db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-mongoose
-  .connect(mongoDB, {
-    dbName: process.env.DB_NAME,
-   // dbName: 'LeHS',
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useFindAndModify: false,
-    useCreateIndex: true,
-  })
+// mongoose
+//   .connect(mongoDB, {
+//     dbName: process.env.DB_NAME,
+//    // dbName: 'LeHS',
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false,
+//     useCreateIndex: true,
+//   })
+mongoose.connect("mongodb+srv://admin:admin@lehs.df2yw.mongodb.net/leHSdb?retryWrites=true&w=majority", {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useCreateIndex: true,
+	useFindAndModify: true
+})
 
   .then(() => {
     console.log('mongodb connected.')

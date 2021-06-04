@@ -5,9 +5,10 @@ const { v4: uuidv4 } = require('uuid')
 var uuid = require('uuid-random');
 let credentials = require('../helpers/data.json')
 const { writeDataToFile } = require('../helpers/utils_fct')
+
 const UsersCredentialsSchema = new Schema({
   id: {
-    type: mongoose.Types.ObjectId,
+    type: String,
     unique:true,
     required: true
   },
@@ -32,32 +33,32 @@ const UsersCredentialsSchema = new Schema({
   }
 });
 
-UsersCredentialsSchema.pre('save', async function (next) {
-  try {
-    /* 
-    Here first checking if the document is new by using a helper of mongoose .isNew, therefore, this.isNew is true if document is new else false, and we only want to hash the password if its a new document, else  it will again hash the password if you save the document again by making some changes in other fields incase your document contains other fields.
-    */
-    if (this.isNew) {
-      const salt = await bcrypt.genSalt(10)
-      const hashedPassword = await bcrypt.hash(this.password, salt)
-      this.password = hashedPassword
-    }
-    next()
-  } catch (error) {
-    next(error)
-  }
-})
+// UsersCredentialsSchema.pre('save', async function (next) {
+//   try {
+//     /* 
+//     Here first checking if the document is new by using a helper of mongoose .isNew, therefore, this.isNew is true if document is new else false, and we only want to hash the password if its a new document, else  it will again hash the password if you save the document again by making some changes in other fields incase your document contains other fields.
+//     */
+//     if (this.isNew) {
+//       const salt = await bcrypt.genSalt(10)
+//       const hashedPassword = await bcrypt.hash(this.password, salt)
+//       this.password = hashedPassword
+//     }
+//     next()
+//   } catch (error) {
+//     next(error)
+//   }
+// })
 
-UsersCredentialsSchema.methods.isValidPassword = async function (password) {
-  try {
-    return await bcrypt.compare(password, this.password)
-  } catch (error) {
-    throw error
-  }
-}
+// UsersCredentialsSchema.methods.isValidPassword = async function (password) {
+//   try {
+//     return await bcrypt.compare(password, this.password)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
-const UserCredentials = mongoose.model('users_credentials', UsersCredentialsSchema);
-module.exports = UserCredentials;
+const UserCredentials = mongoose.model('user_credentials', UsersCredentialsSchema);
+// var user = new UserCredentials();
 
 
 // mongoose.connect("mongodb+srv://admin:admin@lehs.df2yw.mongodb.net/leHSdb?retryWrites=true&w=majority", {
@@ -99,6 +100,7 @@ function create(user) {
 }
 
 module.exports = {
+  UserCredentials,
   findAll,
   create
 }

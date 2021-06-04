@@ -1,9 +1,11 @@
-const UserData = require("../models/user_data.js");
-const UserCredentials = require("../models/user_credentials.js");
+const {UserData} = require("../models/user_data.js");
+const {UserCredentials} = require("../models/user_credentials.js");
+const { v4: uuidv4} = require('uuid')
+
 module.exports = {
     create: (data, callback) => {
-        var user_credentials = new UserCredentials({
-            id: uuid(),
+        let user_credentials = new UserCredentials({
+            id: uuidv4(),
             username: data.username,
             email: data.email,
             password: data.password,
@@ -17,8 +19,9 @@ module.exports = {
             xp: 0
         });
         user_credentials.save(function (err) {
-            if (err) 
-                return callback(err);
+            if (err) {
+                console.log(err)
+                return callback(err);}
             user_data.save();
             return callback(null, user_data);
         });

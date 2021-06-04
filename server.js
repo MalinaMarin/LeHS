@@ -6,24 +6,25 @@ const path = require('path');
 require('dotenv').config()
 require('./helpers/init_mongodb')
 
-const { verifyAccessToken } = require('./helpers/jwt_helper')
-require('./helpers/init_redis')
+// const { verifyAccessToken } = require('./helpers/jwt_helper')
+// require('./helpers/init_redis')
 
 
 const hostname = 'localhost';
 const registerPath = 'register';
 
-const AuthRoute = require('./routes/user_credentials');
-const AuthController = require('./controllers/Auth.Controller');
+// const AuthRoute = require('./routes/user_credentials');
+// const AuthController = require('./controllers/Auth.Controller');
 
  
 const { getAllUserCredentials, createUserCredentials} = require('./controllers/Try.Controller')
+const  {createUser} = require('./controllers/user.controller')
 
 const server = http.createServer((req, res) => {
     if(req.method === 'GET') {
         getAllUserCredentials(req, res)
     } else if(req.method === 'POST') {
-        createUserCredentials(req, res)
+        createUser(req, res)
     } else {
         res.writeHead(404, { 'Content-Type': 'application/json' })
         res.end(JSON.stringify({ message: 'Route Not Found' }))

@@ -5,7 +5,7 @@ var uuid = require('uuid-random');
 
 const UsersDataSchema = new Schema({
   id: {
-    type: mongoose.Types.ObjectId,
+    type: String,
     unique:true,
     required: true
   },
@@ -31,4 +31,4 @@ const UsersDataSchema = new Schema({
 });
 
 const UserData = mongoose.model('users_data', UsersDataSchema);
-module.exports = UserData;
+module.exports = {UserData};
