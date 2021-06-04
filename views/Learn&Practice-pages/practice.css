@@ -220,9 +220,6 @@ main {
     max-height: 50000px;
 }
 
-#toggle25:checked~#slider25 {
-    max-height: 50000px;
-}
 
 @media (pointer:coarse) {
     .highlight:hover {
