@@ -31,7 +31,7 @@ module.exports =
                     // });
                 }
                 
-            res.writeHead(200, { 'Content-Type': 'application/json' })
+            res.writeHead(201, { 'Content-Type': 'application/json' })
             return res.end(JSON.stringify(result))  
                 // return res.status(200).json({
                 //     success: 1,

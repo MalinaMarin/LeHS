@@ -16,6 +16,14 @@ const LevelsSchema = new Schema({
   xp: {
     type: Number,
     required: true
+  },
+  hint_cost:{
+    type: Number,
+    required: true
+  },
+  solved_counter:{
+    type: Number,
+    required: true
   }
 });
 

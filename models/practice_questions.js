@@ -20,8 +20,12 @@ const PracticeQuestionsSchema = new Schema({
       type: String,
       enum:[BEGINNER, INTERMEDIATE, EXPERT],
       required: true
+  },
+  solved_counter:{
+    type: Number,
+    required: true
   }
 });
 
 const PracticeQuestion = mongoose.model('practice_questions', PracticeQuestionsSchema);
-module.exports = PracticeQuestion;
+module.exports = {PracticeQuestion};
