@@ -6,15 +6,14 @@ const {
   signRefreshToken,
   verifyRefreshToken,
 } = require('../helpers/jwt_helper')
-const client = require('../helpers/init_redis.js')
+//const client = require('../helpers/init_redis.js')
 
 module.exports = {
-  register: async (req, res, next) => {
+  register: async (req, res) => {
     try {
       // const { email, password } = req.body
       // if (!email || !password) throw createError.BadRequest()
       const result = await authSchema.validateAsync(req.body)
-
       const doesExist = await User.findOne({ email: result.email })
       if (doesExist)
         throw createError.Conflict(`${result.email} has already been registered`)
@@ -27,11 +26,11 @@ module.exports = {
       res.send({ accessToken, refreshToken })
     } catch (error) {
       if (error.isJoi === true) error.status = 422
-      next(error)
+      throw(error)
     }
   },
 
-  login: async (req, res, next) => {
+  login: async (req, res) => {
     try {
       const result = await authSchema.validateAsync(req.body)
       const user = await User.findOne({ email: result.email })
@@ -47,12 +46,12 @@ module.exports = {
       res.send({ accessToken, refreshToken })
     } catch (error) {
       if (error.isJoi === true)
-        return next(createError.BadRequest('Invalid Username/Password'))
-      next(error)
+        return createError.BadRequest('Invalid Username/Password')
+      throw(error)
     }
   },
 
-  refreshToken: async (req, res, next) => {
+  refreshToken: async (req, res) => {
     try {
       const { refreshToken } = req.body
       if (!refreshToken) throw createError.BadRequest()
@@ -62,25 +61,25 @@ module.exports = {
       const refToken = await signRefreshToken(userId)
       res.send({ accessToken: accessToken, refreshToken: refToken })
     } catch (error) {
-      next(error)
+      throw(error)
     }
   },
 
-  logout: async (req, res, next) => {
+  logout: async (req, res) => {
     try {
       const { refreshToken } = req.body
       if (!refreshToken) throw createError.BadRequest()
       const userId = await verifyRefreshToken(refreshToken)
-      client.DEL(userId, (err, val) => {
-        if (err) {
-          console.log(err.message)
-          throw createError.InternalServerError()
-        }
-        console.log(val)
+     // client.DEL(userId, (err, val) => {
+      //  if (err) {
+      //    console.log(err.message)
+      //    throw createError.InternalServerError()
+     //   }
+     //   console.log(val)
         res.sendStatus(204)
-      })
+      //})
     } catch (error) {
-      next(error)
+      throw(error)
     }
   },
 }

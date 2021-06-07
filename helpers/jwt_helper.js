@@ -1,6 +1,6 @@
 const JWT = require('jsonwebtoken')
 // const createError = require('http-errors')
-const client = require('./init_redis')
+//const client = require('./init_redis')
 
 module.exports = {
   signAccessToken: (userId) => {
@@ -22,8 +22,9 @@ module.exports = {
       })
     })
   },
-  verifyAccessToken: (req, res, next) => {
-    if (!req.headers['authorization']) return next(createError.Unauthorized())
+  
+  verifyAccessToken: (req, res) => {
+    if (!req.headers['authorization']) return createError.Unauthorized()
     const authHeader = req.headers['authorization']
     const bearerToken = authHeader.split(' ')
     const token = bearerToken[1]
@@ -31,10 +32,10 @@ module.exports = {
       if (err) {
         const message =
           err.name === 'JsonWebTokenError' ? 'Unauthorized' : err.message
-        return next(createError.Unauthorized(message))
+        return createError.Unauthorized(message)
       }
       req.payload = payload
-      next()
+     // next()
     })
   },
   signRefreshToken: (userId) => {
@@ -53,14 +54,14 @@ module.exports = {
           reject(createError.InternalServerError())
         }
 
-        client.SET(userId, token, 'EX', 365 * 24 * 60 * 60, (err, reply) => {
-          if (err) {
-            console.log(err.message)
-            reject(createError.InternalServerError())
-            return
-          }
-          resolve(token)
-        })
+        // client.SET(userId, token, 'EX', 365 * 24 * 60 * 60, (err, reply) => {
+        //   if (err) {
+        //     console.log(err.message)
+        //     reject(createError.InternalServerError())
+        //     return
+        //   }
+           resolve(token)
+        // })
       })
     })
   },
@@ -72,15 +73,15 @@ module.exports = {
         (err, payload) => {
           if (err) return reject(createError.Unauthorized())
           const userId = payload.aud
-          client.GET(userId, (err, result) => {
-            if (err) {
-              console.log(err.message)
-              reject(createError.InternalServerError())
-              return
-            }
-            if (refreshToken === result) return resolve(userId)
-            reject(createError.Unauthorized())
-          })
+          // client.GET(userId, (err, result) => {
+          //   if (err) {
+          //     console.log(err.message)
+          //     reject(createError.InternalServerError())
+          //     return
+          //   }
+             if (refreshToken === result) return resolve(userId)
+             reject(createError.Unauthorized())
+          // })
         }
       )
     })
