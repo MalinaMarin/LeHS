@@ -1,0 +1,12 @@
+{
+    "question": "Which among the following is correct HTML code for making a checkbox?",
+    "answers": [
+        {
+            "A": "A) <input type=\"check\">",
+            "B": "B) <check>",
+            "C": "C) <checkbox>",
+            "D": "D) <input type=\"checkbox\">"
+        }
+    ],
+    "correct_answer": "D"
+}

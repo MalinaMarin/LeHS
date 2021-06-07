@@ -1,0 +1,12 @@
+{
+    "question": "Which attribute is used to name an element uniquely?",
+    "answers": [
+        {
+            "A": "A) dot",
+            "B": "B) class",
+            "C": "C) id",
+            "D": "D) all of the above"
+        }
+    ],
+    "correct_answer": "C"
+}

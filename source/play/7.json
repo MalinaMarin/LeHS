@@ -1,0 +1,8 @@
+{
+    "question": "Specify that the transition of the <div> element should have a \"ease-in-out\" speed curve.",
+    "hint": "Hint: Use the transition-timing-function property.",
+    "edit": "<head>\\n    <style>\\n     div {\\n      width: 150px;\\n      height: 150px;\\n      background: black;\\n      transition: width 3s;\\n    }\\n    div:hover {\\n      width: 350px;\\n    }\\n    </style>\\n    </head>\\n    <body>\\n    <div></div>\\n    <p>Hover over the div element.</p>\\n    </body>",
+    "start_part": "",
+    "correct_input": "<head>\\n    <style>\\n     div {\\n      width: 150px;\\n      height: 150px;\\n      background: black;\\n      transition: width 3s;\\n      transition-timing-function: ease-in-out;\\n    }\\n    div:hover {\\n      width: 350px;\\n    }\\n    </style>\\n    </head>\\n    <body>\\n    <div></div>\\n    <p>Hover over the div element.</p>\\n    </body>",
+    "end_part": ""
+}

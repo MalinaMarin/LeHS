@@ -1,0 +1,12 @@
+{
+    "question": "Which of the following is not a style tag?",
+    "answers": [
+        {
+            "A": "A) <tt>",
+            "B": "B) <i>",
+            "C": "C) <b>",
+            "D": "D) All of the above are style tags"
+        }
+    ],
+    "correct_answer": "D"
+}

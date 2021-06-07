@@ -1,0 +1,12 @@
+{
+    "question": "The _____ character tells browsers to stop tagging the text",
+    "answers": [
+        {
+            "A": "A) >",
+            "B": "B) ?",
+            "C": "C) %",
+            "D": "D) /"
+        }
+    ],
+    "correct_answer": "D"
+}

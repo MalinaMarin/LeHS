@@ -1,0 +1,12 @@
+{
+    "question": "What is the correct syntax for writing comments in CSS? ",
+    "answers": [
+        {
+            "A": "A) // comment",
+            "B": "B) /* comment */",
+            "C": "C) <!-- comment -->",
+            "D": "D) All options are valid"
+        }
+    ],
+    "correct_answer": "B"
+}

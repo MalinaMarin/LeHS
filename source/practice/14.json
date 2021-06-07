@@ -1,0 +1,12 @@
+{
+    "question": "How do you display hyperlinks without an underline?",
+    "answers": [
+        {
+            "A": "A) A {text-decoration:none}",
+            "B": "B) A {text-decoration:no underline}",
+            "C": "C) A {decoration:no underline}",
+            "D": "D) A {underline:none}"
+        }
+    ],
+    "correct_answer": "A"
+}

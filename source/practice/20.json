@@ -1,0 +1,12 @@
+{
+    "question": "Which of these CSS properties isn't real?",
+    "answers": [
+        {
+            "A": "A) object-fit",
+            "B": "B) pointer-events",
+            "C": "C) font-smoothing",
+            "D": "D) text-opacity"
+        }
+    ],
+    "correct_answer": "D"
+}

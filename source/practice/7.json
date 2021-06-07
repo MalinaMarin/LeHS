@@ -1,0 +1,12 @@
+{
+    "question": "Which tag allows you to add a row in a table?",
+    "answers": [
+        {
+            "A": "A) <th> and </th>",
+            "B": "B) <tr> and </tr>",
+            "C": "C) <cr> and </cr>",
+            "D": "D) <td> and </td>"
+        }
+    ],
+    "correct_answer": "B"
+}

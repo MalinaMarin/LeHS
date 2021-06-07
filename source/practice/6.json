@@ -1,0 +1,12 @@
+{
+    "question": "What does vlink attribute mean?",
+    "answers": [
+        {
+            "A": "A) active link",
+            "B": "B) very good link",
+            "C": "C) visited link",
+            "D": "D) virtual link"
+        }
+    ],
+    "correct_answer": "C"
+}

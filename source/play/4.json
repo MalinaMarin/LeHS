@@ -1,0 +1,8 @@
+{
+    "question": "Use the correct HTML attribute to make the second TH element span two rows.",
+    "hint": "No hints this time!",
+    "edit": "",
+    "start_part": "<table>\\n    <tr>\\n      <th>Name</th>\\n      <td>John Doe</td>\\n    </tr>\\n    <tr>\\n      <th ",
+    "correct_input": "<table>\\n    <tr>\\n      <th>Name</th>\\n      <td>John Doe</td>\\n    </tr>\\n    <tr>\\n      <th rowspan=\"2\">Phone</th>\\n      <td>0762986114</td>\\n    </tr>\\n    <tr>\\n      <td>0786400892</td>\\n    </tr>\\n  </table>",
+    "end_part": ">Phone</th>\\n    <td>0762986114</td>\\n  </tr>\\n  <tr>\\n    <td>0786400892</td>\\n  </tr>\\n</table>\\n"
+}

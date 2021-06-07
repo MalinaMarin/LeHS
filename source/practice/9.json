@@ -1,0 +1,12 @@
+{
+    "question": "HTML documents are saved in",
+    "answers": [
+        {
+            "A": "A) Special binary format",
+            "B": "B) Machine language codes",
+            "C": "C) ASCII text",
+            "D": "D) None of the above"
+        }
+    ],
+    "correct_answer": "C"
+}

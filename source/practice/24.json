@@ -1,0 +1,12 @@
+{
+    "question": "Which of the following is NOT a valid border-style property value?",
+    "answers": [
+        {
+            "A": "A) dotted",
+            "B": "B) inset",
+            "C": "C) glazed",
+            "D": "D) groove"
+        }
+    ],
+    "correct_answer": "C"
+}

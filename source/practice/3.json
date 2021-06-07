@@ -1,0 +1,12 @@
+{
+    "question": "What is the correct CSS syntax for making all the span elements bold?",
+    "answers": [
+        {
+            "A": "A) span {text-size: bold}",
+            "B": "B) span {font-weight: bold}",
+            "C": "C) <span style=\"font-size: bold\">",
+            "D": "D) <span style=\"text-size: bold\">"
+        }
+    ],
+    "correct_answer": "B"
+}

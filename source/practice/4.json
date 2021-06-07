@@ -1,0 +1,12 @@
+{
+    "question": "In CSS, what is the property used to set the background color of an image?",
+    "answers": [
+        {
+            "A": "A) color",
+            "B": "B) background-color",
+            "C": "C) background:color",
+            "D": "D) color:background"
+        }
+    ],
+    "correct_answer": "B"
+}

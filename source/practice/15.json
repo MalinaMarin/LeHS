@@ -1,0 +1,12 @@
+{
+    "question": "How do you make the text bold in CSS?",
+    "answers": [
+        {
+            "A": "A) font-weight:bold",
+            "B": "B) style:bold",
+            "C": "C) font:b",
+            "D": "D) None of the above are correct"
+        }
+    ],
+    "correct_answer": "A"
+}

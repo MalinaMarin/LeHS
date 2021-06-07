@@ -1,0 +1,12 @@
+{
+    "question": "What is the correct sequence of HTML tags for starting a webpage?",
+    "answers": [
+        {
+            "A": "A) HTML, title, head",
+            "B": "B) head, title, HTML",
+            "C": "C) HTML, head, title",
+            "D": "D) title, head, HTML"
+        }
+    ],
+    "correct_answer": "C"
+}

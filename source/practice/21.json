@@ -1,0 +1,12 @@
+{
+    "question": "Which of these answers contains invalid CSS?",
+    "answers": [
+        {
+            "A": "A) margin: 10px 8px 5px;",
+            "B": "B) margin: -20px;",
+            "C": "C) margin: auto;",
+            "D": "D) All answers are valid"
+        }
+    ],
+    "correct_answer": "D"
+}

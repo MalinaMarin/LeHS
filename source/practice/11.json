@@ -1,0 +1,12 @@
+{
+    "question": "What is the purpose of using div tags in HTML?",
+    "answers": [
+        {
+            "A": "A) For adding titles",
+            "B": "B) For adding headings",
+            "C": "C) For creating different sections",
+            "D": "D) For creating different styles"
+        }
+    ],
+    "correct_answer": "C"
+}

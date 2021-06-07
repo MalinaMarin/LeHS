@@ -1,0 +1,12 @@
+{
+    "question": "Which among the following is the correct way in HTML to insert an image?",
+    "answers": [
+        {
+            "A": "A) <img src=\"https://bit.ly/3QhwnAz\" alt=\"LearnHtmlCss”\">",
+            "B": "B) <img url=\"https://bit.ly/3QhwnAz\">LearnHtmlCss</img>",
+            "C": "C) <image src=\"https://bit.ly/3QhwnAz\" alt=\"LearnHtmlCss\"></image>",
+            "D": "D) <img href=\"https://bit.ly/3QhwnAz\" alt=\"LearnHtmlCss\"></img>"
+        }
+    ],
+    "correct_answer": "A"
+}

@@ -1,0 +1,12 @@
+{
+    "question": "In an unordered list, which selector will target only the last list item?",
+    "answers": [
+        {
+            "A": "A) ul li:last-child",
+            "B": "B) ul:last-child li",
+            "C": "C) ul:last-child(li)",
+            "D": "D) None of the above are correct"
+        }
+    ],
+    "correct_answer": "A"
+}

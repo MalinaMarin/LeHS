@@ -1,0 +1,12 @@
+{
+    "question": "Where in an HTML document is the correct place to refer to an external style sheet?",
+    "answers": [
+        {
+            "A": "A) In the head section",
+            "B": "B) At the end of the document",
+            "C": "C) At the top of the document",
+            "D": "D) In the body section"
+        }
+    ],
+    "correct_answer": "A"
+}
