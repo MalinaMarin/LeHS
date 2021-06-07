@@ -21,7 +21,7 @@ const UsersDataSchema = new Schema({
       required:true
   },
   practice_questions_solved:{
-      type: [Number]
+      type: Array
   },
   coins:{
       type:Number,
