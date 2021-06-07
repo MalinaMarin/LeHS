@@ -14,6 +14,10 @@ module.exports =
                 res.writeHead(404, { 'Content-Type': 'application/json' })
                 return res.end("Ooups...User not found!") 
             }
+            if(user.practice_questions_solved.includes(question_id)){
+                res.writeHead(201, { 'Content-Type': 'application/json' })
+                return res.end("already answered this")
+            }
             const coins = await checkAnswer(body.question_id, body.answer_value);
             // console.log(coins);
             // console.log(typeof coins);
