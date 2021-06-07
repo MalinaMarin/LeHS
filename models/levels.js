@@ -28,4 +28,4 @@ const LevelsSchema = new Schema({
 });
 
 const Level = mongoose.model('levels', LevelsSchema);
-module.exports = Level;
+module.exports = {Level};

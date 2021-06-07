@@ -19,12 +19,14 @@ const registerPath = 'register';
  
 const { getAllUserCredentials, createUserCredentials} = require('./controllers/Try.Controller')
 const  {createUser} = require('./controllers/user.controller')
+const  {submitAnswer} = require('./controllers/practice.controller')
 
 const server = http.createServer((req, res) => {
     if(req.method === 'GET') {
         getAllUserCredentials(req, res)
     } else if(req.method === 'POST') {
-        createUser(req, res)
+        // createUser(req, res)
+        submitAnswer(req,res)
     } else {
         res.writeHead(404, { 'Content-Type': 'application/json' })
         res.end(JSON.stringify({ message: 'Route Not Found' }))

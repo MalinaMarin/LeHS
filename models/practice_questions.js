@@ -18,7 +18,7 @@ const PracticeQuestionsSchema = new Schema({
   },
   difficulty:{
       type: String,
-      enum:[BEGINNER, INTERMEDIATE, EXPERT],
+      enum:["BEGINNER", "INTERMEDIATE", "EXPERT"],
       required: true
   },
   solved_counter:{

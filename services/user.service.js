@@ -16,7 +16,8 @@ module.exports = {
             username: data.username,
             current_level: 1,
             coins: 0,
-            xp: 0
+            xp: 0,
+            practice_questions_solved: []
         });
         user_credentials.save(function (err) {
             if (err) {
