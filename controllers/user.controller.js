@@ -47,6 +47,7 @@ module.exports =
         // const body = req.body;
         try {
             let body = await getPostData(req)
+            console.log("this is body "  + body);
             body = JSON.parse(body)
             createGithub(body, (err, result) => {
                 if (err) {

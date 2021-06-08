@@ -4,6 +4,9 @@ const https = require('https');
 const url = require('url');
 const path = require('path');
 const querystring = require('querystring');
+var access_token;
+var gitdata = require('./services/user.service');
+
 //const cookieSession =require('cookie-session');
 require('dotenv').config()
 require('./helpers/init_mongodb')
@@ -41,11 +44,9 @@ const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
 // });
 
 
-const server = http.createServer(async (req, res) => {
-   // console.log(req.url);
+const server = http.createServer( (req, res) => {
+    console.log(req.url);
     var newurl = req.url;
-
-
     //var check = new RegExp("^login/github\\/callback(?:$|/)");
     //console.log(check);
    //var newurl = req.url.replace('%0A', "");
@@ -79,7 +80,7 @@ const server = http.createServer(async (req, res) => {
         res.end(JSON.stringify({ message: 'Mainpage!!!' }))
     } 
 
-    else if(newurl === '/success' && req.method ==='POST'){
+    else if(req.url === '/dummy%0A' && req.method === 'POST'){
         registerGithubUser(req, res)
     } 
 
@@ -95,33 +96,46 @@ const server = http.createServer(async (req, res) => {
         const codee = queryParameter.code;
         console.log("tHE CODE " + codee);
 
-  const access_token = await getAccessToken(codee);
-  const user = await fetchGitHubUser(access_token);
+    access_token =  getAccessToken(codee);
+  const user =  fetchGitHubUser(access_token);
   if (user) {
     //req.session.access_token = access_token;
     //req.session.githubId = user.id;
    
-const options = {
-  method: 'GET',
-  headers: {
-    Authorization: 'token ' + access_token
- }
-};
 
-    fetch('https://api.github.com/user', options)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data.login)
-     gitdata = JSON.stringify({
-     'username': data.login,
-     'email': data.email
-  })
-  console.log(gitdata);
-  });
+// const options = {
+//   method: 'GET',
+//   headers: {
+//     Authorization: 'token ' + access_token
+//  }
+// };
 
-  res.writeHead(302,  {Location: `http://localhost:5000/success` })
-  res.end();
+//     fetch('https://api.github.com/user', options)
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data.login)
+//      gitdata = JSON.stringify({
+//      'username': data.login,
+//      'email': data.email
+//   })
+//   console.log(gitdata);
 
+//   });
+
+
+
+//     const options2 = {
+//     method: 'POST',
+//     body: gitdata
+//   };
+  
+//       fetch('http://localhost:5000/mainpage', options2)
+//     .then(body => {
+//      registerGithubUser(body, res);
+//     });
+  
+ 
+registerGithubUser(gitdata, res);
 //   const options2 = {
 //     method: 'POST',
 //     headers: {
@@ -134,19 +148,22 @@ const options = {
   
 //     res.on(body, (d) => {
 //       process.stdout.write(d)
-//       registerGithubUser(gitdata, res)
+//       registerGithubUser(body, res)
 //     })
 //   })
-  
-//   req.on('error', (error) => {
+
+//     req.on('error', (error) => {
 //     console.error(error)
 //   })
 
-  
+res.writeHead(302,  {Location: `http://localhost:5000/mainpage` })
+  res.end();
+
+
 
   } else{
     res.writeHead(404, { 'Content-Type': 'application/json' })
-        res.end(JSON.stringify({ message: 'Login did not succeed' }))
+    res.end(JSON.stringify({ message: 'Login did not succeed' }))
   }
 }
    
@@ -221,7 +238,7 @@ function getData(req) {
     })
 }
 
-
+exports.access_token = access_token;
 
     // const routeMap = {
         
