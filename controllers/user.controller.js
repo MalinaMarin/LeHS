@@ -1,5 +1,5 @@
 const { hashSync, genSaltSync, compareSync } = require("bcrypt");
-const { create } = require("../services/user.service.js")
+const { create, createGithub } = require("../services/user.service.js")
 const { getPostData } = require('../helpers/utils_fct');
 const http = require('http');
 
@@ -22,6 +22,33 @@ module.exports =
             console.log(body.password)
             body.password = hashSync(body.password, salt);
             create(body, (err, result) => {
+                if (err) {
+                    res.writeHead(500, { 'Content-Type': 'application/json' })
+                    return res.end("An error occurred...") 
+                    // return res.status(500).json({
+                    //     success: 0,
+                    //     message: "Database connection errror"
+                    // });
+                }
+                
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            return res.end(JSON.stringify(result))  
+                // return res.status(200).json({
+                //     success: 1,
+                //     message: "user successfully created"
+                // });
+            });
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+    registerGithubUser: async (req, res) => {
+        // const body = req.body;
+        try {
+            let body = await getPostData(req)
+            body = JSON.parse(body)
+            createGithub(body, (err, result) => {
                 if (err) {
                     res.writeHead(500, { 'Content-Type': 'application/json' })
                     return res.end("An error occurred...") 

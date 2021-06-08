@@ -9,7 +9,33 @@ module.exports = {
             username: data.username,
             email: data.email,
             password: data.password,
-            role: "USER"
+            role: "USER",
+            github_account: false
+        });
+        var user_data = new UserData({
+            id: user_credentials.id,
+            username: data.username,
+            current_level: 1,
+            coins: 0,
+            xp: 0,
+            practice_questions_solved: []
+        });
+        user_credentials.save(function (err) {
+            if (err) {
+                console.log(err)
+                return callback(err);}
+            user_data.save();
+            return callback(null, user_data);
+        });
+    },
+
+    createGithub: (data, callback) => {
+        let user_credentials = new UserCredentials({
+            id: uuidv4(),
+            username: data.username,
+            email: data.email,
+            role: "USER",
+            github_account: true
         });
         var user_data = new UserData({
             id: user_credentials.id,
