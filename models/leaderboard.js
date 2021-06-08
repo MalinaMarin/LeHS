@@ -12,7 +12,6 @@ const LeaderboardSchema = new Schema({
   },
   player: {
     type: UserData,
-    required: true
   }
 });
 
