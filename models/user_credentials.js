@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const { v4: uuidv4 } = require('uuid')
 var uuid = require('uuid-random');
 let credentials = require('../helpers/data.json')
-const { writeDataToFile } = require('../helpers/utils_fct')
+const { writeDataToFile } = require('../helpers/utils_fct');
+const { boolean } = require("joi");
 
 const UsersCredentialsSchema = new Schema({
   id: {
@@ -20,16 +21,17 @@ const UsersCredentialsSchema = new Schema({
   email: {
     type: String,
     unique:true,
-    required: true
   },
   password: {
     type: String,
-    required: true
   },
   role: {
     type: String,
     enum:["ADMIN", "USER"],
     required: true
+  },
+  github_account: {
+    type: Boolean
   }
 });
 
