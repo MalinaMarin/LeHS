@@ -4,9 +4,8 @@ const https = require('https');
 const url = require('url');
 const path = require('path');
 const querystring = require('querystring');
+//var gitdata = require('./services/user.service');
 var access_token;
-var gitdata = require('./services/user.service');
-
 //const cookieSession =require('cookie-session');
 require('dotenv').config()
 require('./helpers/init_mongodb')
@@ -44,7 +43,7 @@ const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
 // });
 
 
-const server = http.createServer( (req, res) => {
+const server = http.createServer( async (req, res) => {
     console.log(req.url);
     var newurl = req.url;
     //var check = new RegExp("^login/github\\/callback(?:$|/)");
@@ -96,12 +95,14 @@ const server = http.createServer( (req, res) => {
         const codee = queryParameter.code;
         console.log("tHE CODE " + codee);
 
-    access_token =  getAccessToken(codee);
-  const user =  fetchGitHubUser(access_token);
+    access_token = await getAccessToken(codee);
+    //console.log(access_token);
+  const user = await fetchGitHubUser(access_token);
+  console.log(user);
   if (user) {
     //req.session.access_token = access_token;
     //req.session.githubId = user.id;
-   
+    registerGithubUser(res);
 
 // const options = {
 //   method: 'GET',
@@ -135,7 +136,6 @@ const server = http.createServer( (req, res) => {
 //     });
   
  
-registerGithubUser(gitdata, res);
 //   const options2 = {
 //     method: 'POST',
 //     headers: {
@@ -158,7 +158,6 @@ registerGithubUser(gitdata, res);
 
 res.writeHead(302,  {Location: `http://localhost:5000/mainpage` })
   res.end();
-
 
 
   } else{
@@ -238,7 +237,7 @@ function getData(req) {
     })
 }
 
-exports.access_token = access_token;
+
 
     // const routeMap = {
         
@@ -266,3 +265,5 @@ exports.access_token = access_token;
 const PORT = process.env.PORT || 5000
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!!!`))
+
+exports.access_token = access_token;

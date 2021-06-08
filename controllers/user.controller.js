@@ -43,13 +43,13 @@ module.exports =
         }
     },
 
-    registerGithubUser: async (req, res) => {
-        // const body = req.body;
+    registerGithubUser: async (res) => {
+         //const body = req.body;
         try {
-            let body = await getPostData(req)
-            console.log("this is body "  + body);
-            body = JSON.parse(body)
-            createGithub(body, (err, result) => {
+            // let body = await getPostData(req)
+            // console.log("this is body "  + body);
+            // body = JSON.parse(body)
+            createGithub((err, result) => {
                 if (err) {
                     res.writeHead(500, { 'Content-Type': 'application/json' })
                     return res.end("An error occurred...") 

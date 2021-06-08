@@ -2,8 +2,9 @@ const {UserData} = require("../models/user_data.js");
 const {UserCredentials} = require("../models/user_credentials.js");
 const { v4: uuidv4} = require('uuid');
 const fetch = require('node-fetch');
-var gitdata;
-var access_token = require('../server');
+//var gitdata;
+var token = require('../server');
+
 module.exports = {
     create: (data, callback) => {
         let user_credentials = new UserCredentials({
@@ -31,48 +32,51 @@ module.exports = {
         });
     },
 
-    createGithub: (data, callback) => {
-        let user_credentials = new UserCredentials({
-            id: uuidv4(),
-            username: data.username,
-            email: data.email,
-            role: "USER",
-            github_account: true
-        });
-        var user_data = new UserData({
+    createGithub: (callback) => {
+        var access_token = token.access_token;
+        const options = {
+            method: 'GET',
+            headers: {
+                
+              Authorization: 'token ' + access_token
+           }
+          };
+            fetch('https://api.github.com/user', options)
+            .then(response => response.json())
+            .then(data => {
+                console.log(access_token)
+              //console.log(data.login);
+              let gitdata = JSON.stringify({
+                'username': data.login,
+                'email': data.email
+             })
+             console.log(gitdata);
+               let user_credentials = new UserCredentials({
+                id: uuidv4(),
+                username: data.login,
+                email: data.email,
+                role: "USER",
+                github_account: true
+            });
+
+            var user_data = new UserData({
             id: user_credentials.id,
             username: data.username,
             current_level: 1,
             coins: 0,
             xp: 0,
             practice_questions_solved: []
-        });
-        user_credentials.save(function (err) {
-            if (err) {
-                console.log(err)
-                return callback(err);}
-            user_data.save();
-            return callback(null, user_data);
-        });
-
-        const options = {
-            method: 'GET',
-            headers: {
-              Authorization: 'token ' + access_token
-           }
-          };
-          
-            fetch('https://api.github.com/user', options)
-            .then(response => response.json())
-            .then(data => {
-              console.log(data.login)
-               gitdata = JSON.stringify({
-               'username': data.login,
-               'email': data.email
-            })
-            console.log(gitdata);
-          
             });
+
+            user_credentials.save(function (err) {
+                if (err) {
+                    console.log(err)
+                    return callback(err);}
+                user_data.save();
+                return callback(null, user_data);
+            });
+            });
+
     },
 
     getUserDataById: async user_id => {
@@ -88,4 +92,4 @@ module.exports = {
     }
 }
 
-exports.gitdata = gitdata;
+//exports.gitdata = gitdata;
