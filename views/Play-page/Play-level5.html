@@ -59,10 +59,10 @@
         <div class="instructuions-row">
              
             <p id="instructions">
-                Troubleshooting HTML: Someone messed up this webpage! Analyze this code and fix the errors. 
+                
                  </p>
             <button id="hint"><i class="fas fa-lightbulb"></i></button> 
-            <p class="hidden"  id="text-hint"><br>Hint : The first two items in this list are formatted correctly.</p>
+            <p class="hidden"  id="text-hint"></p>
         </div>
         <div class="middle">
             <div class="editor">
@@ -97,27 +97,10 @@
                        14
                        <br>
                     </div>
-                    <pre id="before"></pre>
-                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 300px;"><h2>The greatest bunnies</h2> 
-                        <p>
-                            <strong>The first bunny</strong> (<em>Colour</em>, white)
-                        </p>                   
-                    <br><br>
-                    <img src="/images/ex5_1.jpg" alt="first-bunny">
-                    <br><br>                
-                        <p>
-                            <strong>The second bunny</strong> (<em>Colour</em>: black)
-                        </p>                
-                    <br><br>
-                    <img src="/images/ex5_2.jpg" alt="second-bunny">
-                    <br><br>                
-                        <p>
-                            <sstrong>The third bunny</strong> (<em>Colour</em>: grey)    
-                        </p>               
-                    <br><br>
-                    <img src="/images/ex5_3.jpg" alt="third-bunny">
-                    <br><br></textarea>
-                    <pre id="after">
+                    <pre id="start"></pre>
+                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 300px;">
+                    </textarea>
+                    <pre id="end">
                     </pre>
                     <button id="run" >Run</button>
                 </div>
@@ -174,5 +157,42 @@
 </div>
 <script src="./play.js"></script>
 <script src="../Navbar&footer/script.js"></script>
+<script>
+    (function () {
+               "use strict";
+               var load
+               load = function (url) {
+   
+                   var request;
+                   var q = document.getElementById("instructions");
+                   var hint = document.getElementById("text-hint");
+                   var code = document.getElementById("code");
+                   
+                   
+                   request = new XMLHttpRequest();
+   
+                   
+                   request.addEventListener("readystatechange", function (event) {
+   
+                       if (this.readyState == 4 && this.status == 200) {
+   
+                           var json = JSON.parse(this.responseText);
+                           q.innerHTML = json.question
+                           hint.innerHTML = json.hint
+                           code.innerHTML = json.edit
+                           
+                           
+                       }
+   
+                   });
+   
+                   request.open("GET", url);
+                   request.send(null);
+   
+               };
+   
+               load("../../source/play/5.json");
+           })();
+       </script>
 </body>
 </html>

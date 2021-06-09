@@ -743,15 +743,14 @@
             load = function (url, question, answerA, answerB, answerC, answerD, coins) {
 
                 var request;
-                var q = document.getElementById(question);// The output p element.
+                var q = document.getElementById(question);
                 var aA = document.getElementById(answerA);
                 var aB = document.getElementById(answerB);
                 var aC = document.getElementById(answerC);
                 var aD = document.getElementById(answerD);
-                request = new XMLHttpRequest();// We use an XMLHttpRequest to load the file.
+                request = new XMLHttpRequest();
 
-                /* This event listener will call the specified function when the file at the
-                specified url is loaded. */
+                
                 request.addEventListener("readystatechange", function (event) {
 
                     if (this.readyState == 4 && this.status == 200) {

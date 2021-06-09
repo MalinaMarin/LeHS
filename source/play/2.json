@@ -1,8 +1,8 @@
 {
-    "question": "Display an image that when clicked will link to the Google search engine(should be opened in a new window).\\n The source for the image is: /images/ex2.jpg ",
-    "hint": "Hint: What attributes does the <a> tag have? We'll definitely need the href one.",
+    "question": "Display an image that when clicked will link to the Google search engine(should be opened in a new window).<br> The source for the image is: /images/ex2.jpg ",
+    "hint": "Hint: What attributes does the &lt;a&gt; tag have? We'll definitely need the href one.",
     "edit": "",
-    "start_part": "<body>",
-    "correct_input": "<body>\\n    <a href=\"http://www.google.com\" target=\"_blank\">\\n    <img src=\"/images/ex2.jpg\" alt=\"Flowers\" />\\n    </a>\\n    </body>\\n    <p>\\n    Click on the image to be taken to the Google search engine.\\n    </p>\\n",
-    "end_part": "</body>\\n <p>\\n Click on the image to be taken to the Google search engine.\\n </p>"
+    "start_part": "&lt;body&gt;",
+    "correct_input": "&lt;body&gt;\n    &lt;a href=\"http://www.google.com\" target=\"_blank\"&gt;\n    &lt;img src=\"/images/ex2.jpg\" alt=\"Flowers\" /&gt;\n    &lt;/a&gt;\n    &lt;/body&gt;\n    &lt;p&gt;\n    Click on the image to be taken to the Google search engine.\n    &lt;/p&gt;\n",
+    "end_part": "&lt;/body&gt; \n &lt;p&gt; \n Click on the image to be taken to the Google search engine.\n &lt;/p&gt;"
 }

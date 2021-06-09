@@ -58,9 +58,9 @@
         <h1 class="level"> Level 8 </h1>
         <div class="instructuions-row">
              
-            <p id="instructions">Remove the transparency of the &lt;img&gt; element when the user hovers over it with the mouse pointer. </p>
+            <p id="instructions"> </p>
             <button id="hint"><i class="fas fa-lightbulb"></i></button> 
-            <p class="hidden"  id="text-hint">Hint : Set the opacity property to 1.0.</p>
+            <p class="hidden"  id="text-hint"></p>
         </div>
         <div class="middle">
             <div class="editor">
@@ -95,16 +95,9 @@
                        14
                        <br>
                     </div>
-                    <pre id="before">&lt;head&gt;
-&lt;style&gt;
-img {</pre>
-                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 24px;">opacity: 0.4;</textarea>
-                    <pre id="after">}
-                    &lt;/style&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;                   
-                    &lt;img src="/images/ex8.jpg" width="280" height="280"&gt;                    
-                    &lt;/body&gt;
+                    <pre id="before"></pre>
+                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 270px;"></textarea>
+                    <pre id="end">
                     </pre>
                     <button id="run" >Run</button>
                 </div>
@@ -161,5 +154,40 @@ img {</pre>
 </div>
 <script src="./play.js"></script>
 <script src="../Navbar&footer/script.js"></script>
+<script>
+    (function () {
+               "use strict";
+               var load
+               load = function (url) {
+   
+                   var request;
+                   var q = document.getElementById("instructions");
+                   var hint = document.getElementById("text-hint");
+                   var code = document.getElementById("code");
+                   
+                   request = new XMLHttpRequest();
+   
+                   
+                   request.addEventListener("readystatechange", function (event) {
+   
+                       if (this.readyState == 4 && this.status == 200) {
+   
+                           var json = JSON.parse(this.responseText);
+                           q.innerHTML = json.question
+                           hint.innerHTML = json.hint
+                           code.innerHTML = json.edit
+                           
+                       }
+   
+                   });
+   
+                   request.open("GET", url);
+                   request.send(null);
+   
+               };
+   
+               load("../../source/play/8.json");
+           })();
+       </script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 {
-    "question": "Display an image that has a border of size 5, a width of 400, and a height of 350.\\nThe source for the image is /images/ex6.jpg, the alt should be Landscape",
-    "hint": "Hint: Use border, width and height attributes. We should place them in the <img> tag.",
+    "question": "Display an image that has a border of size 5, a width of 400, and a height of 350.<br>The source for the image is /images/ex6.jpg, the alt should be Landscape",
+    "hint": "Hint: Use border, width and height attributes. We should place them in the &lt;img&gt; tag.",
     "edit": "",
-    "start_part": " <body>",
-    "correct_input": "<body>\\n    <img src=\"/images/ex6.jpg\" width=\"400\" height=\"350\" alt=\"Landscape\" border=\"5\" />\\n    </body>",
-    "end_part": " </body>"
+    "start_part": " &lt;body&gt;",
+    "correct_input": "&lt;body&gt;\n    &lt;img src=\"/images/ex6.jpg\" width=\"400\" height=\"350\" alt=\"Landscape\" border=\"5\" /&gt;\n    &lt;/body&gt;",
+    "end_part": " &lt;/body&gt;"
 }

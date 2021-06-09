@@ -58,15 +58,9 @@
         <h1 class="level"> Level 9 </h1>
         <div class="instructuions-row">
              
-            <p id="instructions">Add the following 5 steps to the animation "example":
-                <br>    
-                0% - Set background color to "purple", left position to "0px", top position to: "0px"
-                <br>25% - Set background color to "blue", left position to "0px", top position to: "200px"
-                <br> - Set background color to "purple", left position to "200px", top position to: "200px"
-                <br>75% - Set background color to "blue", left position to "200px", top position to: "0px"
-                <br>100% - Set background color to "purple", left position to "0px", top position to: "0px"</p>
+            <p id="instructions"></p>
             <button id="hint"><i class="fas fa-lightbulb"></i></button> 
-            <p class="hidden"  id="text-hint">Hint :The % values represents the different stages of the animation. 0% is the start, and 100% is the end.</p>
+            <p class="hidden"  id="text-hint"></p>
         </div>
         <div class="middle">
             <div class="editor">
@@ -101,23 +95,9 @@
                        14
                        <br>
                     </div>
-                    <pre id="before">&lt;head&gt;
-&lt;style&gt; 
-div {
-  width: 180px; height: 180px;
-  position: relative;
-  background-color: black;
-  animation-name: example;
-  animation-duration: 4s;
-}
-@keyframes example {</pre>
+                    <pre id="start"></pre>
                     <textarea id="code" autofocus="" autocapitalize="none" style="height: 24px;"></textarea>
-                    <pre id="after">}
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div&gt;&lt;/div&gt;
-&lt;/body&gt;                    </pre>
+                    <pre id="end"> </pre>
                     <button id="run" >Run</button>
                 </div>
                 
@@ -173,5 +153,42 @@ div {
 </div>
 <script src="./play.js"></script>
 <script src="../Navbar&footer/script.js"></script>
+<script>
+    (function () {
+               "use strict";
+               var load
+               load = function (url) {
+   
+                   var request;
+                   var q = document.getElementById("instructions");
+                   var hint = document.getElementById("text-hint");
+                   var start = document.getElementById("start");
+                   var end = document.getElementById("end");
+                   
+                   request = new XMLHttpRequest();
+   
+                   
+                   request.addEventListener("readystatechange", function (event) {
+   
+                       if (this.readyState == 4 && this.status == 200) {
+   
+                           var json = JSON.parse(this.responseText);
+                           q.innerHTML = json.question
+                           hint.innerHTML = json.hint
+                           start.innerHTML = json.start_part
+                           end.innerHTML = json.end_part
+                           
+                       }
+   
+                   });
+   
+                   request.open("GET", url);
+                   request.send(null);
+   
+               };
+   
+               load("../../source/play/9.json");
+           })();
+       </script>
 </body>
 </html>

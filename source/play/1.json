@@ -1,8 +1,8 @@
 {
     "question": " Print the squares of the numbers 1 - 10. Each number should be on a separate line, next to it the number 2 superscripted, an equal sign and the result.",
-    "hint": "Hint: Look up <sup> tag. What does it do?",
+    "hint": "Hint: Look up &lt;sup> tag. What does it do?",
     "edit": "",
-    "start_part": "<body>",
-    "correct_input": "<body>\\n    1<sup>2</sup> = 1\\n    <br />\\n    2<sup>2</sup> = 4\\n    <br />\\n    3<sup>2</sup> = 9\\n    <br />\\n    4<sup>2</sup> = 16\\n    <br />\\n    5<sup>2</sup> = 25\\n    <br />\\n    6<sup>2</sup> = 36\\n    <br />\\n    7<sup>2</sup> = 49\\n    <br />\\n    8<sup>2</sup> = 64\\n    <br />\\n    9<sup>2</sup> = 81\\n    <br />\\n    10<sup>2</sup> = 100\\n    </body>",
-    "end_part": "</body>"
+    "start_part": "&lt;body&gt;",
+    "correct_input": "&lt;body&gt;\n    1&lt;sup>2&lt;/sup> = 1\n    &lt;br />\n    2&lt;sup>2&lt;/sup> = 4\n    &lt;br />\n    3&lt;sup>2&lt;/sup> = 9\n    &lt;br />\n    4&lt;sup>2&lt;/sup> = 16\n    &lt;br />\n    5&lt;sup>2&lt;/sup> = 25\n    &lt;br />\n    6&lt;sup>2&lt;/sup> = 36\n    &lt;br />\n    7&lt;sup>2&lt;/sup> = 49\n    &lt;br />\n    8&lt;sup>2&lt;/sup> = 64\n    &lt;br />\n    9&lt;sup>2&lt;/sup> = 81\n    &lt;br />\n    10&lt;sup>2&lt;/sup> = 100\n    &lt;/body>",
+    "end_part": "&lt;/body>"
 }

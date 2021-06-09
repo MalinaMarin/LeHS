@@ -1,8 +1,8 @@
 {
-    "question": "Remove the transparency of the <img> element when the user hovers over it with the mouse pointer.",
+    "question": "Remove the transparency of the &lt;img&gt; element when the user hovers over it with the mouse pointer.",
     "hint": "Hint: Set the opacity property to 1.0.",
-    "edit": "<head>\\n    <style>\\n    img {\\n      opacity: 0.4;\\n    }\\n    </style>\\n    </head>\\n    <body>\\n    <img src=\"/images/ex8.jpg\" width=\"280\" height=\"280\">\\n    </body>",
+    "edit": "&lt;head&gt;\n    &lt;style&gt;\n    img {\n      opacity: 0.4;\n    }\n    &lt;/style&gt;\n    &lt;/head&gt;\n    &lt;body&gt;\n    &lt;img src=\"/images/ex8.jpg\" width=\"280\" height=\"280\"&gt;\n    &lt;/body&gt;",
     "start_part": "",
-    "correct_input": "<head>\\n    <style>\\n    img {\\n      opacity: 0.4;\\n    }\\n    img:hover {\\n      opacity: 1.0;\\n    }\\n    </style>\\n    </head>\\n    <body>\\n    <img src=\"/images/ex8.jpg\" width=\"280\" height=\"280\">\\n    </body>\\n",
+    "correct_input": "&lt;head&gt;\n    &lt;style&gt;\n    img {\n      opacity: 0.4;\n    }\n    img:hover {\n      opacity: 1.0;\n    }\n    &lt;/style&gt;\n    &lt;/head&gt;\n    &lt;body&gt;\n    &lt;img src=\"/images/ex8.jpg\" width=\"280\" height=\"280\"&gt;\n    &lt;/body&gt;\n",
     "end_part": ""
 }

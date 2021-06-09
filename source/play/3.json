@@ -1,8 +1,8 @@
 {
-    "question": "Display three different images. Skip two lines between each image. Each image should have a title.\\n The sources for the images are:\\n /images/ex3_1.jpg\\n /images/ex3_2.jpg\\n /images/ex3_3.jpg.\\n For the alt and title tags, use: Butterfly1, Butterfly2, Butterfly3.",
+    "question": "Display three different images. Skip two lines between each image. Each image should have a title.<br> The sources for the images are:<br> /images/ex3_1.jpg<br> /images/ex3_2.jpg<br> /images/ex3_3.jpg.<br> For the alt and title tags, use: Butterfly1, Butterfly2, Butterfly3.",
     "hint": "Hint: You can insert an image with the img tag.",
     "edit": "",
-    "start_part": "<body>",
-    "correct_input": "<body>\\n    <img src=\"/images/ex3_1.jpg\" alt=\"Butterfly1\" title=\"Butterfly1\" />\\n    <br /><br />\\n    <img src=\"/images/ex3_2.jpg\" alt=\"Butterfly2\" title=\"Butterfly2\" />\\n    <br /><br />\\n    <img src=\"/images/ex3_3.jpg\" alt=\"Butterfly3\" title=\"Butterfly3\" />\\n    </body>",
-    "end_part": "</body>"
+    "start_part": "&lt;body&gt;",
+    "correct_input": "&lt;body&gt;\n    &lt;img src=\"/images/ex3_1.jpg\" alt=\"Butterfly1\" title=\"Butterfly1\" /&gt;\n    &lt;br /&gt;&lt;br /&gt;\n    &lt;img src=\"/images/ex3_2.jpg\" alt=\"Butterfly2\" title=\"Butterfly2\" /&gt;\n    &lt;br /&gt;&lt;br /&gt;\n    &lt;img src=\"/images/ex3_3.jpg\" alt=\"Butterfly3\" title=\"Butterfly3\" /&gt;\n    &lt;/body&gt;",
+    "end_part": "&lt;/body&gt;"
 }

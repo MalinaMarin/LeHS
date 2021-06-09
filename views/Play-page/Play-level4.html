@@ -58,9 +58,9 @@
         <h1 class="level"> Level 4 </h1>
         <div class="instructuions-row">
              
-            <p id="instructions">Use the correct HTML attribute to make the second TH element span two rows. </p>
+            <p id="instructions"> </p>
             <button id="hint"><i class="fas fa-lightbulb"></i></button> 
-            <p class="hidden"  id="text-hint">No hints this time! </p>
+            <p class="hidden"  id="text-hint"> </p>
         </div>
         <div class="middle">
             <div class="editor">
@@ -96,22 +96,10 @@
                        <br>
                        15
                     </div>
-                    <pre id="before">&lt;table&gt;
-&lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;td&gt;John Doe&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;th
+                    <pre id="start">
                     </pre>
                     <textarea id="code" autofocus="" autocapitalize="none" style="height: 24px;"></textarea>
-                    <pre id="after">&gt;Phone&lt;/th&gt;
-&lt;td&gt;0762986114&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;0786400892&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
+                    <pre id="end">
                     </pre>
                     <button id="run" >Run</button>
                 </div>
@@ -168,5 +156,42 @@
 </div>
 <script src="./play.js"></script>
 <script src="../Navbar&footer/script.js"></script>
+<script>
+    (function () {
+               "use strict";
+               var load
+               load = function (url) {
+   
+                   var request;
+                   var q = document.getElementById("instructions");
+                   var hint = document.getElementById("text-hint");
+                   var start = document.getElementById("start");
+                   var end = document.getElementById("end");
+                   
+                   request = new XMLHttpRequest();
+   
+                   
+                   request.addEventListener("readystatechange", function (event) {
+   
+                       if (this.readyState == 4 && this.status == 200) {
+   
+                           var json = JSON.parse(this.responseText);
+                           q.innerHTML = json.question
+                           hint.innerHTML = json.hint
+                           start.innerHTML = json.start_part
+                           end.innerHTML = json.end_part
+                           
+                       }
+   
+                   });
+   
+                   request.open("GET", url);
+                   request.send(null);
+   
+               };
+   
+               load("../../source/play/4.json");
+           })();
+       </script>
 </body>
 </html>

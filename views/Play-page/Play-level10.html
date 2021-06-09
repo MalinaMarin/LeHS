@@ -58,10 +58,10 @@
         <h1 class="level"> Level 10 </h1>
         <div class="instructuions-row">
              
-            <p id="instructions">Specify that the animation of the &lt;div&gt; element should alternate between running forwards and backwards.
+            <p id="instructions">
                 </p>
             <button id="hint"><i class="fas fa-lightbulb"></i></button> 
-            <p class="hidden"  id="text-hint">Hint : Use the animation-direction property.</p>
+            <p class="hidden"  id="text-hint"></p>
         </div>
         <div class="middle">
             <div class="editor">
@@ -96,31 +96,9 @@
                        14
                        <br>
                     </div>
-                    <pre id="before"></pre>
-                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 300px;"><head>
-<style> 
-div {
-animation-name: example;
-position: relative;
-width: 150px;
-height: 150px;
-background-color: black;
-animation-duration: 4s;
-animation-iteration-count: infinite;
-}                 
-@keyframes example {
-0%   {background-color: purple; left:0px; top:0px;}
-25%  {background-color: blue; left:0px; top:200px;}
-50%  {background-color: purple; left:200px; top:200px;}
-75%  {background-color: blue; left:200px; top:0px;}
-100% {background-color: purple; left:0px; top:0px;}
-}
- </style>
- </head>
- <body>
- <div></div>
- </body></textarea>
-                    <pre id="after">
+                    <pre id="start"></pre>
+                    <textarea id="code" autofocus="" autocapitalize="none" style="height: 300px;"></textarea>
+                    <pre id="end">
                     </pre>
                     <button id="run" >Run</button>
                 </div>
@@ -177,5 +155,40 @@ animation-iteration-count: infinite;
 </div>
 <script src="./play.js"></script>
 <script src="../Navbar&footer/script.js"></script>
+<script>
+    (function () {
+               "use strict";
+               var load
+               load = function (url) {
+   
+                   var request;
+                   var q = document.getElementById("instructions");
+                   var hint = document.getElementById("text-hint");
+                   var code = document.getElementById("code");
+                   
+                   request = new XMLHttpRequest();
+   
+                   
+                   request.addEventListener("readystatechange", function (event) {
+   
+                       if (this.readyState == 4 && this.status == 200) {
+   
+                           var json = JSON.parse(this.responseText);
+                           q.innerHTML = json.question
+                           hint.innerHTML = json.hint
+                           code.innerHTML = json.edit
+                           
+                       }
+   
+                   });
+   
+                   request.open("GET", url);
+                   request.send(null);
+   
+               };
+   
+               load("../../source/play/10.json");
+           })();
+       </script>
 </body>
 </html>
