@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML&CSS</title>
+    <link rel="stylesheet" href="./stat.css">
+    <link rel="stylesheet" href="../Navbar&footer/footer.css">
+    <link rel="stylesheet" href="../Navbar&footer/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            <div class="nav-row">
+                <div class="nav-start">
+                    <div class="logo">
+                        <img src="../resources/logo.svg" alt="Logo">
+                    </div>
+                </div>
+                <button type="button" class="nav-toggler active">
+                    <span></span>
+                </button>
+                <div class="nav-right open" style="max-height: fit-content;">
+                    <div class="nav-center">
+                        <ul>
+                            <li><a href="../Learn&Practice-pages/learn.html"> Learn </a></li>
+                            <li><a href="../Learn&Practice-pages/practice.html"> Practice </a></li>
+                            <li><a href="../Level-Map/map.html"> Play </a></li>
+                            <li><a href="../leaderboard/leaderboard.html" class="active"> Leaderboard </a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-end" id="navend">
+                        <a id="menu-btn">
+                            Username
+                        </a>
+                        <button type="button" class="nav-toggler-submenu active">
+                            <span></span>
+                        </button>
+                        <div class="sub-menu open" id="submenu" style="max-height: fit-content;">
+                            <ul>
+                                <li><a id="exp"> Experience </a></li>
+                                <li><a id="coins"> Coins </a></li>
+                                <li><a href="../presenting-page/presenting_page.html" id="logout.btn"> Log out </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="../Navbar&footer/script.js"></script>
+    <div class="one-scroll">
+        <main>
+            <div class="rank_title">
+                <h1 id="rank"> You are #3 out of 123</h1>
+            </div>
+            <div class="charts">
+                <div style="height:20vh; width:30vw">
+                    <canvas id="user_chart"></canvas>
+                </div>
+                <div style="height:20vh; width:30vw">
+                    <canvas id="level_chart"></canvas>
+                </div>
+            </div>
+
+            <script>
+                const data = {
+                    labels: [
+                        'Beginner',
+                        'Intermediate',
+                        'Expert'
+                    ],
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: [80, 50, 30],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(75, 192, 192)',
+                            'rgb(255, 205, 86)'
+                        ]
+                    }]
+                };
+                const config = {
+                    type: 'polarArea',
+                    data: data,
+                    options: {}
+                };
+                var myChart = new Chart(
+                    document.getElementById('user_chart'),
+                    config
+                );
+
+                const data_level = {
+                    labels: [
+                        'Level'
+                    ],
+                    datasets: [{
+                        label: 'Level',
+                        data: [5],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)'
+                        ]
+                    }]
+                };
+                const config_level = {
+                    type: 'bar',
+                    data: data_level,
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    beginAtZero: false,
+                                    min: 1,
+                                    max: 10,
+                                    stepSize: 1
+                                }
+                            }]
+                        }
+                    }
+                };
+                var levelChart = new Chart(
+                    document.getElementById('level_chart'),
+                    config_level
+                );
+            </script>
+        </main>
+        <footer class="footer">
+            <div class="conatiner">
+                <div class="row">
+                    <div class="footer-col">
+                        <a class="logo">
+                            <img src="../resources/logo.svg" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="footer-col">
+                        <h3> Support </h3>
+                        <ul>
+                            <li><a href="../Footer-pages/FAQ.html" id="questions-btn"> FAQ </a></li>
+                            <li> <a href="../Footer-pages/FAQ.html" id="about-btn"> About us </a></li>
+                            <li><a href="../raport.html" id="report-btn"> Report </a></li>
+                            <li> <a href="../Footer-pages/privacy.html" id="privacy-btn"> Privacy policy </a></li>
+                            <li><a href="../Footer-pages/terms.html" id="terms-btn"> Terms of Service </a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3> Follow </h3>
+                        <ul>
+                            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook </a></li>
+                            <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram </a>
+                            </li>
+                            <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> Youtube </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="footer-copyright">
+                        <span> © 2021 LeHS. All rights reserved. </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

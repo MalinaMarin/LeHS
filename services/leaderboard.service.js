@@ -24,21 +24,42 @@ module.exports = {
     },
 
     getRank: async (xp) => {
-        const rank = await UserData.count({ "xp": { "$gt": xp } });
+        const rank = await UserData.count({ "xp": { "$gt": xp } }).exec() + 1;
         return rank;
     },
 
     getNumberOfPlayers: async () => {
-        return await UserData.count();
+        return await UserData.count().exec();
     },
 
-    getDiffcultyStats: async (practice_questions_solved, difficulty) => {
+    getDifficultyStatsPerUser: async (practice_questions_solved, difficulty) => {
         const howMany = await PracticeQuestion.count({ "difficulty": difficulty }).exec();
         let counter = 0;
         for (let i = 0; i < practice_questions_solved.length; i++){
-            var question = await PracticeQuestion.findOne({ id:practice_questions_solved[i]  })
-
+            var question = await PracticeQuestion.findOne({ id:practice_questions_solved[i] }).exec();
+            if(question.difficulty == difficulty)
+                counter++;
         }
+        return counter/howMany*100;
+    },
+    getGeneralDifficultyStats: async difficulty => {
+        const questions = await PracticeQuestion.find({ "difficulty": difficulty }).exec();
+        const howManyQuestions = questions.length;
+        let solvedQuestions = 0;
+        for(let i=0; i<howManyQuestions;i++){
+            solvedQuestions+=questions[i].solved_counter;
+        }
+        const howManyUsers = await UserData.count().exec();
+        var percentage = solvedQuestions*100/(howManyQuestions*howManyUsers);
+
+        return percentage;
+
+    },
+
+    getGeneralLevelStats: async level => {
+        const users = await UserData.count({ "current_level": { "$gt": level } }).exec();
+
+        return users;
     }
 
 }
