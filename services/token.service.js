@@ -15,6 +15,13 @@ const createRefreshToken = userId => {
 };
 
 
+const clearRefreshToken = () => {
+    return sign({ msg: "logout" }, process.env.REFRESH_TOKEN_SECRET, {
+      expiresIn: '0',
+    });
+};
+
+
 const sendAccessToken = (res, req, accesstoken) => {
 
     res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -35,5 +42,6 @@ module.exports = {
   createAccessToken,
   createRefreshToken,
   sendAccessToken,
-  sendRefreshToken
+  sendRefreshToken,
+  clearRefreshToken
 };

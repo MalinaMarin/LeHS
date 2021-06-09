@@ -36,7 +36,7 @@ const { getAllUserCredentials, createUserCredentials} = require('./controllers/T
 const  {createUser, registerGithubUser} = require('./controllers/user.controller');
 const { string } = require('joi');
 const { match } = require('assert');
-const { JwtRegister, JwtLogin} = require('./controllers/AuthJwt.Controller');
+const { JwtRegister, JwtLogin, JwtLogout} = require('./controllers/AuthJwt.Controller');
 const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
 const { register, login } = require('./controllers/Auth.Controller');
 
@@ -71,6 +71,10 @@ const server = http.createServer( async (req, res) => {
         JwtRegister(req, res);
        //register(req, res);
        //createUser(req, res);
+    }
+    else
+    if(newurl === '/logout'){
+        JwtLogout(req, res);
     }
     else
 

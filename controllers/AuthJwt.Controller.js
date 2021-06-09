@@ -3,7 +3,7 @@ const {hash, compare} = require('bcryptjs');
 const { getPostData } = require('../helpers/utils_fct');
 const { create, createGithub } = require("../services/user.service.js")
 const {User, UserCredentials} = require('../models/user_credentials');
-const {createAccessToken, createRefreshToken, sendAccessToken, sendRefreshToken} = require('../services/token.service');
+const {clearRefreshToken, createAccessToken, createRefreshToken, sendAccessToken, sendRefreshToken} = require('../services/token.service');
 module.exports =
 {
 
@@ -84,12 +84,10 @@ try {
        return res.end("Password is not correct!")
        }
     
-    //Create Refresh and Accesstoken
 
     const accesstoken = createAccessToken(user.id);
     const refreshtoken = createRefreshToken(user.id);
     
-    //Store Refreshtoken with user in db
     user.refreshtoken = refreshtoken;
     
     // Send token. Refreshtoken as a cookie and 
@@ -100,4 +98,19 @@ try {
    console.log(err);
   }
 }
+,
+
+JwtLogout: (_req, res) => 
+  {
+      try {
+       const clearedToken = clearRefreshToken();
+       sendRefreshToken(res, clearedToken);
+       res.writeHead(201, { 'Content-Type': 'application/json' })
+       return res.end("logged out.")  
+  
+} catch (err) {
+   console.log(err);
+  }
 }
+}
+
