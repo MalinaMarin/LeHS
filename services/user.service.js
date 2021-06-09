@@ -2,9 +2,9 @@ const {UserData} = require("../models/user_data.js");
 const {UserCredentials} = require("../models/user_credentials.js");
 const { v4: uuidv4} = require('uuid');
 const fetch = require('node-fetch');
+const localStorage = require('node-localstorage');
 //var gitdata;
-var token = require('../server');
-
+//var token = require('../server');
 module.exports = {
     create: (data, callback) => {
         let user_credentials = new UserCredentials({
@@ -33,18 +33,19 @@ module.exports = {
     },
 
     createGithub: (callback) => {
-        var access_token = token.access_token;
+        //var access_token = token.access_token;
+        var currentToken = localStorage.getItem("token");
         const options = {
             method: 'GET',
             headers: {
                 
-              Authorization: 'token ' + access_token
+              Authorization: 'token ' + currentToken
            }
           };
             fetch('https://api.github.com/user', options)
             .then(response => response.json())
             .then(data => {
-                console.log(access_token)
+                console.log("TOKEN  " + currentToken)
               //console.log(data.login);
               let gitdata = JSON.stringify({
                 'username': data.login,

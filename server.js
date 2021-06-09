@@ -4,6 +4,7 @@ const https = require('https');
 const url = require('url');
 const path = require('path');
 const querystring = require('querystring');
+const localStorage = require('node-localstorage');
 //var gitdata = require('./services/user.service');
 var access_token;
 //const cookieSession =require('cookie-session');
@@ -35,7 +36,7 @@ const { getAllUserCredentials, createUserCredentials} = require('./controllers/T
 const  {createUser, registerGithubUser} = require('./controllers/user.controller');
 const { string } = require('joi');
 const { match } = require('assert');
-
+const { JwtRegister} = require('./controllers/AuthJwt.Controller');
 const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
 
 // cookieSession({
@@ -43,7 +44,7 @@ const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
 // });
 
 
-const server = http.createServer( async (req, res) => {
+const server = http.createServer(  (req, res) => {
     console.log(req.url);
     var newurl = req.url;
     //var check = new RegExp("^login/github\\/callback(?:$|/)");
@@ -63,6 +64,9 @@ const server = http.createServer( async (req, res) => {
     //     createUser(req, res)
     // }
 
+    if(newurl === '/register%0A' && req.method === 'POST'){
+        JwtRegister(req, res);
+    }
 
      if(newurl === '/login/github'){
         // console.log(client_id);
@@ -95,9 +99,10 @@ const server = http.createServer( async (req, res) => {
         const codee = queryParameter.code;
         console.log("tHE CODE " + codee);
 
-    access_token = await getAccessToken(codee);
+    access_token = getAccessToken(codee);
+    localStorage.setItem("token", access_token)
     //console.log(access_token);
-  const user = await fetchGitHubUser(access_token);
+  const user =  fetchGitHubUser(access_token);
   console.log(user);
   if (user) {
     //req.session.access_token = access_token;
@@ -266,4 +271,4 @@ const PORT = process.env.PORT || 5000
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!!!`))
 
-exports.access_token = access_token;
+//exports.access_token = access_token;
