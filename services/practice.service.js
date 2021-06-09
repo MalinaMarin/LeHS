@@ -22,15 +22,6 @@ module.exports = {
         let coins = question.coins;
         console.log(coins);
         correct_value = await jsonReader(question.question_source).correct_answer;
-        //     , (err, question_data) => {
-        //     if (err) {
-        //         console.log(err)
-        //         return "error";
-        //     }
-        //     console.log(typeof question_data.correct_answer);
-        //     return question_data.correct_answer;
-
-        // })
         if (correct_value == "error")
             return -1;
         else if (correct_value === answer_value) {
