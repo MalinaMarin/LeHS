@@ -6,7 +6,7 @@ const path = require('path');
 const querystring = require('querystring');
 const localStorage = require('node-localstorage');
 //var gitdata = require('./services/user.service');
-var access_token;
+//var access_token;
 //const cookieSession =require('cookie-session');
 require('dotenv').config()
 require('./helpers/init_mongodb')
@@ -36,15 +36,15 @@ const { getAllUserCredentials, createUserCredentials} = require('./controllers/T
 const  {createUser, registerGithubUser} = require('./controllers/user.controller');
 const { string } = require('joi');
 const { match } = require('assert');
-const { JwtRegister} = require('./controllers/AuthJwt.Controller');
+const { JwtRegister, JwtLogin} = require('./controllers/AuthJwt.Controller');
 const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
+const { register, login } = require('./controllers/Auth.Controller');
 
 // cookieSession({
 //     secret: cookie_secret
 // });
 
-
-const server = http.createServer(  (req, res) => {
+const server = http.createServer( async (req, res) => {
     console.log(req.url);
     var newurl = req.url;
     //var check = new RegExp("^login/github\\/callback(?:$|/)");
@@ -63,10 +63,16 @@ const server = http.createServer(  (req, res) => {
     // else if(newurl === '/register' && req.method === 'POST') {
     //     createUser(req, res)
     // }
+    if(newurl === '/loginn'){
+        JwtLogin(req, res);
+    } else
 
-    if(newurl === '/register%0A' && req.method === 'POST'){
+    if(newurl === '/register'){
         JwtRegister(req, res);
+       //register(req, res);
+       //createUser(req, res);
     }
+    else
 
      if(newurl === '/login/github'){
         // console.log(client_id);
@@ -83,13 +89,10 @@ const server = http.createServer(  (req, res) => {
         res.end(JSON.stringify({ message: 'Mainpage!!!' }))
     } 
 
-    else if(req.url === '/dummy%0A' && req.method === 'POST'){
-        registerGithubUser(req, res)
-    } 
 
     else if(newurl.startsWith('/login/github/callback')){
         console.log("url gasit: " + newurl);
-        var github_data = null;
+        //var github_data = null;
        // var url_parts = url.parse(req.url, true);
         //var query = url_parts.query;
 
@@ -99,15 +102,15 @@ const server = http.createServer(  (req, res) => {
         const codee = queryParameter.code;
         console.log("tHE CODE " + codee);
 
-    access_token = getAccessToken(codee);
-    localStorage.setItem("token", access_token)
-    //console.log(access_token);
-  const user =  fetchGitHubUser(access_token);
+    var access_token = await getAccessToken(codee);
+   // localStorage.setItem("token", access_token)
+    console.log(access_token);
+  const user =  await fetchGitHubUser(access_token);
   console.log(user);
-  if (user) {
+ // if (user) {
     //req.session.access_token = access_token;
     //req.session.githubId = user.id;
-    registerGithubUser(res);
+    registerGithubUser(access_token, res);
 
 // const options = {
 //   method: 'GET',
@@ -162,13 +165,19 @@ const server = http.createServer(  (req, res) => {
 //   })
 
 res.writeHead(302,  {Location: `http://localhost:5000/mainpage` })
+// res.writeHead(302, {
+//     'Location': 'http://localhost:5000/mainpage',
+//     'Set-Cookie': 'token=' + access_token + '; Path=/'
+//   });
+
   res.end();
 
 
-  } else{
-    res.writeHead(404, { 'Content-Type': 'application/json' })
-    res.end(JSON.stringify({ message: 'Login did not succeed' }))
-  }
+ // }
+  // else{
+   // res.writeHead(404, { 'Content-Type': 'application/json' })
+    //res.end(JSON.stringify({ message: 'Login did not succeed' }))
+  //}
 }
    
   

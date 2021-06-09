@@ -1,6 +1,7 @@
 const createError = require('http-errors')
 const User = require('../models/user_credentials')
 const { authSchema } = require('../helpers/validation_schema')
+const { getPostData } = require('../helpers/utils_fct');
 const {
   signAccessToken,
   signRefreshToken,
@@ -11,10 +12,12 @@ const {
 module.exports = {
   register: async (req, res) => {
     try {
+      let body = await getPostData(req)
+      body = JSON.parse(body)
       // const { email, password } = req.body
       // if (!email || !password) throw createError.BadRequest()
-      const result = await authSchema.validateAsync(req.body)
-      const doesExist = await User.findOne({ email: result.email })
+      //const result = await authSchema.validateAsync(req.body)
+      const doesExist = await User.findOne({ email: body.email })
       if (doesExist)
         throw createError.Conflict(`${result.email} has already been registered`)
 
@@ -33,7 +36,7 @@ module.exports = {
   login: async (req, res) => {
     try {
       const result = await authSchema.validateAsync(req.body)
-      const user = await User.findOne({ email: result.email })
+      const user = await User.findOne({ username: result.username }).exec();
       if (!user) throw createError.NotFound('User not registered')
 
       const isMatch = await user.isValidPassword(result.password)

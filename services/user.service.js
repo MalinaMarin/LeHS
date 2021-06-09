@@ -32,15 +32,32 @@ module.exports = {
         });
     },
 
-    createGithub: (callback) => {
+    parseCookies: function (req) {
+        var list = {},
+          rc = req.headers.cookie;
+      
+        rc && rc.split(';').forEach(function (cookie) {
+          var parts = cookie.split('=');
+          list[parts.shift().trim()] = decodeURI(parts.join('='));
+        });
+      
+        return list;
+      },
+
+
+    createGithub: (access_token, callback) => {
         //var access_token = token.access_token;
-        var currentToken = localStorage.getItem("token");
+        //var currentToken = localStorage.getItem("token");
+
+       // const token = parseCookies(req).token;
+
         const options = {
             method: 'GET',
             headers: {
                 
-              Authorization: 'token ' + currentToken
-           }
+              Authorization: 'token ' + access_token
+           },
+           credentials: "include"
           };
             fetch('https://api.github.com/user', options)
             .then(response => response.json())
