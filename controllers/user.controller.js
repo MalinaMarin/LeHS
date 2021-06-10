@@ -66,8 +66,8 @@ module.exports =
                     // });
                 }
                 
-            res.writeHead(201, { 'Content-Type': 'application/json' })
-            return res.end(JSON.stringify(result))  
+                res.writeHead(302,  {Location: `http://localhost:5000/mainpage` })
+                res.end();
                 // return res.status(200).json({
                 //     success: 1,
                 //     message: "user successfully created"

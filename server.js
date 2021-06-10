@@ -73,6 +73,12 @@ const server = http.createServer( async (req, res) => {
         JwtLogin(req, res);
     } else
 
+    if(newurl === '/mainpage'){
+     res.writeHead(201, { 'Content-Type': 'application/json' })
+    res.end(JSON.stringify({ message: 'Mainpage Route.' }))
+    }
+    else
+
     if(newurl === '/register'){
         JwtRegister(req, res);
        //register(req, res);
@@ -125,6 +131,7 @@ const server = http.createServer( async (req, res) => {
     }
     else if(newurl === '/success'){
         registerGithubUser(req, res);
+    
     } else {
        // res.writeHead(404, { 'Content-Type': 'application/json' })
         //res.end(JSON.stringify({ message: 'Route Not Found' }))
