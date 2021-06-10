@@ -15,6 +15,9 @@ module.exports = {
             doc.save();
         });
     },
+    getAllQuestions: async () =>{
+        return await PracticeQuestion.find().exec();
+    },
 
     checkAnswer: async (question_id, answer_value) => {
         const question = await getQuestionById(question_id);

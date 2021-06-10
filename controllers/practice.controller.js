@@ -1,31 +1,42 @@
 const { getUserDataById } = require("../services/user.service.js")
-const { checkAnswer } = require("../services/practice.service.js")
+const { checkAnswer, getAllQuestions } = require("../services/practice.service.js")
 const { getPostData } = require('../helpers/utils_fct');
 const http = require('http');
 
 module.exports =
 {
+    getAllPractice: async (req, res) => {
+        try {
+            let practice = await getAllQuestions();
+            res.writeHead(200, { 'Content-Type': 'application/json' })
+            return res.end(JSON.stringify(practice));
+        }
+        catch (err) {
+            console.log(err);
+            res.writeHead(500, { 'Content-Type': 'application/json' })
+            res.end("An error occurred...");
+        }
+    },
     submitAnswer: async (req, res) => {
         try {
             let body = await getPostData(req)
             body = JSON.parse(body)
             const user = await getUserDataById(body.user_id);
-            if (user==null) {
+            if (user == null) {
                 res.writeHead(404, { 'Content-Type': 'application/json' })
-                return res.end("Ooups...User not found!") 
+                return res.end("Ooups...User not found!")
             }
-            if(user.practice_questions_solved.includes(question_id)){
-                res.writeHead(201, { 'Content-Type': 'application/json' })
-                return res.end("already answered this")
+            if (user.practice_questions_solved.includes(body.question_id)) {
+                res.writeHead(204, { 'Content-Type': 'application/json' })
             }
             const coins = await checkAnswer(body.question_id, body.answer_value);
             // console.log(coins);
             // console.log(typeof coins);
-            if(coins == -1){
+            if (coins == -1) {
                 res.writeHead(500, { 'Content-Type': 'application/json' })
                 return res.end("Error trying to parse the source")
             }
-            else if ( coins==0){
+            else if (coins == 0) {
                 res.writeHead(200, { 'Content-Type': 'application/json' })
                 return res.end(JSON.stringify(coins)) // Ooups..wrong answer! Try again"  
             }
@@ -39,15 +50,15 @@ module.exports =
             user.practice_questions_solved.push(body.question_id);
             console.log(user.coins);
 
-            user.save(function(err){
-                if(err){
+            user.save(function (err) {
+                if (err) {
                     console.log(err);
                     res.writeHead(500, { 'Content-Type': 'application/json' })
                     return res.end("An error occurred...")
                 }
-                else{
-                    res.writeHead(200, { 'Content-Type': 'application/json' })
-                    return res.end(JSON.stringify(user))  
+                else {
+                    res.writeHead(201, { 'Content-Type': 'application/json' })
+                    return res.end(JSON.stringify(user))
                 }
             });
         } catch (error) {
