@@ -17,7 +17,7 @@ const createRefreshToken = userId => {
 
 const clearRefreshToken = () => {
     return sign({ msg: "expired" }, process.env.REFRESH_TOKEN_SECRET, {
-      expiresIn: '0s',
+      expiresIn: '0',
     });
 };
 

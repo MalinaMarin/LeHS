@@ -60,7 +60,7 @@ try {
   }
   ,
 
-  JwtLogin:   async (req, res) => 
+  JwtLogin: async (req, res) => 
   {
     try {
   let body = await getPostData(req)
@@ -73,9 +73,7 @@ try {
      res.writeHead(500, { 'Content-Type': 'application/json' })
     return res.end("User does not exist!")
     }
-   // if (!user) throw createError.NotFound('User not registered')
-
-    
+   
     const valid = await compare(body.password, user.password);
 
     if (!valid){

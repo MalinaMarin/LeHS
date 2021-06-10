@@ -56,7 +56,7 @@ module.exports = {
                 
               Authorization: 'token ' + token
            },
-         //  credentials: "include"
+   
           };
 
             fetch('https://api.github.com/user', options)

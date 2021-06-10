@@ -31,17 +31,14 @@ var gitdata;
 // const AuthRoute = require('./routes/user_credentials');
 // const AuthController = require('./controllers/Auth.Controller');
 
- 
 const { getAllUserCredentials, createUserCredentials} = require('./controllers/Try.Controller')
 const  {createUser, registerGithubUser} = require('./controllers/user.controller');
-const { string } = require('joi');
-const { match } = require('assert');
 const { JwtRegister, JwtLogin, JwtLogout} = require('./controllers/AuthJwt.Controller');
 const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
 const { register, login } = require('./controllers/Auth.Controller');
 const{getAllPractice,submitAnswer} = require('./controllers/practice.controller.js');
 const{getLeaderboard} = require('./controllers/leaderboard.controller.js');
-const{callbackGithub, pass} = require('./helpers/githelper');
+const{callbackGithub, callbackGithubLogin, pass} = require('./helpers/githelper');
 
 
 // cookieSession({
@@ -54,30 +51,52 @@ const server = http.createServer( async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin','*');
     res.setHeader('Access-Control-Allow-Methods','OPTIONS,GET,POST,PUT');
     res.setHeader('Access-Control-Allow-Headers','*');
-    //var check = new RegExp("^login/github\\/callback(?:$|/)");
-    //console.log(check);
-   //var newurl = req.url.replace('%0A', "");
-   // console.log(newurl);
-    // if(req.method === 'GET') {
-    //     //res.writeHead(req.url);
-    //     getAllUserCredentials(req, res);
-    //     var urll = req.url;
-    //     var x = encodeURIComponent(req.url);
-    //     console.log(x);
-    //     const urlData = url.parse(req.url, true);
-    //     res.end(JSON.stringify({urldata: newurl}));
-    // } 
-    // else if(newurl === '/register' && req.method === 'POST') {
-    //     createUser(req, res)
-    // }
-    if(newurl === '/loginn'){
-        JwtLogin(req, res);
-    } else
+
+     if(newurl.startsWith('/register/github/callback')){
+        let baseURI = url.parse(req.url, true);
+        let path = baseURI.pathname.split('/');
+        let queryParameter = baseURI.query;
+        const codee = queryParameter.code;
+        console.log("tHE CODE serverside" + codee);
+         callbackGithub(res, codee);
+    }
+    else
+
+    if(newurl.startsWith('/login/github/callback')){
+        let baseURI = url.parse(req.url, true);
+        let path = baseURI.pathname.split('/');
+        let queryParameter = baseURI.query;
+        const codee = queryParameter.code;
+        console.log("tHE CODE serverside" + codee);
+         callbackGithubLogin(res, codee);
+    } 
+    else
+
+    if(newurl === '/register/github'){
+       // console.log(client_id);
+       // console.log(client_secret);
+        
+       const redirect_uri2 = 'http://localhost:5000/register/github/callback';
+       var urll = `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri2}`;
+       res.writeHead(302,  {Location: `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri2}` })
+       res.end();
+   }
+
+    else
+
+    if(newurl === '/login/github'){
+        const redirect_uri = 'http://localhost:5000/login/github/callback';
+        var urll = `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}`;
+        res.writeHead(302,  {Location: `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}` })
+        res.end();
+    } 
+    else
 
     if(newurl === '/mainpage'){
      res.writeHead(201, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify({ message: 'Mainpage Route.' }))
     }
+
     else
 
     if(newurl === '/register'){
@@ -99,33 +118,7 @@ const server = http.createServer( async (req, res) => {
     if(newurl === '/logout'){
         JwtLogout(req, res);
     }
-    else
-
-     if(newurl === '/login/github'){
-        // console.log(client_id);
-        // console.log(client_secret);
-         
-        const redirect_uri = 'http://localhost:5000/login/github/callback';
-        var urll = `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}`;
-        res.writeHead(302,  {Location: `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}` })
-        res.end();
-    }
- 
-
-    else if(newurl.startsWith('/login/github/callback')){
-        let baseURI = url.parse(req.url, true);
-        let path = baseURI.pathname.split('/');
-        let queryParameter = baseURI.query;
-        const codee = queryParameter.code;
-        console.log("tHE CODE serverside" + codee);
-         callbackGithub(res, codee);
-        // registerGithubUser(res);
-       // console.log("server res" + res)
-       // var data = res;
-      // callbackGithub(codee, res);
       
-
-  }
 
   else if(newurl === '/logout'){
         if(req.session) req.session = null;
@@ -136,7 +129,12 @@ const server = http.createServer( async (req, res) => {
     else if(newurl === '/success'){
         registerGithubUser(req, res);
     
-    } else {
+    }
+
+    else if(newurl === '/loginn'){
+        JwtLogin(req, res);
+    }
+     else {
        // res.writeHead(404, { 'Content-Type': 'application/json' })
         //res.end(JSON.stringify({ message: 'Route Not Found' }))
     }
