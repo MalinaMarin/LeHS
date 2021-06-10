@@ -39,6 +39,7 @@ const { register, login } = require('./controllers/Auth.Controller');
 const{getAllPractice,submitAnswer} = require('./controllers/practice.controller.js');
 const{getLeaderboard} = require('./controllers/leaderboard.controller.js');
 const{callbackGithub, callbackGithubLogin, pass} = require('./helpers/githelper');
+const { getLevels } = require('./controllers/map.controller');
 
 
 // cookieSession({
@@ -110,6 +111,10 @@ const server = http.createServer( async (req, res) => {
     else if(newurl === '/all/practice' && req.method === 'GET'){
         getAllPractice(req,res);
     }
+    else if(newurl === '/all/levels' && req.method === 'GET'){
+        getLevels(req,res);
+    }
+
 
      else if(newurl === '/practice/submit' && req.method === 'POST'){
         submitAnswer(req,res);
@@ -224,7 +229,7 @@ function getData(req) {
 //     });
 // }
 
-const PORT = process.env.PORT || 5500
+const PORT = process.env.PORT || 5000
 
 server.listen(PORT, () => console.log(`Server listening on port ${PORT}!!!`))
 

@@ -5,8 +5,8 @@ async function getData() {
         .then((res) => res.json())
         .then((response) => { console.log(response); data = response; })
 }
-localStorage.setItem("user_id","131a593e-ada7-4f8e-94b9-39e48bd75ed0");
-localStorage.setItem("user_coins",0);
+// localStorage.setItem("user_id","131a593e-ada7-4f8e-94b9-39e48bd75ed0");
+// localStorage.setItem("user_coins",0);
 // localStorage.setItem("practice_questions_answered")
 
 async function populate() {
@@ -107,6 +107,10 @@ function status(response)
             console.log(response);
             return Promise.reject(new Error ("Error trying to parse the source"))
         }
+    else{
+        console.log(response);
+        return Promise.reject(new Error ("Unexpected error"))
+    }
 }
 
 
@@ -122,7 +126,7 @@ await fetch("http://localhost:5000/practice/submit", {
         "answer_value":answer
     })
 })
-
+.then(status)
 .then((res) => res.json())
 .then((response) => {
     localStorage.setItem("user_coins",response.coins)
