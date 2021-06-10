@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="../Navbar&footer/footer.css">
     <link rel="stylesheet" href="../Navbar&footer/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="./leaderboard.js"></script>
 
 </head>
 
-<body>
+<body onload="getLeaderboard()">
     <header class="header">
         <div class="nav-container">
             <div class="nav-row">
@@ -109,8 +110,8 @@
                             <label id="progress-label">My Progress</label>
                             <div class="progress-circle">
                                 <svg>
-                                  <circle cx="70" cy="70" r="60"></circle>
-                                  <circle cx="70" cy="70" r="60"></circle>
+                                  <circle id="circle" cx="70" cy="70" r="60"></circle>
+                                  <circle id="percentage_circle" cx="70" cy="70" r="60"></circle>
                                 </svg>
                                 <div class="percentage">
                                   <h2 id="progress-number">90<span>%</span></h2>

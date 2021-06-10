@@ -211,15 +211,18 @@ svg circle{
     stroke-width: 10;
     stroke:#000;
     transform: translate(5px, 5px);
+    transition: stroke-dashoffset 1s linear;
     stroke-dasharray: calc(2*3.14*60); /* 2*PI*radius */
 }
 svg circle:nth-child(1){
     stroke-dashoffset: 0;
-    stroke:var(--light-pink);
+    stroke:var(--pink);
+
 } 
 svg circle:nth-child(2){
     stroke-dasharray: calc(2*3.14*60*90/100); /* 2*PI*radius*percentage*/
-    stroke:var(--pink);
+    stroke:var(--light-pink);
+
 }
 .percentage{
     position:absolute;
