@@ -3,6 +3,6 @@
     "hint": "Hint: Look up &lt;sup> tag. What does it do?",
     "edit": "",
     "start_part": "&lt;body&gt;",
-    "correct_input": "&lt;body&gt;\n    1&lt;sup>2&lt;/sup> = 1\n    &lt;br />\n    2&lt;sup>2&lt;/sup> = 4\n    &lt;br />\n    3&lt;sup>2&lt;/sup> = 9\n    &lt;br />\n    4&lt;sup>2&lt;/sup> = 16\n    &lt;br />\n    5&lt;sup>2&lt;/sup> = 25\n    &lt;br />\n    6&lt;sup>2&lt;/sup> = 36\n    &lt;br />\n    7&lt;sup>2&lt;/sup> = 49\n    &lt;br />\n    8&lt;sup>2&lt;/sup> = 64\n    &lt;br />\n    9&lt;sup>2&lt;/sup> = 81\n    &lt;br />\n    10&lt;sup>2&lt;/sup> = 100\n    &lt;/body>",
+    "correct_input": "&lt;body&gt;    1<sup>2</sup> = 1    <br />    2<sup>2</sup> = 4    <br />    3<sup>2</sup> = 9    <br />   4<sup>2</sup> = 16    <br />   5<sup>2</sup> = 25    <br />   6<sup>2</sup> = 36    <br />   7<sup>2</sup> = 49    <br />   8<sup>2</sup> = 64    <br />   9<sup>2</sup> = 81    <br />   10<sup>2</sup> = 100&lt;/body>",
     "end_part": "&lt;/body>"
 }

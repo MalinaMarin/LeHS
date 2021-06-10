@@ -49,7 +49,7 @@ async function addContent(i, j, arrow_direction, level_number) {
     button.setAttribute("id", "button_" + level_number);
     if (localStorage.getItem("user_level") > level_number)
         var lock = "unlocked completed"
-    else if (localStorage.getItem("user_level") === level_number)
+    else if (localStorage.getItem("user_level") == level_number)
         var lock = "unlocked"
     else
         var lock = "locked"
@@ -91,33 +91,43 @@ async function loadMap() {
     console.log(data)
 
     document.getElementById("button_1").addEventListener("click", function () {
+        if(document.getElementById("button_1").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level1.html";
     });
     document.getElementById("button_2").addEventListener("click", function () {
+        if(document.getElementById("button_2").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level2.html";
     });
     document.getElementById("button_3").addEventListener("click", function () {
+        if(document.getElementById("button_3").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level3.html";
     });
     document.getElementById("button_4").addEventListener("click", function () {
+        if(document.getElementById("button_4").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level4.html";
     });
     document.getElementById("button_5").addEventListener("click", function () {
+        if(document.getElementById("button_5").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level5.html";
     });
     document.getElementById("button_6").addEventListener("click", function () {
+        if(document.getElementById("button_6").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level6.html";
     });
     document.getElementById("button_7").addEventListener("click", function () {
+        if(document.getElementById("button_7").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level7.html";
     });
     document.getElementById("button_8").addEventListener("click", function () {
+        if(document.getElementById("button_8").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level8.html";
     });
     document.getElementById("button_9").addEventListener("click", function () {
+        if(document.getElementById("button_9").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level9.html";
     });
     document.getElementById("button_10").addEventListener("click", function () {
+        if(document.getElementById("button_10").getAttribute("class")!=="grid-btn locked")
         location.href = "../Play-page/Play-level10.html";
     });
 

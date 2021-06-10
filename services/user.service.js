@@ -97,8 +97,8 @@ module.exports = {
         return user;
     },
 
-    updateUserData : (column_name, current, new_data) => {
-        UserData.findOne( {[column_name]: current}, function (err, doc){
+    updateUserData : async (column_name, user_id, new_data) => {
+        await UserData.findOne( {id: user_id}, function (err, doc){
             doc[column_name] = new_data;
             doc.save();
           });
