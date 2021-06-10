@@ -39,6 +39,9 @@ const { match } = require('assert');
 const { JwtRegister, JwtLogin, JwtLogout} = require('./controllers/AuthJwt.Controller');
 const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
 const { register, login } = require('./controllers/Auth.Controller');
+const{getAllPractice,submitAnswer} = require('./controllers/practice.controller.js');
+
+
 
 // cookieSession({
 //     secret: cookie_secret
@@ -47,6 +50,9 @@ const { register, login } = require('./controllers/Auth.Controller');
 const server = http.createServer( async (req, res) => {
     console.log(req.url);
     var newurl = req.url;
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader('Access-Control-Allow-Methods','OPTIONS,GET,POST,PUT');
+    res.setHeader('Access-Control-Allow-Headers','*');
     //var check = new RegExp("^login/github\\/callback(?:$|/)");
     //console.log(check);
    //var newurl = req.url.replace('%0A', "");
@@ -71,6 +77,13 @@ const server = http.createServer( async (req, res) => {
         JwtRegister(req, res);
        //register(req, res);
        //createUser(req, res);
+    }
+     else if(newurl === '/all/practice' && req.method === 'GET'){
+        getAllPractice(req,res);
+    }
+
+     else if(newurl === '/practice/submit' && req.method === 'POST'){
+        submitAnswer(req,res);
     }
     else
     if(newurl === '/logout'){

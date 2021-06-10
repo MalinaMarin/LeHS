@@ -28,6 +28,7 @@ module.exports =
             }
             if (user.practice_questions_solved.includes(body.question_id)) {
                 res.writeHead(204, { 'Content-Type': 'application/json' })
+                return res.end("Already answered!")
             }
             const coins = await checkAnswer(body.question_id, body.answer_value);
             // console.log(coins);
