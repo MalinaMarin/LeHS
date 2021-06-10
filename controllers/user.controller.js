@@ -1,6 +1,6 @@
 const { hashSync, genSaltSync, compareSync } = require("bcrypt");
 const { create, createGithub } = require("../services/user.service.js")
-const { getPostData } = require('../helpers/utils_fct');
+const { getPostData, parseCookies } = require('../helpers/utils_fct');
 const http = require('http');
 
 module.exports =
@@ -43,13 +43,20 @@ module.exports =
         }
     },
 
-    registerGithubUser: async (res) => {
+        registerGithubUser: async (req, res) => {
+        const token = parseCookies(req).gittoken;
+        console.log("in controller.. token is " + token);
+ //res.end();
+//req.session.access_token = access_token;
+//req.session.githubId = user.id;
+
          //const body = req.body;
         try {
+            
             // let body = await getPostData(req)
             // console.log("this is body "  + body);
             // body = JSON.parse(body)
-            createGithub((err, result) => {
+            createGithub(token, (err, result) => {
                 if (err) {
                     res.writeHead(500, { 'Content-Type': 'application/json' })
                     return res.end("An error occurred...") 
@@ -59,8 +66,8 @@ module.exports =
                     // });
                 }
                 
-            res.writeHead(201, { 'Content-Type': 'application/json' })
-            return res.end(JSON.stringify(result))  
+                res.writeHead(302,  {Location: `http://localhost:5000/mainpage` })
+                res.end();
                 // return res.status(200).json({
                 //     success: 1,
                 //     message: "user successfully created"
@@ -69,5 +76,7 @@ module.exports =
         } catch (error) {
             console.log(error)
         }
-    }
+    },
+
+
 }

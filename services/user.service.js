@@ -2,6 +2,7 @@ const {UserData} = require("../models/user_data.js");
 const {UserCredentials} = require("../models/user_credentials.js");
 const { v4: uuidv4} = require('uuid');
 const fetch = require('node-fetch');
+const { getPostData, parseCookies } = require('../helpers/utils_fct');
 const localStorage = require('node-localstorage');
 //var gitdata;
 //var token = require('../server');
@@ -32,43 +33,37 @@ module.exports = {
         });
     },
 
-    parseCookies: function (req) {
-        var list = {},
-          rc = req.headers.cookie;
+    // parseCookies: function (req) {
+    //     var list = {},
+    //       rc = req.headers.cookie;
       
-        rc && rc.split(';').forEach(function (cookie) {
-          var parts = cookie.split('=');
-          list[parts.shift().trim()] = decodeURI(parts.join('='));
-        });
+    //     rc && rc.split(';').forEach(function (cookie) {
+    //       var parts = cookie.split('=');
+    //       list[parts.shift().trim()] = decodeURI(parts.join('='));
+    //     });
       
-        return list;
-      },
+    //     return list;
+    //   },
 
 
-    createGithub: (access_token, callback) => {
+    createGithub: (token, callback) => {
         //var access_token = token.access_token;
         //var currentToken = localStorage.getItem("token");
-
-       // const token = parseCookies(req).token;
-
+        console.log("token from create fct in service" + token);
         const options = {
             method: 'GET',
             headers: {
                 
-              Authorization: 'token ' + access_token
+              Authorization: 'token ' + token
            },
-           credentials: "include"
+         //  credentials: "include"
           };
+
             fetch('https://api.github.com/user', options)
             .then(response => response.json())
             .then(data => {
-                console.log("TOKEN  " + currentToken)
+                //console.log("TOKEN  " + token)
               //console.log(data.login);
-              let gitdata = JSON.stringify({
-                'username': data.login,
-                'email': data.email
-             })
-             console.log(gitdata);
                let user_credentials = new UserCredentials({
                 id: uuidv4(),
                 username: data.login,
@@ -79,7 +74,7 @@ module.exports = {
 
             var user_data = new UserData({
             id: user_credentials.id,
-            username: data.username,
+            username: data.login,
             current_level: 1,
             coins: 0,
             xp: 0,
