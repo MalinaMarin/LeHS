@@ -23,6 +23,31 @@ main {
     align-items: center;
     justify-content: center;
 }
+iframe{
+  height: 375px;
+  width: 530px;
+  margin-left: -40px;
+  margin-top:-10px;
+  border:0px;
+}
+
+#hint_coins{
+  display:none;
+  background-color: var(--gray);
+  color: var(--white);
+  position: absolute;
+ right: 1em;
+ align-content: flex-end;
+ text-align: center;
+margin-top:2.5em;
+border-radius: 3px;
+padding:2px;
+
+}
+#hint:hover + #hint_coins{
+  display:block !important;
+  
+} 
 .one-scroll{
     overflow-y: scroll;
     width: 100%;
@@ -44,21 +69,21 @@ main {
     text-align: center;
     margin-top: 0.5em;
   }
-  .instructuions-row{
+
+  .instructions-row{
       display: flex;
       flex-wrap: wrap;
       position:relative;
       padding: 25px;
-      
+      flex-direction: column;
   }
-  .instructuions-row p{
+  .instructions-row p{
       color: var(--black);
   }
-  #instructuions{
-      position: absolute;
-      left:1em;
-      margin-right: 1em;
-      width: 70%;      
+  #instructions{
+     align-content: justify;
+     width:85%;
+        
   }
 #hint{
     right: 1em;
@@ -176,13 +201,13 @@ main {
       margin-top: 2em;
   }
   #submit{
-      position: absolute;
+      
       align-content: center;
       cursor: pointer;
       text-align: center;
       justify-content: center;
       margin: auto;
-      
+      align-self: center;
   }
   .middle{
     display: flex;
@@ -218,9 +243,10 @@ main {
     }
     .editor,.result{
         margin-left: 0em;
+        margin-right: 2em;
     }
     #instructuions{
       width: 50%;
     }
-
+    
   }
