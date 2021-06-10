@@ -31,10 +31,10 @@ const sendAccessToken =  (res, req, accesstoken) => {
 
 const sendRefreshToken = (res, token) => {
 
-  res.writeHead(301, {
+  res.writeHead(201, {
     'Set-Cookie': 'refreshtoken=' + token,
     //'Location': '/loginn'
-    'Content-Type': 'text/plain'
+    //'Content-Type': 'text/plain'
   });
 
 

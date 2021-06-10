@@ -28,3 +28,36 @@ html,body{
     display: flex;
     justify-content: space-between;
 }
+#rank{
+    width: 100%;
+    text-align: center;
+}
+#user_chart{
+    margin-left:5vh;
+}
+#level_chart{
+   margin-right:20vh;
+    margin-top:10vh;
+}
+
+@media(max-width:1000px)
+{
+    .charts{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #rank{
+        width: 100%;
+        text-align: center;
+    }
+    .levelchart{
+        margin-bottom:300px;
+    }
+    canvas{
+        aspect-ratio:400/400;
+    }
+    
+}

@@ -1,4 +1,3 @@
-
 function status(response)
 {
     

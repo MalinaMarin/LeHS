@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn HTML&CSS</title>
+    <!-- <link rel="shortcut icon" href="#"> -->
     <link rel="stylesheet" href="./login.css">
 </head>
 
@@ -18,47 +19,17 @@
             <form action="#">
                 <div class="data">
                     <label>Username</label>
-                    <input type="text" required>
+                    <input type="text" id="username" required>
                 </div>
                 <div class="data">
                     <label>Password</label>
-                    <input type="password" required>
+                    <input type="password" id="password" required>
                 </div>
                 <div class="forgot-pass">
                     <a href="./forgot.html">Forgot Password?</a>
                 </div>
                 <div class="btn">
-                    <button onclick="goToPage();">login</button>
-                    <script>
-                        function goToPage() {
-                            //console.log("i am here");
-                            //const {whereTo} = require('../presenting_page/presenting_page.js');
-                            var whereTo=3;//by default goes to map now, will redirect diferently in backend
-                            switch (whereTo) {
-                                case 1: {
-                                    location.href = "../Learn&Practice-pages/learn.html";
-                                    break;
-                                }
-                                case 2: {
-                                    location.href = "../Learn&Practice-pages/practice.html";
-                                    break;
-                                }
-                                case 3: {
-                                    location.href = "../Level-Map/map.html";
-                                    break;
-                                }
-                                case 4: {
-                                    location.href = "../leaderboard/leaderboard.html";
-                                    break;
-                                }
-                                default: {
-                                    location.href = "../Level-Map/map.html";
-                                    break;
-                                }
-
-                            }
-                        }
-                    </script>
+                    <button onclick="login()">login</button>
                 </div>
                 <div class="signup-link">Not a member? <a href="./signup.html">Signup now</a></div>
             </form>
@@ -68,6 +39,7 @@
             </div>
         </div>
     </div>
+    <script src="./login.js"></script>
 </body>
 
 </html>

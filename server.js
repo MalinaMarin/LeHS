@@ -124,13 +124,6 @@ const server = http.createServer( async (req, res) => {
         JwtLogout(req, res);
     }
       
-
-  else if(newurl === '/logout'){
-        if(req.session) req.session = null;
-        res.writeHead(302,  {Location: `http://localhost:5000` })
-        res.end();
-
-    }
     else if(newurl === '/success'){
         registerGithubUser(req, res);
     

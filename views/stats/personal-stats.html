@@ -112,7 +112,6 @@
 
 
                         }
-
                     }
                 };
 
@@ -123,16 +122,13 @@
 
                 const data_level = {
                     labels: [
-                        'Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5', 'Level 6', 'Level 7', 'Level 8', 'Level 9', 'Level 10'
+                        'Level'
                     ],
                     datasets: [{
-
-                        data: [100, 122, 40, 60, 70, 90, 200, 40, 55, 185],
+                        label: 'Level',
+                        data: [5],
                         backgroundColor: [
-                            'rgb(79, 79, 81,0.7)', 'rgb(245, 143, 124,0.8)', 'rgb(42, 161, 255,0.7)',
-                            'rgb(79, 79, 81,0.4)', 'rgb(245, 143, 124,0.6)', 'rgb(42, 161, 255,0.4)',
-                            'rgb(79, 79, 81,0.9)', 'rgb(245, 143, 124,0.9)', 'rgb(42, 161, 255,0.9)',
-                            'rgb(79, 79, 81,0.6)'
+                            '#2aa1ff'
                         ]
                     }]
                 };
@@ -140,11 +136,8 @@
                     type: 'bar',
                     data: data_level,
                     options: {
-                        legend: {
-                            display: false
-                        },
                         scales: {
-                            xAxes: [{
+                            yAxes: [{
                                 display: true,
                                 ticks: {
                                     beginAtZero: false,
@@ -152,28 +145,8 @@
                                     max: 10,
                                     stepSize: 1
                                 }
-                            }],
-                            yAxes: [{
-                                display: true,
-                                ticks: {
-                                    beginAtZero: false,
-                                    min: 0,
-                                    max: 300,
-                                    stepSize: 50
-                                }
                             }]
-                        },
-                        tooltips: {
-                            callbacks: {
-                                label: function (tooltipItem, data) {
-                                    return data['labels'][tooltipItem['index']] + ': ' + data['datasets'][0]['data'][tooltipItem['index']] + ' users';
-                                }
-                            }
-
-
-
                         }
-
 
                     }
                 };
