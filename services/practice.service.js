@@ -34,19 +34,6 @@ module.exports = {
             question.save();
             return coins;
         }
-        // else {
-        //     console.log(correct_value);
-        //     console.log(answer_value);
-        // }
         return 0;
-
     }
-    //     submitAnswer: (data, callback) => {
-    //         // const coins = this.checkAnswer(data.question_id, data.answer_value)
-    //         // if ( coins == null)
-    //         //     return false;
-    //         // else {
-    //         //     const user = UserData.getU
-    //         // }
-    //     }
 }

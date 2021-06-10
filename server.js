@@ -40,6 +40,7 @@ const{getAllPractice,submitAnswer} = require('./controllers/practice.controller.
 const{getLeaderboard} = require('./controllers/leaderboard.controller.js');
 const{callbackGithub, callbackGithubLogin, pass} = require('./helpers/githelper');
 const { getLevels } = require('./controllers/map.controller');
+const { getLevel, submitLevel, clickOnHint } = require('./controllers/play.controller');
 
 
 // cookieSession({
@@ -119,6 +120,19 @@ const server = http.createServer( async (req, res) => {
      else if(newurl === '/practice/submit' && req.method === 'POST'){
         submitAnswer(req,res);
     }
+    else if(newurl === '/play/submit' && req.method === 'POST'){
+        submitLevel(req,res);
+    }
+    else if(newurl === '/play/hint' && req.method === 'POST'){
+        clickOnHint(req,res);
+    }
+    else if(newurl.startsWith('/get/level')){
+        let baseURI = url.parse(req.url, true);
+        let path = baseURI.pathname.split('/');
+        let queryParameter = baseURI.query;
+        const level_id = queryParameter.code;
+         getLevel(level_id, res);
+    } 
     else
     if(newurl === '/logout'){
         JwtLogout(req, res);

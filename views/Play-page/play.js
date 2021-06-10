@@ -7,12 +7,14 @@ let submit_clickable = false;
 let data;
 
 async function getData(level) {
-    await fetch("http://localhost:5000/get/level" +"?id="+level;)
+    await fetch("http://localhost:5000/get/level" +"?id="+level)
         .then((res) => res.json())
         .then((response) => { console.log(response); data = response; })
 }
-function load(url, level_id) {
+async function load(url, level_id) {
 
+    await getData(level_id);
+    document.getElementById("hint_coins").textContent = data.hint_cost + " coins";
     var request;
     var q = document.getElementById("instructions");
     var hint = document.getElementById("text-hint");
