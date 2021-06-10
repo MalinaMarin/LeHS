@@ -122,7 +122,7 @@ await fetch("http://localhost:5000/practice/submit", {
         "answer_value":answer
     })
 })
-.then(status)
+
 .then((res) => res.json())
 .then((response) => {
     localStorage.setItem("user_coins",response.coins)
