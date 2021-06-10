@@ -3,6 +3,6 @@
     "hint": "No hints this time!",
     "edit": "",
     "start_part": "&lt;table&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Name&lt;/th&gt;\n      &lt;td&gt;John Doe&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th ",
-    "correct_input": "&lt;table&gt;\n    &lt;tr&gt;\n      &lt;th&gt;Name&lt;/th&gt;\n      &lt;td&gt;John Doe&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;th rowspan=\"2\"&gt;Phone&lt;/th&gt;\n      &lt;td&gt;0762986114&lt;/td&gt;\n    &lt;/tr&gt;\n    &lt;tr&gt;\n      &lt;td&gt;0786400892&lt;/td&gt;\n    &lt;/tr&gt;\n  &lt;/table&gt;",
+    "correct_input": "&lt;table&gt;    &lt;tr&gt;      &lt;th&gt;Name&lt;/th&gt;      &lt;td&gt;John Doe&lt;/td&gt;    &lt;/tr&gt;    &lt;tr&gt;      &lt;th rowspan=\"2\"&gt;Phone&lt;/th&gt;      &lt;td&gt;0762986114&lt;/td&gt;   &lt;/tr&gt;    &lt;tr&gt;      &lt;td&gt;0786400892&lt;/td&gt;    &lt;/tr&gt;  &lt;/table&gt;",
     "end_part": "&gt;Phone&lt;/th&gt;\n    &lt;td&gt;0762986114&lt;/td&gt;\n  &lt;/tr&gt;\n  &lt;tr&gt;\n    &lt;td&gt;0786400892&lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;\n"
 }

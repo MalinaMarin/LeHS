@@ -3,6 +3,6 @@
     "hint": "Hint: What attributes does the &lt;a&gt; tag have? We'll definitely need the href one.",
     "edit": "",
     "start_part": "&lt;body&gt;",
-    "correct_input": "&lt;body&gt;\n    &lt;a href=\"http://www.google.com\" target=\"_blank\"&gt;\n    &lt;img src=\"/images/ex2.jpg\" alt=\"Flowers\" /&gt;\n    &lt;/a&gt;\n    &lt;/body&gt;\n    &lt;p&gt;\n    Click on the image to be taken to the Google search engine.\n    &lt;/p&gt;\n",
+    "correct_input": "&lt;body&gt;    <a href=\"http://www.google.com\" target=\"_blank\">   <img src=\"/images/ex2.jpg\" alt=\"Flowers\" >    </a>    &lt;/body&gt;   &lt;p&gt;   Click on the image to be taken to the Google search engine.    &lt;/p&gt;",
     "end_part": "&lt;/body&gt; \n &lt;p&gt; \n Click on the image to be taken to the Google search engine.\n &lt;/p&gt;"
 }
