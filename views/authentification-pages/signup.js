@@ -8,11 +8,6 @@ function status(response)
         return Promise.resolve(response);
         
     }
-    // else if(response.status===204)
-    //     {
-    //         console.log(response);
-    //         return Promise.reject(new Error ("Already answered this"));
-    //     }
     else
      if(response.status===404)
         {
@@ -64,10 +59,6 @@ async function register() {
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
  
-    // console.log( username );
-    // console.log( email );
-    // console.log(password );
-    // console.log( confirmPassword );
    await fetch('http://localhost:5000/register', {
       "method" : 'POST',
       "body" : JSON.stringify({
@@ -78,30 +69,16 @@ async function register() {
       }),
     })
     .then(status)
-    //.then((res) => {res.json();
-    // })
-    //.then((response) => {
-       // localStorage.setItem("user_data",response.)
-       // console.log(localStorage.getItem("user_coins"))
-    //})
+    .then((res) => res.json())
+    .then((response) => {console.log(response);
+        localStorage.setItem("user_id", response.id);
+        localStorage.setItem("username", response.username);
+        localStorage.setItem("user_xp", response.xp);
+        localStorage.setItem("user_coins", response.coins);
+        localStorage.setItem("user_level", response.current_level);
+        localStorage.setItem("user_practice", response.practice_questions_solved);
+        goToPage();
+    })
+    .catch((err) => alert(err))
 
-    .then((response) => {
-      console.log(response.json());
-     })
-
-    //.catch((err) => alert(err))
-
-
-    // if (!result.error) {
-    //   console.log(result.message);
-    //  // navigate('/');
-    // } else {
-    //   console.log(result.error);
-    // }
-  }
-
-  // window.register = function () {
-  //  // parent.innerHTML = html;
-  //   const form = document.getElementById('signup_btn');
-  //   form.addEventListener('submit', register);
-  // };
+    }
