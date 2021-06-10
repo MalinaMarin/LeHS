@@ -12,13 +12,13 @@
 
 </head>
 
-<body>
+<body onload="loadMap();">
     <header class="header">
         <div class="nav-container">
             <div class="nav-row">
                 <div class="nav-start">
                     <div class="logo">
-                        <img src="../resources/logo.svg"  alt="Logo">
+                        <img src="../resources/logo.svg" alt="Logo">
                     </div>
                 </div>
                 <button type="button" class="nav-toggler active">
@@ -27,14 +27,14 @@
                 <div class="nav-right open" style="max-height: fit-content;">
                     <div class="nav-center">
                         <ul>
-                            <li><a href="../Learn&Practice-pages/learn.html" > Learn </a></li>
+                            <li><a href="../Learn&Practice-pages/learn.html"> Learn </a></li>
                             <li><a href="../Learn&Practice-pages/practice.html"> Practice </a></li>
                             <li><a href="../Level-Map/map.html" class="active"> Play </a></li>
                             <li><a href="../leaderboard/leaderboard.html"> Leaderboard </a></li>
                         </ul>
                     </div>
                     <div class="nav-end" id="navend">
-                        <a id="menu-btn" >
+                        <a id="menu-btn">
                             Username
                         </a>
                         <button type="button" class="nav-toggler-submenu active">
@@ -53,10 +53,9 @@
             <script src="../Navbar&footer/script.js"></script>
         </div>
     </header>
-        <div class="one-scroll">
+    <div class="one-scroll">
         <main>
-            <div id="container" class="container">
-                <script src="./map.js"></script>
+            <div id="containerLevels" class="container">
             </div>
             <div id="hide" class="hide">
                 <div class="level-info">
@@ -68,29 +67,30 @@
             <div class="conatiner">
                 <div class="row">
                     <div class="footer-col">
-                        <a class="logo" >
+                        <a class="logo">
                             <img src="../resources/logo.svg" alt="Logo">
                         </a>
                     </div>
                 </div>
-                <div class="row">    
+                <div class="row">
                     <div class="footer-col">
                         <h3> Support </h3>
                         <ul>
-                            <li><a  href="../Footer-pages/FAQ.html" id="questions-btn" > FAQ </a></li>                         
-                            <li> <a href="../Footer-pages/FAQ.html" id="about-btn"> About us </a></li>  
-                            <li><a  href="../raport.html" id="report-btn" > Report </a></li>                                                                                                                            
-                            <li> <a  href="../Footer-pages/privacy.html" id="privacy-btn"> Privacy policy </a></li>                        
-                            <li><a  href="../Footer-pages/terms.html" id="terms-btn"> Terms of Service </a></li>
+                            <li><a href="../Footer-pages/FAQ.html" id="questions-btn"> FAQ </a></li>
+                            <li> <a href="../Footer-pages/FAQ.html" id="about-btn"> About us </a></li>
+                            <li><a href="../raport.html" id="report-btn"> Report </a></li>
+                            <li> <a href="../Footer-pages/privacy.html" id="privacy-btn"> Privacy policy </a></li>
+                            <li><a href="../Footer-pages/terms.html" id="terms-btn"> Terms of Service </a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h3> Follow </h3>
-                            <ul>
-                                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook </a></li>
-                                <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram </a></li>
-                                <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> Youtube </a></li>
-                            </ul>    
+                        <ul>
+                            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook </a></li>
+                            <li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram </a>
+                            </li>
+                            <li><a href="https://www.youtube.com/"><i class="fab fa-youtube"></i> Youtube </a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row">
@@ -98,9 +98,9 @@
                         <span> © 2021 LeHS. All rights reserved. </span>
                     </div>
                 </div>
-            </div>                
+            </div>
         </footer>
     </div>
 </body>
-
+<script src="./map.js"></script>
 </html>

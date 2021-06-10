@@ -152,14 +152,21 @@ html,body{
     width: 100px;
     border-radius: 5px;
     background-color: var(--gray);
+  }
+
+  .unlocked, .completed{
     cursor: pointer;
+  }
+  .completed{
+    border-radius: 10px;
+    background-color: var(--blue);
   }
 
   .hide{
     display: none;
   }
   
-  .grid-btn:hover{
+  .unlocked:hover{
     border-radius: 10px;
     background-color: var(--blue);
   }
