@@ -7,6 +7,15 @@
     --blue:#2aa1ff;
 
 }
+* {
+    font-size: medium;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: .005em;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
 html,body{
     width:100%;
     height: 100%;
@@ -31,33 +40,69 @@ html,body{
 #rank{
     width: 100%;
     text-align: center;
-}
-#user_chart{
-    margin-left:5vh;
-}
-#level_chart{
-   margin-right:20vh;
-    margin-top:10vh;
+    font-size: 30px;
 }
 
+.difchart{
+    height:400px;
+    width:400px;
+    margin-left:5vh;
+}
+.levelchart{
+    height:500px;
+    width:500px;
+    margin-right:5vh;
+    margin-top:10vh;
+}
+p{
+    text-align: center;
+    color: var(--black);
+    margin-top:5vh;
+    margin-bottom:5vh;
+    
+}
 @media(max-width:1000px)
 {
+    main{
+        height:fit-content;
+    }
     .charts{
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
     }
     #rank{
         width: 100%;
         text-align: center;
     }
-    .levelchart{
-        margin-bottom:300px;
+    
+    .difchart{
+        height:400px;
+        width:400px;
+        margin-left:0vh;
     }
-    canvas{
-        aspect-ratio:400/400;
+    .levelchart{
+        height:400px;
+        width:400px;
+        margin-right:0vh;
+        margin-top:10vh;
     }
     
+}
+
+@media(max-width:500px){
+    .difchart{
+        height:300px;
+        width:300px;
+        margin-left:0vh;
+    }
+    .levelchart{
+        height:300px;
+        width:300px;
+        margin-right:0vh;
+        margin-top:10vh;
+    }
 }
