@@ -40,6 +40,7 @@ const { JwtRegister, JwtLogin, JwtLogout} = require('./controllers/AuthJwt.Contr
 const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
 const { register, login } = require('./controllers/Auth.Controller');
 const{getAllPractice,submitAnswer} = require('./controllers/practice.controller.js');
+const{getLeaderboard} = require('./controllers/leaderboard.controller.js');
 const{callbackGithub, pass} = require('./helpers/githelper');
 
 
@@ -84,7 +85,10 @@ const server = http.createServer( async (req, res) => {
        //register(req, res);
        //createUser(req, res);
     }
-     else if(newurl === '/all/practice' && req.method === 'GET'){
+     else if(newurl === '/get/leaderboard' && req.method === 'GET'){
+        getLeaderboard(req,res);
+    }
+    else if(newurl === '/all/practice' && req.method === 'GET'){
         getAllPractice(req,res);
     }
 
