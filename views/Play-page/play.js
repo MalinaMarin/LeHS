@@ -6,10 +6,27 @@ let input;
 let submit_clickable = false;
 let data;
 
+function status(response) {
+    if (response.status === 200) {
+        return Promise.resolve(response);
+    }
+    else if (response.status === 404) {
+        console.log(response);
+        return Promise.reject(new Error("Ooups...not found!"))
+    }
+    else {
+        console.log(response);
+        return Promise.reject(new Error("An unexpected error occured"))
+    }
+}
+
 async function getData(level) {
     await fetch("http://localhost:5000/get/level" +"?id="+level)
+        .then(status)
         .then((res) => res.json())
         .then((response) => { console.log(response); data = response; })
+        .catch((err) => alert(err))
+
 }
 async function load(url, level_id) {
 
@@ -46,16 +63,47 @@ async function load(url, level_id) {
 
 };
 
-var sub = document.getElementById("submit");
-sub.addEventListener("click", function (submit_clickable) { 
-    if(submit_clickable)
-    location.href = "../Level-Map/map.html"; })
+let sub = document.getElementById("submit");
+sub.addEventListener("click", async function (submit_clickable) { 
+    if(submit_clickable){
+        await fetch("http://localhost:5000/play/submit", {
+            "method": "PUT",
+            "body" :JSON.stringify({
+                "user_id":localStorage.getItem("user_id"),
+                "level_id":data.id
+            })
+        })
+        .then(status)
+        .then((res) => res.json())
+        .catch((err) => alert(err))
+    localStorage.setItem("user_level",localStorage.getItem("user_level")++)
+    localStorage.setItem("user_xp",localStorage.getItem("user_xp")+data.xp)
+
+    location.href = "../Level-Map/map.html"; }})
 
 
-var hint = document.getElementById("hint");
-hint.addEventListener("click", function () {
+let hint = document.getElementById("hint");
+hint.addEventListener("click", async function () {
+    let coinsHint=data.hint_cost;
+    if(coinsHint > localStorage.getItem("user_coins")){
+        alert("You do not have enough coins for this!");
+        return;
+    }
     var texthint = document.getElementById("text-hint");
     texthint.style.visibility = "visible";
+
+    localStorage.setItem("user_coins",localStorage.getItem("user_coins")-coinsHint);
+    await fetch("http://localhost:5000/play/hint", {
+    "method": "PUT",
+    "body" :JSON.stringify({
+        "user_id":localStorage.getItem("user_id"),
+        "coins":localStorage.getItem("user_coins")
+    })
+})
+.then(status)
+.then((res) => res.json())
+.catch((err) => alert(err))
+
 });
 
 

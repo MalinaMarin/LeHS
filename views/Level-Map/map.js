@@ -1,4 +1,4 @@
-localStorage.setItem("user_level", 5);
+// localStorage.setItem("user_level", 5);
 
 function status(response) {
     if (response.status === 200) {

@@ -3,12 +3,12 @@ const http = require('http');
 
 
 module.exports = {
-    getLevel: async (level_id, res) => {
+    getLevel: async (res, level_id) => {
         try {
-            console.log(level_id)
+            console.log(level_id);
             let level = await getLevelData(level_id);
             res.writeHead(200, { 'Content-Type': 'application/json' })
-            return res.end(level);
+            return res.end(JSON.stringify(level));
         }
         catch (err) {
             console.log(err);

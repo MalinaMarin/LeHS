@@ -120,18 +120,20 @@ const server = http.createServer( async (req, res) => {
      else if(newurl === '/practice/submit' && req.method === 'POST'){
         submitAnswer(req,res);
     }
-    else if(newurl === '/play/submit' && req.method === 'POST'){
+    else if(newurl === '/play/submit' && req.method === 'PUT'){
         submitLevel(req,res);
     }
-    else if(newurl === '/play/hint' && req.method === 'POST'){
+    else if(newurl === '/play/hint' && req.method === 'PUT'){
         clickOnHint(req,res);
     }
     else if(newurl.startsWith('/get/level')){
-        let baseURI = url.parse(req.url, true);
-        let path = baseURI.pathname.split('/');
-        let queryParameter = baseURI.query;
-        const level_id = queryParameter.code;
-         getLevel(level_id, res);
+        console.log(newurl);
+        let queryParams = newurl.split('?');
+        let path = queryParams[1];
+        let value = path.split('=');
+        const level_id = decodeURIComponent(value[1]);
+        console.log(level_id);
+         getLevel(res, level_id);
     } 
     else
     if(newurl === '/logout'){
