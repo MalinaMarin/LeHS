@@ -58,7 +58,6 @@ const UsersCredentialsSchema = new Schema({
 //   }
 // }
 
-const UserCredentials = mongoose.model('user_credentials', UsersCredentialsSchema);
 // var user = new UserCredentials();
 
 
@@ -99,6 +98,11 @@ function create(user) {
       resolve(newUser)
   })
 }
+
+//const User = mongoose.model('user_credentials', UsersCredentialsSchema);
+
+
+const UserCredentials = mongoose.model('user_credentials', UsersCredentialsSchema);
 
 module.exports = {
   UserCredentials,

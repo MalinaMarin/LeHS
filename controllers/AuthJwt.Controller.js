@@ -2,13 +2,23 @@ const {verify, JsonWebTokenError} = require('jsonwebtoken');
 const {hash, compare} = require('bcryptjs');
 const { getPostData } = require('../helpers/utils_fct');
 const { create, createGithub } = require("../services/user.service.js")
-
+const {User, UserCredentials} = require('../models/user_credentials');
+const {clearRefreshToken, createAccessToken, createRefreshToken, sendAccessToken, sendRefreshToken} = require('../services/token.service');
 module.exports =
 {
+
 JwtRegister: async (req, res) => {
 try {
     let body = await getPostData(req)
     body = JSON.parse(body)
+
+   // const doesExist = await User.findOne({ email: body.email })
+
+    //if (doesExist){
+    //res.writeHead(500, { 'Content-Type': 'application/json' })
+    //  return res.end(`${result.email} has already been registered`)
+   // }
+
     if (body.password != body.confirmPassword) {
         res.writeHead(500, { 'Content-Type': 'application/json' })
         return res.end("passwords don't match") 
@@ -48,4 +58,59 @@ try {
       
     }
   }
+  ,
+
+  JwtLogin:   async (req, res) => 
+  {
+      try {
+
+  let body = await getPostData(req)
+  body = JSON.parse(body)
+
+  
+    const user = await UserCredentials.findOne({ username: body.username }).exec();
+  
+    if (!user){
+     res.writeHead(500, { 'Content-Type': 'application/json' })
+    return res.end("User does not exist!")
+    }
+   // if (!user) throw createError.NotFound('User not registered')
+
+    
+    const valid = await compare(body.password, user.password);
+
+    if (!valid){
+        res.writeHead(500, { 'Content-Type': 'application/json' })
+       return res.end("Password is not correct!")
+       }
+    
+
+    const accesstoken = createAccessToken(user.id);
+    const refreshtoken = createRefreshToken(user.id);
+    
+    user.refreshtoken = refreshtoken;
+    
+    // Send token. Refreshtoken as a cookie and 
+    //accesstoken as a regular response.
+    sendRefreshToken(res, refreshtoken);
+    sendAccessToken(res, req, accesstoken);
+  } catch (err) {
+   console.log(err);
+  }
 }
+,
+
+JwtLogout: (_req, res) => 
+  {
+      try {
+       const clearedToken = clearRefreshToken();
+       sendRefreshToken(res, clearedToken);
+       res.writeHead(201, { 'Content-Type': 'application/json' })
+       return res.end("logged out.")  
+  
+} catch (err) {
+   console.log(err);
+  }
+}
+}
+
