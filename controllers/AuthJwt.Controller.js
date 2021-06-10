@@ -2,7 +2,8 @@ const {verify, JsonWebTokenError} = require('jsonwebtoken');
 const {hash, compare} = require('bcryptjs');
 const { getPostData, parseCookies } = require('../helpers/utils_fct');
 const { create, createGithub } = require("../services/user.service.js")
-const {User, UserCredentials} = require('../models/user_credentials');
+const {UserCredentials} = require('../models/user_credentials');
+const {UserData} = require('../models/user_data');
 const {clearRefreshToken, createAccessToken, createRefreshToken, sendAccessToken, sendRefreshToken} = require('../services/token.service');
 module.exports =
 {
@@ -56,7 +57,7 @@ try {
     } catch(err) {
      console.log(err);
      res.writeHead(500, { 'Content-Type': 'application/json' })
-    res.end("eroare ......")  
+      res.end("eroare ......")  
       
     }
   }
@@ -84,6 +85,8 @@ try {
        }
     
 
+    const userdata = await UserData.findOne({ id: user.id }).exec();
+
     const accesstoken = createAccessToken(user.id);
     const refreshtoken = createRefreshToken(user.id);
     
@@ -91,10 +94,17 @@ try {
     console.log(refreshtoken);
     // Send token. Refreshtoken as a cookie and 
     //accesstoken as a regular response.
-    sendRefreshToken(res, refreshtoken);
-    //const access_token = sendAccessToken(res, req, accesstoken);
-    res.writeHead(201, { 'Content-Type': 'application/json' })
-    return res.end(JSON.stringify({user: user, access_token: accesstoken}));
+   // sendRefreshToken(res, refreshtoken);
+  
+   res.writeHead(201, {
+    'Set-Cookie': 'refreshtoken=' + refreshtoken,
+    //'Location': '/loginn'
+    //'Content-Type': 'text/plain'
+  },
+ // { 'Content-Type': 'text/plain' }
+  );
+
+  return res.end(JSON.stringify({user_data: userdata , access_token: accesstoken}));
   } catch (err) {
    console.log(err);
   }
@@ -104,6 +114,7 @@ try {
 JwtLogout: (_req, res) => 
   {
       try {
+        console.log("hello from jwt logout");
        const clearedToken = clearRefreshToken();
        sendRefreshToken(res, clearedToken);
       res.end("logged out");
