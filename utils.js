@@ -8,112 +8,183 @@
 // }
 
 // DO NOT RUN THIS SCRIPT
-// used to insert practice questions and levels
+// used to insert practice questions and levels and dummy leaderbard
 
-const {PracticeQuestion} = require("./models/practice_questions.js");
-const {Level} = require("./models/levels.js");
+// const {PracticeQuestion} = require("./models/practice_questions.js");
+const {Leaderboard} = require("./models/leaderboard.js");
+const {UserData} = require("./models/user_data.js");
+
 
 require('./helpers/init_mongodb')
 
-let level1 = new Level({
-   id: 1,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/1.json",
-   xp: 10,
-   hint_cost: 30,
-   solved_counter: 0
-});
+let users;
 
-level1.save();
+async function getUSers(){
+users = await UserData.find().sort({ xp: -1 }).limit(10).exec();
+}
 
-let level2 = new Level({
-   id: 2,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/2.json",
-   xp: 20,
-   hint_cost: 30,
-   solved_counter: 0
-});
+async function generate(){
+   await getUSers();
+let place1 = new Leaderboard({
+   id:1,
+   player: users[0]
+})
 
-level2.save();
+console.log(place1);
+console.log(users[0]);
 
-let level3 = new Level({
-   id: 3,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/3.json",
-   xp: 30,
-   hint_cost: 40,
-   solved_counter: 0
-});
+let place2 = new Leaderboard({
+   id:2,
+   player: users[1]
+})
+let place3 = new Leaderboard({
+   id:3,
+   player: users[2]
+})
+let place4 = new Leaderboard({
+   id:4,
+   player: users[3]
+})
+let place5 = new Leaderboard({
+   id:5,
+   player: users[4]
+})
+let place6 = new Leaderboard({
+   id:6,
+   player: users[5]
+})
+let place7 = new Leaderboard({
+   id:7,
+   player: users[6]
+})
+let place8 = new Leaderboard({
+   id:8,
+   player: users[7]
+})
+let place9 = new Leaderboard({
+   id:9,
+   player: users[8]
+})
+let place10 = new Leaderboard({
+   id:10,
+   player: users[9]
+})
 
-level3.save();
+place1.save();
+place2.save();
+place3.save();
+place4.save();
+place5.save();
+place6.save();
+place7.save();
+place8.save();
+place9.save();
+place10.save();
 
-let level4 = new Level({
-   id: 4,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/4.json",
-   xp: 40,
-   hint_cost: 50,
-   solved_counter: 0
-});
+}
 
-level4.save();
+generate();
 
-let level5 = new Level({
-   id: 5,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/5.json",
-   xp: 50,
-   hint_cost: 50,
-   solved_counter: 0
-});
+// let level1 = new Level({
+//    id: 1,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/1.json",
+//    xp: 10,
+//    hint_cost: 30,
+//    solved_counter: 0
+// });
 
-level5.save();
+// level1.save();
 
-let level6 = new Level({
-   id: 6,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/6.json",
-   xp: 60,
-   hint_cost: 50,
-   solved_counter: 0
-});
+// let level2 = new Level({
+//    id: 2,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/2.json",
+//    xp: 20,
+//    hint_cost: 30,
+//    solved_counter: 0
+// });
 
-level6.save();
+// level2.save();
 
-let level7 = new Level({
-   id: 7,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/7.json",
-   xp: 70,
-   hint_cost: 50,
-   solved_counter: 0
-});
+// let level3 = new Level({
+//    id: 3,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/3.json",
+//    xp: 30,
+//    hint_cost: 40,
+//    solved_counter: 0
+// });
 
-level7.save();
+// level3.save();
 
-let level8 = new Level({
-   id: 8,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/8.json",
-   xp: 80,
-   hint_cost: 50,
-   solved_counter: 0
-});
+// let level4 = new Level({
+//    id: 4,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/4.json",
+//    xp: 40,
+//    hint_cost: 50,
+//    solved_counter: 0
+// });
 
-level8.save();
+// level4.save();
 
-let level9 = new Level({
-   id: 9,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/9.json",
-   xp: 90,
-   hint_cost: 60,
-   solved_counter: 0
-});
+// let level5 = new Level({
+//    id: 5,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/5.json",
+//    xp: 50,
+//    hint_cost: 50,
+//    solved_counter: 0
+// });
 
-level9.save();
+// level5.save();
 
-let level10 = new Level({
-   id: 10,
-   level_source: "/Users/Raluca/Desktop/LeHS/source/play/10.json",
-   xp: 100,
-   hint_cost: 70,
-   solved_counter: 0
-});
+// let level6 = new Level({
+//    id: 6,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/6.json",
+//    xp: 60,
+//    hint_cost: 50,
+//    solved_counter: 0
+// });
 
-level10.save();
+// level6.save();
+
+// let level7 = new Level({
+//    id: 7,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/7.json",
+//    xp: 70,
+//    hint_cost: 50,
+//    solved_counter: 0
+// });
+
+// level7.save();
+
+// let level8 = new Level({
+//    id: 8,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/8.json",
+//    xp: 80,
+//    hint_cost: 50,
+//    solved_counter: 0
+// });
+
+// level8.save();
+
+// let level9 = new Level({
+//    id: 9,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/9.json",
+//    xp: 90,
+//    hint_cost: 60,
+//    solved_counter: 0
+// });
+
+// level9.save();
+
+// let level10 = new Level({
+//    id: 10,
+//    level_source: "/Users/Raluca/Desktop/LeHS/source/play/10.json",
+//    xp: 100,
+//    hint_cost: 70,
+//    solved_counter: 0
+// });
+
+// level10.save();
+
 
 // let question1 = new PracticeQuestion({
 //    id: 1,
