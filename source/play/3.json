@@ -3,6 +3,6 @@
     "hint": "Hint: You can insert an image with the img tag.",
     "edit": "",
     "start_part": "&lt;body&gt;",
-    "correct_input": "&lt;body&gt;\n    &lt;img src=\"/images/ex3_1.jpg\" alt=\"Butterfly1\" title=\"Butterfly1\" /&gt;\n    &lt;br /&gt;&lt;br /&gt;\n    &lt;img src=\"/images/ex3_2.jpg\" alt=\"Butterfly2\" title=\"Butterfly2\" /&gt;\n    &lt;br /&gt;&lt;br /&gt;\n    &lt;img src=\"/images/ex3_3.jpg\" alt=\"Butterfly3\" title=\"Butterfly3\" /&gt;\n    &lt;/body&gt;",
+    "correct_input": "&lt;body&gt;    <img src=\"/images/ex3_1.jpg\" alt=\"Butterfly1\" title=\"Butterfly1\">    <br ><br >   <img src=\"/images/ex3_2.jpg\" alt=\"Butterfly2\" title=\"Butterfly2\" >    <br ><br>    <img src=\"/images/ex3_3.jpg\" alt=\"Butterfly3\" title=\"Butterfly3\" >    &lt;/body&gt;",
     "end_part": "&lt;/body&gt;"
 }

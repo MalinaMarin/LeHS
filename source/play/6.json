@@ -3,6 +3,6 @@
     "hint": "Hint: Use border, width and height attributes. We should place them in the &lt;img&gt; tag.",
     "edit": "",
     "start_part": " &lt;body&gt;",
-    "correct_input": "&lt;body&gt;\n    &lt;img src=\"/images/ex6.jpg\" width=\"400\" height=\"350\" alt=\"Landscape\" border=\"5\" /&gt;\n    &lt;/body&gt;",
+    "correct_input": "&lt;body&gt;\n    <img src=\"/images/ex6.jpg\" width=\"400\" height=\"350\" alt=\"Landscape\" border=\"5\" >    &lt;/body&gt;",
     "end_part": " &lt;/body&gt;"
 }
