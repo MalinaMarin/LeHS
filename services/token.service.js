@@ -16,25 +16,27 @@ const createRefreshToken = userId => {
 
 
 const clearRefreshToken = () => {
-    return sign({ msg: "logout" }, process.env.REFRESH_TOKEN_SECRET, {
-      expiresIn: '0',
+    return sign({ msg: "expired" }, process.env.REFRESH_TOKEN_SECRET, {
+      expiresIn: '0s',
     });
 };
 
 
-const sendAccessToken = (res, req, accesstoken) => {
+const sendAccessToken =  (res, req, accesstoken) => {
 
-    res.writeHead(500, { 'Content-Type': 'application/json' });
-    return res.end(JSON.stringify( {token: accesstoken, email: req.username})) 
+    return  accesstoken;
+
 };
 
 
 const sendRefreshToken = (res, token) => {
 
-  res.writeHead(302, {
+  res.writeHead(301, {
     'Set-Cookie': 'refreshtoken=' + token,
-    'Location': '/refresh_token'
+    //'Location': '/loginn'
+    'Content-Type': 'text/plain'
   });
+
 
 };
 
