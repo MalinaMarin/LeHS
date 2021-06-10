@@ -282,6 +282,7 @@ svg circle:nth-child(2){
 }
 #container3{
     height: 20%;
+    margin-top: 25px;
 }
 #container1{
     display: flex;
@@ -307,7 +308,7 @@ svg circle:nth-child(2){
 #xp:hover,#coin:hover,#progress:hover{
     background-color: var(--blue);
 }
-#get-stats{
+#get-stats,#get-pers-stats{
     width: 150px;
     height: 50px;
     border-radius: 4px;
@@ -315,10 +316,16 @@ svg circle:nth-child(2){
     background-color: var(--pink);
     font-weight: bold;
     color: var(--white);
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+
 }
-#get-stats:hover{
+#get-stats:hover,#get-pers-stats:hover{
     font-style: italic;
     color: var(--blue);
+
 }
 
   /* footer{
