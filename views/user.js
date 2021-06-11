@@ -1,7 +1,7 @@
-var username = window.localStorage.getItem("username");
-var coins = window.localStorage.getItem("user_coins");
-var xp = window.localStorage.getItem("user_xp");
-function header_populate() {
+var username = localStorage.getItem("username");
+var coins = localStorage.getItem("user_coins");
+var xp = localStorage.getItem("user_xp");
+function user_populate() {
     
     var name = document.getElementById("menu_btn")
     var c = document.getElementById("coins");
