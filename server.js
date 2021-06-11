@@ -46,6 +46,7 @@ const { isAdmin, getUserById, getAllUsers, findAndUpdateUser, deleteUser, getAll
 const {getPostData} = require('./helpers/utils_fct');
 const { getUserDataById } = require('./services/user.service');
 
+
 const server = http.createServer( async (req, res) => {
     console.log(req.url);
     var newurl = req.url;
@@ -217,7 +218,7 @@ const server = http.createServer( async (req, res) => {
      else if(newurl === '/practice/submit' && req.method === 'POST'){
         submitAnswer(req,res);
     }
-    else if(newurl === '/play/submit' && req.method === 'PUT'){
+    else if(newurl === '/play/submit' && req.method === 'POST'){
         submitLevel(req,res);
     }
     else if(newurl === '/play/hint' && req.method === 'PUT'){
