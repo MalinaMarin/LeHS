@@ -30,7 +30,7 @@
         </li>
         <li>
             <a href="#client">
-                Client
+                Client si Server
             </a>
         </li>
         <li>
@@ -95,6 +95,12 @@
            
             <a href="#structura">
                Structura - implementare
+            </a>
+        </li>
+        <li>
+           
+            <a href="#bd">
+               Baza de date - modele
             </a>
         </li>
 
@@ -195,11 +201,17 @@
     </section>
 
     <section id="client">
-        <h2><span>3. </span>Client</h2>
+        <h2><span>3. </span>Client si Server</h2>
         <p>
             La nivel de client s-a utilizat suita HTML5, CSS3 și JavaScript. Au fost luate in considerare aspecte
             precum accesibilitatea. Interfata este intuitiva, iar toate paginile sunt responsive, elementele componente
             modificandu-si dimensiunea, forma sau asezarea in pagina in functie de device-ul folosit, pentru o navigare fara cusur.
+            In ceea ce priveste serverul, s-a folosit Node.js, iar pentru baza de date s-a ales MongoDB. Mentionam ca s-a recurs la arhitectura MVC, proiectul
+            fiind structurat intr-un mod logic, riguros si intuitiv. Autentificarea poate fi realizata fie in mod clasic, fie utilizand contul de Github. In caz de inregistrare cu succes,
+            aplicatia pune la dispozitie o suita de activitati, progresul utilizatorului fiind salvat in baza de date. Pe langa alte caracteristici, utilizatorul are un rol bine definit: user sau admin, al doilea rol
+            putand fi acordat doar persoanelor autorizate. Proiectul contine si un modul de administrare prin API-ul propriu, in urma furnizarii unui id de administrator se pot realiza actiuni precum:
+            vizualizare utilizatori in functie de id, primire lista completa de useri, actualizare utilizator sau actualizare date utilizator etc. De asemenea, este pus la dispozitie un API REST prin care se pot prelua 
+            atat intrebarile cu raspunsuri de tip grila, cat si cerintele, raspunsurile de la fiecare nivel de joc in format JSON, pentru a fi folosite de o alta aplicatie.
         </p>
       
     </section>
@@ -233,7 +245,10 @@
                 Pe aceasta pagina utilizatorul se poate autentifica, introducand username-ul si parola aferente contului sau. De aici poate fi redirectionat
                 spre paginile Forgot, daca si-a uitat parola, sau Signup, pentru a-si crea un cont. 
                 Mentionam ca autentificarea se poate realiza si cu un cont disponibil pe reteaua sociala Github.
-            
+                Pentru inregistrarea normala, s-a apelat la Json Web Tokens, fiecarui utilizator fiindu-i generat un token de acces cu un anumit timp de viata. 
+                In ceea ce priveste inregistrarea cu contul de Github, s-a apelat la oAuth. Userul se poate deloga , moment in care nu mai are acces la majoritatea functionalitatilor: joc, sectiunea de practice etc.
+                De asemenea, exista posibilitatea ca unui utilizator sa i poata fi generat un refresh token, care va deveni noul sau token jwt (prin API). In momentul in care utilizatorul se inregistreaza cu succes, datele
+                sale sunt stocate in baza de date MongoDB, urmand a fi actualizate cand acesta avanseaza niveluri. 
                 
             </p>
 
@@ -270,7 +285,8 @@
             <h3><span>4.6 </span>Practice</h3>
             <p>
                 Pe aceasta pagina utilizatorul are la dispozitie un set de 25 de intrebari, grupate in functie de dificultate (beginner, intermediate, expert).
-                Un raspuns corect la o intrebare ii va aduce un anumit numar de coins, cu care va putea ulterior sa deblocheze hint-uri pentru partea de Play.
+                Un raspuns corect la o intrebare ii va aduce un anumit numar de coins, cu care va putea ulterior sa deblocheze hint-uri pentru partea de Play(cu acei coins va putea da click pe hint 
+                la un anumit nivel).
                 Design-ul se bazeaza si aici pe ideea de flashcards.
             </p>
 
@@ -280,9 +296,9 @@
             <h3><span>4.7 </span>Map</h3>
             <p>
                 Pe pagina de Map utilizatorul poate vizualiza cu hover pe fiecare nivel: numarul nivelului si XP, experienta necesara pentru
-                a putea debloca nivvelul. Mentionam ca fiecare nivel completat cu succes aduce un plus de XP. Daca are experienta necesara, un click pe casuta corespunzatoare
-                nivelului il va directiona pe utilizator spre pagina de Play cu nivelul ales. Dupa ce termina de rezolvat un nivel, el va fi redirectionat spre pagina Map, de acolo putand sa il
-                aleaga pe urmatorul.
+                a putea debloca nivelul. Mentionam ca fiecare nivel completat cu succes aduce un plus de XP. Daca are experienta necesara (sau daca a completat deja nivelul), un click pe casuta corespunzatoare
+                nivelului il va directiona pe utilizator spre pagina de Play cu nivelul ales. Altfel, zona va fi gri. Dupa ce termina de rezolvat un nivel, el va fi redirectionat spre pagina Map, de acolo putand sa il
+                aleaga pe urmatorul la care are acces.
                 <br><br>Exista 10 niveluri vizand HTML si CSS, fiecare avand o anumita dificultate si un anumit mod de abordare.
             </p>
 
@@ -293,7 +309,7 @@
             <p>
                 Pagina de leaderboard pune la dispozitia utilizatorului, pe langa progres, numar de coins, XP, mai multe moduri de a-si vedea evolutia comparativ cu alte persoane: 
                  Pe de o parte, exista leaderboard-ul general, bazat pe experienta acumulata. Pe de alta parte, Get more statistics se va ocupa de generarea intr-un anumit
-                 format a unor grafice per exercitii usoare, medii sau grele, diverse top-uri vizand nivelurile de dificultate, la modul general dar si pentru utilizator.   
+                 format a unor grafice (folosind chart Js) per exercitii usoare, medii sau grele, diverse top-uri vizand nivelurile de dificultate, la modul general dar si pentru utilizator.   
             </p>
             
         </section>
@@ -308,12 +324,24 @@
            de culori, functionalitati noi precum XP si coins, modul in care acestea vor fi integrate, interactiunea cu utilizatorul, respectarea
            constrangerilor impuse de notiuni precum accesibilitate si internationalizare. Ulterior, au fost alocate fiecarui membru pagini. In plus,
             fiecare membru a propus imbunatatiri sau a rezolvat probleme apartinand altor pagini. 
+            Pe partea de backend, s-a impartit cerinta in multe taskuri mai mici si fiecarui membru i-au fost alocate sarcini. Cu toate acestea, sunt si unitati la care au lucrat simultan 2 persoane, rezolvare de probleme
+            intampinate, punerea de idei in practica, nu neaparat vizand taskurile alocate initial. Ca si sistem de management al codului sursa, s-a ales Github, unde au fost multe commit-uri data fiind impartirea aplicatiei in multe submodule si taskuri.
 
          </p>
         </section>
 
+        <section id="bd">
+            <h2><span>6.</span>Baza de date - modele</h2>
+            <p>
+                Baza de date are urmatoarele tabele: user_credentials, user_data, practice_questions, levels si leaderboard, informatiile find modelate astfel: 
+                In user_credentials sunt datele personale ale utilizatorilor: id, username, email, parola, rol. In user_data sunt in majoritatea lor acele date care se
+                actualizeaza in functie de parcursul userului: intrebari grila rezolvate, coins, XP, nivel curent, dar si username si id. In levels avem id, sursa, xp necesar, coins - costul hinturilor, solved counter. In leaderboard 
+                sunt stocate id si player. 
+             </p>
+            </section>
+
     <section id="referinte">
-        <h2><span>6. </span>Referinte</h2>
+        <h2><span>7. </span>Referinte</h2>
        
             <ul>
                 <li property="schema:citation" typeof="schema:WebSite" resource="https://developer.mozilla.org/en-US/">
