@@ -29,8 +29,8 @@
             </a>
         </li>
         <li>
-            <a href="#client">
-                Client si Server
+            <a href="#ghid">
+                Ghid de utilizare
             </a>
         </li>
         <li>
@@ -91,18 +91,7 @@
                
             </ul>
         </li>
-        <li>
-           
-            <a href="#structura">
-               Structura - implementare
-            </a>
-        </li>
-        <li>
-           
-            <a href="#bd">
-               Baza de date - modele
-            </a>
-        </li>
+       
 
         <li>
            
@@ -201,17 +190,9 @@
     </section>
 
     <section id="client">
-        <h2><span>3. </span>Client si Server</h2>
+        <h2><span>3. </span>Ghid de utilizare</h2>
         <p>
-            La nivel de client s-a utilizat suita HTML5, CSS3 și JavaScript. Au fost luate in considerare aspecte
-            precum accesibilitatea. Interfata este intuitiva, iar toate paginile sunt responsive, elementele componente
-            modificandu-si dimensiunea, forma sau asezarea in pagina in functie de device-ul folosit, pentru o navigare fara cusur.
-            In ceea ce priveste serverul, s-a folosit Node.js, iar pentru baza de date s-a ales MongoDB. Mentionam ca s-a recurs la arhitectura MVC, proiectul
-            fiind structurat intr-un mod logic, riguros si intuitiv. Autentificarea poate fi realizata fie in mod clasic, fie utilizand contul de Github. In caz de inregistrare cu succes,
-            aplicatia pune la dispozitie o suita de activitati, progresul utilizatorului fiind salvat in baza de date. Pe langa alte caracteristici, utilizatorul are un rol bine definit: user sau admin, al doilea rol
-            putand fi acordat doar persoanelor autorizate. Proiectul contine si un modul de administrare prin API-ul propriu, in urma furnizarii unui id de administrator se pot realiza actiuni precum:
-            vizualizare utilizatori in functie de id, primire lista completa de useri, actualizare utilizator sau actualizare date utilizator etc. De asemenea, este pus la dispozitie un API REST prin care se pot prelua 
-            atat intrebarile cu raspunsuri de tip grila, cat si cerintele, raspunsurile de la fiecare nivel de joc in format JSON, pentru a fi folosite de o alta aplicatie.
+           In urmatoarele sectiuni vor fi prezentate principalele functionalitati ale aplicatiei si interactiunea cu utilizatorul.
         </p>
       
     </section>
@@ -222,11 +203,12 @@
             <h3><span>4.1 </span>Pagina de prezentare</h3>
             <p>
                 Pagina de prezentare
-               ofera functionalitatile unui meniu, avand rolul unui punct de referinta. Pe langa design-ul elegant si atractiv, sunt puse la dispozitie
+               ofera functionalitatile unui meniu, avand rolul unui punct de referinta. Sunt puse la dispozitie
                urmatoarele:
                <br><br>-Pagina propriu-zisa ce ofera detalii despre scopul principal al aplicatiei, butoanele Get Started,
                Level up your skills, Let's play redirectionand spre pagina de login daca utilizatorul nu s-a autentificat, sau
                spre pagina Map, daca utilizatorul este deja autentificat 
+
                <br><br>-Bara de navigare, situata in partea de sus a paginii, cu butoanele: Login, ce directioneaza spre pagina de autentificare,
                Sign Up, ce directioneaza spre pagina de inregistrare, Learn, Practice, Play, Leaderboard, ce vor directiona spre pagina de Login, daca
                utilizatorul nu s-a autentificat(si ulterior, dupa logare, spre pagina aleasa initial), sau spre paginile aferente, daca acesta este deja logat(in cazul Play pagina aferenta este Map). Dupa autentificare,
@@ -243,12 +225,8 @@
             <h3><span>4.2 </span>Login</h3>
             <p>
                 Pe aceasta pagina utilizatorul se poate autentifica, introducand username-ul si parola aferente contului sau. De aici poate fi redirectionat
-                spre paginile Forgot, daca si-a uitat parola, sau Signup, pentru a-si crea un cont. 
-                Mentionam ca autentificarea se poate realiza si cu un cont disponibil pe reteaua sociala Github.
-                Pentru inregistrarea normala, s-a apelat la Json Web Tokens, fiecarui utilizator fiindu-i generat un token de acces cu un anumit timp de viata. 
-                In ceea ce priveste inregistrarea cu contul de Github, s-a apelat la oAuth. Userul se poate deloga , moment in care nu mai are acces la majoritatea functionalitatilor: joc, sectiunea de practice etc.
-                De asemenea, exista posibilitatea ca unui utilizator sa i poata fi generat un refresh token, care va deveni noul sau token jwt (prin API). In momentul in care utilizatorul se inregistreaza cu succes, datele
-                sale sunt stocate in baza de date MongoDB, urmand a fi actualizate cand acesta avanseaza niveluri. 
+                spre paginile Forgot, daca si-a uitat parola, sau Signup, pentru a-si crea un cont. Toate campurile sunt obligatorii.
+                Mentionam ca autentificarea se poate realiza si cu un cont disponibil pe reteaua sociala Github, cu un singur click pe butonul cu iconita aferenta.
                 
             </p>
 
@@ -257,8 +235,8 @@
         <section id="signup">
             <h3><span>4.3 </span>Sign Up</h3>
             <p>
-                Pe aceasta pagina, utilizatorul isi poate crea un cont introducand email-ul, username-ul si parola, sau folosind contul de Github. Poate fi 
-                redirectionat spre pagina de Login daca are deja un cont.
+                Pe aceasta pagina, utilizatorul isi poate crea un cont introducand email-ul, username-ul si parola si apasand pe butonul submit sau folosind contul de Github apasand pe butonul cu iconita aferenta. Poate fi 
+                redirectionat spre pagina de Login daca are deja un cont. Toate campurile sunt obligatorii.
             </p>
 
         </section>
@@ -275,7 +253,7 @@
             <h3><span>4.5 </span>Learn</h3>
             <p>
                 Aceasta pagina prezinta mai multe aspecte teoretice, scopul fiind familiarizarea utilizatorului cu anumite notiuni relevante.
-                Design-ul se bazeaza pe ideea de flashcards, utilizatorul putand sa deschida sau sa inchida dropdown-ul cu textul aferent unei notiuni.
+               Cu un click pe subiectul principal se gliseaza in jos textul aferent, utilizatorul putand sa deschida sau sa inchida dropdown-ul cu textul aferent unei notiuni.
             </p>
 
         </section>
@@ -285,9 +263,9 @@
             <h3><span>4.6 </span>Practice</h3>
             <p>
                 Pe aceasta pagina utilizatorul are la dispozitie un set de 25 de intrebari, grupate in functie de dificultate (beginner, intermediate, expert).
-                Un raspuns corect la o intrebare ii va aduce un anumit numar de coins, cu care va putea ulterior sa deblocheze hint-uri pentru partea de Play(cu acei coins va putea da click pe hint 
+                Un raspuns corect la o intrebare (dand click pe un raspuns din cele oferite si apasand pe butonul de submit) ii va aduce un anumit numar de coins, cu care va putea ulterior sa deblocheze hint-uri pentru partea de Play(cu acei coins va putea da click pe hint 
                 la un anumit nivel).
-                Design-ul se bazeaza si aici pe ideea de flashcards.
+               
             </p>
 
         </section>
@@ -316,29 +294,6 @@
 
 
     </section>
-
-    <section id="structura">
-        <h2><span>5. </span>Structura - implementare</h2>
-        <p>
-           Sarcinile au fost impartite astfel incat toti membrii echipei sa lucreze la fel de mult. Initial s-au discutat: design-ul, paleta
-           de culori, functionalitati noi precum XP si coins, modul in care acestea vor fi integrate, interactiunea cu utilizatorul, respectarea
-           constrangerilor impuse de notiuni precum accesibilitate si internationalizare. Ulterior, au fost alocate fiecarui membru pagini. In plus,
-            fiecare membru a propus imbunatatiri sau a rezolvat probleme apartinand altor pagini. 
-            Pe partea de backend, s-a impartit cerinta in multe taskuri mai mici si fiecarui membru i-au fost alocate sarcini. Cu toate acestea, sunt si unitati la care au lucrat simultan 2 persoane, rezolvare de probleme
-            intampinate, punerea de idei in practica, nu neaparat vizand taskurile alocate initial. Ca si sistem de management al codului sursa, s-a ales Github, unde au fost multe commit-uri data fiind impartirea aplicatiei in multe submodule si taskuri.
-
-         </p>
-        </section>
-
-        <section id="bd">
-            <h2><span>6.</span>Baza de date - modele</h2>
-            <p>
-                Baza de date are urmatoarele tabele: user_credentials, user_data, practice_questions, levels si leaderboard, informatiile find modelate astfel: 
-                In user_credentials sunt datele personale ale utilizatorilor: id, username, email, parola, rol. In user_data sunt in majoritatea lor acele date care se
-                actualizeaza in functie de parcursul userului: intrebari grila rezolvate, coins, XP, nivel curent, dar si username si id. In levels avem id, sursa, xp necesar, coins - costul hinturilor, solved counter. In leaderboard 
-                sunt stocate id si player. 
-             </p>
-            </section>
 
     <section id="referinte">
         <h2><span>7. </span>Referinte</h2>
