@@ -20,7 +20,7 @@ res.writeHead(302, {
     //'Location': '/loginn'
     'Content-Type': 'text/plain'
   });   
-  return res.end();
+  return res.end(JSON.stringify(user));
 
 
 // res.writeHead(302, {
@@ -35,31 +35,5 @@ else{
 }
 
 }
-,
 
-callbackGithubLogin: async(res, codee) =>{
-
-    console.log("tHE CODE controller side" + codee);
-    var access_token = await getAccessToken(codee);
-    
-    console.log("githelper token " + access_token);
-    const user =  await fetchGitHubUser(access_token);
-    const userDb = await UserCredentials.findOne({ username: user.login }).exec();
-  
-    //we found the github user in db, so we can log in
-
-    if (userDb){
-        res.writeHead(302, {
-            'Location': 'http://localhost:5000/mainpage',
-            'Set-Cookie': 'token=' + access_token + '; Path=/'
-          });
-        
-    }
-
-    else{
-        res.writeHead(500, { 'Content-Type': 'application/json' })
-        return res.end("User is inexistent in the database. You need to register.")
-    }
-    
-    }
 }
