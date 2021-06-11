@@ -30,10 +30,10 @@ async function populate() {
 
                 var json = JSON.parse(this.responseText);
                 q.innerHTML = json.question + "<img class=\"coins-icon\" src=\"coins.svg\" alt=\"coins icon\"><span class=\"money\">" + coins + "</span>";
-                aA.innerHTML = json.answers[0].A
-                aB.innerHTML = json.answers[0].B
-                aC.innerHTML = json.answers[0].C
-                aD.innerHTML = json.answers[0].D
+                aA.textContent = json.answers[0].A
+                aB.textContent = json.answers[0].B
+                aC.textContent = json.answers[0].C
+                aD.textContent = json.answers[0].D
             }
 
         });

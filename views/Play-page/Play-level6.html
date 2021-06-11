@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Level 6</title>
 </head>
-<body>
+<body onload="load('../../source/play/6.json','6');" onload="user_populate()">
     <header class="header">
         <div class="nav-container">
             <div class="nav-row">
@@ -155,42 +155,7 @@
 </div>
 <script src="./play.js"></script>
 <script src="../Navbar&footer/script.js"></script>
-<script>
-    (function () {
-               "use strict";
-               var load
-               load = function (url) {
-   
-                   var request;
-                   var q = document.getElementById("instructions");
-                   var hint = document.getElementById("text-hint");
-                   var start = document.getElementById("start");
-                   var end = document.getElementById("end");
-                   
-                   request = new XMLHttpRequest();
-   
-                   
-                   request.addEventListener("readystatechange", function (event) {
-   
-                       if (this.readyState == 4 && this.status == 200) {
-   
-                           var json = JSON.parse(this.responseText);
-                           q.innerHTML = json.question
-                           hint.innerHTML = json.hint
-                           start.innerHTML = json.start_part
-                           end.innerHTML = json.end_part
-                           
-                       }
-   
-                   });
-   
-                   request.open("GET", url);
-                   request.send(null);
-   
-               };
-   
-               load("../../source/play/6.json");
-           })();
-       </script>
+<script src="../user.js"></script>
+
 </body>
 </html>
