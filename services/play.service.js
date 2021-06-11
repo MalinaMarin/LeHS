@@ -24,7 +24,7 @@ module.exports = {
             user.xp = auxXP+level.xp;
             user.current_level++;
             user.save();
-            await refreshLedearboard(user.xp);
+            await refreshLedearboard(auxXP+level.xp);
         }
     }
 }
