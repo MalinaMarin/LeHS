@@ -12,15 +12,16 @@ var access_token = await getAccessToken(codee);
 // localStorage.setItem("token", access_token)
 console.log("githelper token " + access_token);
 const user =  await fetchGitHubUser(access_token);
-console.log(user);
+console.log("hola " + user.login);
 if (user) {
 res.writeHead(302, {
     'Location': 'http://localhost:5000/success',
     'Set-Cookie': 'gittoken=' + access_token + "; path=/success",
     //'Location': '/loginn'
-    'Content-Type': 'text/plain'
+    //'Content-Type': 'text/plain'
+    'Content-Type': 'application/json' 
   });   
-  return res.end(JSON.stringify(user));
+  return res.end(JSON.stringify({"login" : user.login}));
 
 
 // res.writeHead(302, {
