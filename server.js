@@ -12,15 +12,7 @@ const {UserCredentials} = require('./models/user_credentials');
 require('dotenv').config()
 require('./helpers/init_mongodb')
 const fetch = require('node-fetch');
-// const google = require('googleapis');
-// var OAuth2 = google.auth.OAuth2;
-// const ClientId = "YourGoogleAppClientId";
-// const ClientSecret = "YourGoogleAppClientSecret";
-// const RedirectionUrl = "http://localhost:5000/oauthCallback";
 
-//import fetch from 'node-fetch';
-// const { verifyAccessToken } = require('./helpers/jwt_helper')
-// require('./helpers/init_redis')
 
 const app_id  = process.env.GITHUB_APP_ID;
 const client_secret = process.env.GITHUB_CLIENT_SECRET;
@@ -29,14 +21,11 @@ const cookie_secret = process.env.COOKIE_SECRET;
 const hostname = 'localhost';
 const registerPath = 'register';
 var gitdata;
-// const AuthRoute = require('./routes/user_credentials');
-// const AuthController = require('./controllers/Auth.Controller');
 
-const { getAllUserCredentials, createUserCredentials} = require('./controllers/Try.Controller')
+
 const  {createUser, registerGithubUser} = require('./controllers/user.controller');
 const { JwtRegister, JwtLogin, JwtLogout} = require('./controllers/AuthJwt.Controller');
 const{getAccessToken, fetchGitHubUser} = require('./services/github.service');
-const { register, login } = require('./controllers/Auth.Controller');
 const{getAllPractice,submitAnswer} = require('./controllers/practice.controller.js');
 const{getLeaderboard} = require('./controllers/leaderboard.controller.js');
 const{callbackGithub, callbackGithubLogin, pass} = require('./helpers/githelper');
@@ -247,18 +236,9 @@ const server = http.createServer( async (req, res) => {
     }
       
     else if(newurl === '/success'){
-        let body = await getPostData(req)
-        //console.log(body.login);
-        //body = JSON.parse(body)
-        const userDb = await UserCredentials.findOne({ username: body.login }).exec();
-        console.log(userDb);
-        if(userDb === null){
-        //registerGithubUser(req, res);
-        }
-        else{
-            res.writeHead(302,  {Location: `http://localhost:5000/mainpage` })
-            res.end();
-        }
+       
+        registerGithubUser(req, res);
+    
     }
 
     else if(newurl === '/loginn'){
