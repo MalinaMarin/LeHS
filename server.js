@@ -45,6 +45,8 @@ const { getLevel, submitLevel, clickOnHint } = require('./controllers/play.contr
 const { isAdmin, getUserById, getAllUsers, findAndUpdateUser, deleteUser, getAllData, findAndUpdateData } = require('./services/admin.service');
 const {getPostData} = require('./helpers/utils_fct');
 const { getUserDataById } = require('./services/user.service');
+const { getNumberOfPlayers } = require('./services/leaderboard.service');
+const { getPracticeQuestions, getPlay } = require('./controllers/export.controller');
 
 
 const server = http.createServer( async (req, res) => {
@@ -223,6 +225,12 @@ const server = http.createServer( async (req, res) => {
     }
     else if(newurl === '/play/hint' && req.method === 'PUT'){
         clickOnHint(req,res);
+    }
+    else if(newurl === '/export/practice' && req.method === 'GET'){
+        getPlay(req, res);
+    }
+    else if(newurl === '/export/play' && req.method === 'GET'){
+        getPracticeQuestions(req,res);
     }
     else if(newurl.startsWith('/get/level')){
         console.log(newurl);

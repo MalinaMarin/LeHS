@@ -14,7 +14,7 @@ module.exports = {
         }
     },
 
-    getLevels: async (req, res) => {
+    getPlay: async (req, res) => {
         try{
             let levels= await exportLevels();
             res.writeHead(200, { 'Content-Type': 'application/json' })
