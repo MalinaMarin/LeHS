@@ -8,6 +8,7 @@ let data;
 
 function status(response) {
     if (response.status === 200) {
+        console.log("working!")
         return Promise.resolve(response);
     }
     else if (response.status === 404) {
@@ -65,21 +66,32 @@ async function load(url, level_id) {
 
 let sub = document.getElementById("submit");
 sub.addEventListener("click", async function (submit_clickable) { 
+    console.log(localStorage.getItem("user_id"));
+    console.log(data.id);
     if(submit_clickable){
         await fetch("http://localhost:5000/play/submit", {
-            "method": "PUT",
-            "body" :JSON.stringify({
+            "method": "POST",
+            "body": JSON.stringify({
                 "user_id":localStorage.getItem("user_id"),
                 "level_id":data.id
             })
         })
         .then(status)
-        .then((res) => res.json())
+        .then((res) => res.text())
         .catch((err) => alert(err))
-    localStorage.setItem("user_level",localStorage.getItem("user_level")++)
-    localStorage.setItem("user_xp",localStorage.getItem("user_xp")+data.xp)
+        console.log("Here")
+        let current_level = parseInt(localStorage.getItem("user_level"));
+        let xp = parseInt(localStorage.getItem("user_xp"));
+        xp=xp+data.xp;
+        if(current_level == data.id){
+            current_level++;
+        
+        localStorage.setItem("user_level",current_level);
+        localStorage.setItem("user_xp",xp);
+}
 
-    location.href = "../Level-Map/map.html"; }})
+    // location.href = "../Level-Map/map.html"; 
+}})
 
 
 let hint = document.getElementById("hint");
