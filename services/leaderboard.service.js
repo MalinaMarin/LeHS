@@ -11,7 +11,7 @@ module.exports = {
     refreshLedearboard: async xp => {
         const last = await Leaderboard.findOne({ id: 10 }).exec();
         let leaderboard = await Leaderboard.find().exec();
-        if (last.xp < xp) {
+        if (last.xp <= xp) {
             const array = await this.getTop10();
             for (let index = 0; index < 10; index++) {
                 leaderboard[index].player = array[index];
