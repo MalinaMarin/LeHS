@@ -104,7 +104,9 @@ hint.addEventListener("click", async function () {
     var texthint = document.getElementById("text-hint");
     texthint.style.visibility = "visible";
 
-    localStorage.setItem("user_coins",localStorage.getItem("user_coins")-coinsHint);
+    let coins = parseInt(localStorage.getItem("user_coins"));
+    coins = coins - coinsHint;
+    localStorage.setItem("user_coins",coins);
     await fetch("http://localhost:5000/play/hint", {
     "method": "PUT",
     "body" :JSON.stringify({
