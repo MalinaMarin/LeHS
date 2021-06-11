@@ -90,7 +90,7 @@ sub.addEventListener("click", async function (submit_clickable) {
         localStorage.setItem("user_xp",xp);
 }
 
-    // location.href = "../Level-Map/map.html"; 
+    location.href = "../Level-Map/map.html"; 
 }})
 
 
