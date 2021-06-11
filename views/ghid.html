@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <title>LeHS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=yes">
+    
+</head>
+
+
+
+<body prefix="schema: http://schema.org">
+    <header>
+        <h1>LeHS</h1>
+    </header>
+
+    <h2>Table of Contents</h2>
+    <ol role="directory">
+        <li>
+            <a href="#abstract">
+                Abstract
+            </a>
+        </li>
+        <li>
+            <a href="#introducere">
+                Introducere
+            </a>
+        </li>
+        <li>
+            <a href="#ghid">
+                Ghid de utilizare
+            </a>
+        </li>
+        <li>
+    
+            <a href="#pages">
+                Paginile aplicatiei Web
+            </a>
+            <ul role="directory">
+                <li>
+                    4.1
+                    <a href="#presenting-page">
+                       Pagina de prezentare
+                    </a>
+                </li>
+                <li>
+                    4.2
+                    <a href="#login">
+                        Login
+                    </a>
+                </li>
+                <li>
+                    4.3
+                    <a href="#signup">
+                        Sign Up
+                    </a>
+                    
+                </li>
+                <li>
+                    4.4
+                    <a href="#forgot">
+                        Forgot
+                    </a>
+                </li>
+                <li>
+                    4.5
+                    <a href="#learn">
+                        Learn
+                    </a>
+                </li>
+                <li>
+                    4.6
+                    <a href="#practice">
+                        Practice
+                    </a>
+                </li>
+                <li>
+                    4.7
+                    <a href="#map">
+                        Map
+                    </a>
+                </li>
+                <li>
+                    4.8
+                    <a href="#leaderboard">
+                        Leaderboard
+                    </a>
+                </li>
+               
+            </ul>
+        </li>
+       
+
+        <li>
+           
+            <a href="#referinte">
+               Referinte
+            </a>
+        </li>
+        
+    </ol>
+
+
+    <div class="info" role="contentinfo"> 
+
+        <section typeof="sa:AuthorsList">
+            <h2>Autori</h2>
+            <ul>
+              <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person">
+                  <meta property="schema:givenName" content="Raluca">
+                  <meta property="schema:familyName" content="Macovei">
+                  <span property="schema:name">Raluca Macovei</span>
+                </span>
+                
+                <ul>
+                    <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                        <a href="https://github.com/McRalu10"
+                            property="schema:email">McRalu10</a>
+                    </li>
+
+                </ul>
+               
+              </li>
+
+              <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person">
+                  <meta property="schema:givenName" content="Malina">
+                  <meta property="schema:additionalName" content="Alexandra">
+                  <meta property="schema:familyName" content="Marin">
+                  <span property="schema:name">Malina Marin</span>
+                </span>
+               
+                <ul>
+                  <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                    <a href="https://github.com/MalinaMarin"
+                       property="schema:email">MalinaMarin</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person">
+                  <meta property="schema:givenName" content="Ingrid">
+                  <meta property="schema:additionalName" content="Maria">
+                  <meta property="schema:familyName" content="Romila">
+                  <span property="schema:name">Ingrid Romila</span>
+                </span>
+               
+                <ul>
+                  <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                    <a href="https://github.com/RomilaIngridMaria"
+                       property="schema:email">RomilaIngridMaria</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          
+        
+            
+    </div>
+
+    <section typeof="sa:Abstract"  role="doc-abstract" id="abstract">
+        <h2><span>1. </span>Abstract</h2>
+        <p>
+            Sa se creeze un sistem Web ce ajuta diverse categorii de persoane (de la incepatori la experti) sa invete, exerseze si aprofundeze cunostinte referitoare la HTML si CSS.
+
+            Dupa autentificarea cu un cont disponibil pe o retea sociala la alegere (minimal, GitHub), aplicatia va pune la dispozitia utilizatorilor, printr-o interfata atractiva, nivele cu diverse provocari (eventual, insotite de explicatii ce constau din anumite sarcini (e.g., scriere de cod-sursa, raspunsuri la teste) pentru a trece mai departe.
+
+            Aplicatia va salva progresul fiecarui utilizator, acesta putand, ulterior, sa continue de unde a ramas. In plus, se vor oferi statistici referitoare la clasamentele globale pentru fiecare utilizator in parte si vizand nivelurile de dificultate. De asemenea, solutia va expune si un API REST/GraphQL prin care alte aplicatii vor putea prelua in format JSON sau XML atat provocarile, cat si raspunsurile corecte.
+
+            Se vor avea in vedere aspecte precum internationalizarea si accesibilitatea.
+        </p>
+    </section>
+
+    <section id="introducere">
+        <h2><span>2. </span>Introducere</h2>
+        <p>
+            Proiectul LeHS (Learn HTML and CSS) presupune realizarea unui sistem care sa ajute la asimilarea 
+            cunostintelor referitoare la HTML si CSS intr-un mod interactiv si placut. Scopul este acela de
+            a oferi mai multe module astfel incat sa fie acoperite trei categorii de baza, utilizatorii avand la 
+            dispozitie, pe langa o parte teoretica, categorii diferite vizand nivelurile de dificultate: incepator,
+            intermediar, expert. Aplicabilitatea proiectului este cu atat mai relevanta daca se ia in considerare
+            contextul actual.
+        </p>
+
+    </section>
+
+    <section id="client">
+        <h2><span>3. </span>Ghid de utilizare</h2>
+        <p>
+           In urmatoarele sectiuni vor fi prezentate principalele functionalitati ale aplicatiei si interactiunea cu utilizatorul.
+        </p>
+      
+    </section>
+
+    <section id="pages">
+        <h2><span>4. </span>Paginile aplicatiei Web</h2>
+        <section id="presenting-page">
+            <h3><span>4.1 </span>Pagina de prezentare</h3>
+            <p>
+                Pagina de prezentare
+               ofera functionalitatile unui meniu, avand rolul unui punct de referinta. Sunt puse la dispozitie
+               urmatoarele:
+               <br><br>-Pagina propriu-zisa ce ofera detalii despre scopul principal al aplicatiei, butoanele Get Started,
+               Level up your skills, Let's play redirectionand spre pagina de login daca utilizatorul nu s-a autentificat, sau
+               spre pagina Map, daca utilizatorul este deja autentificat 
+
+               <br><br>-Bara de navigare, situata in partea de sus a paginii, cu butoanele: Login, ce directioneaza spre pagina de autentificare,
+               Sign Up, ce directioneaza spre pagina de inregistrare, Learn, Practice, Play, Leaderboard, ce vor directiona spre pagina de Login, daca
+               utilizatorul nu s-a autentificat(si ulterior, dupa logare, spre pagina aleasa initial), sau spre paginile aferente, daca acesta este deja logat(in cazul Play pagina aferenta este Map). Dupa autentificare,
+               aspectul navbar-ului se modifica, in partea din dreapta aparand numele utilizatorului, la hover fiind afisate optiunile Experience, Coins, Log out. Optiunea Log out
+               redirectioneaza spre pagina de prezentare, utilizatorul fiind delogat.
+               <br><br>-Footer-ul, situat in partea de jos a paginii, cu urmatoarele optiuni: FAQ (Frequently Asked Questions), About Us, Privacy Policy, Terms of Service, 
+               Facebook, Instagram, Youtube ce directioneaza spre pagini cu informatii corespunzatoare. 
+            </p>
+
+           
+        </section>
+
+        <section id="login">
+            <h3><span>4.2 </span>Login</h3>
+            <p>
+                Pe aceasta pagina utilizatorul se poate autentifica, introducand username-ul si parola aferente contului sau. De aici poate fi redirectionat
+                spre paginile Forgot, daca si-a uitat parola, sau Signup, pentru a-si crea un cont. Toate campurile sunt obligatorii.
+                Mentionam ca autentificarea se poate realiza si cu un cont disponibil pe reteaua sociala Github, cu un singur click pe butonul cu iconita aferenta.
+                
+            </p>
+
+        </section>
+
+        <section id="signup">
+            <h3><span>4.3 </span>Sign Up</h3>
+            <p>
+                Pe aceasta pagina, utilizatorul isi poate crea un cont introducand email-ul, username-ul si parola si apasand pe butonul submit sau folosind contul de Github apasand pe butonul cu iconita aferenta. Poate fi 
+                redirectionat spre pagina de Login daca are deja un cont. Toate campurile sunt obligatorii.
+            </p>
+
+        </section>
+
+        <section id="forgot">
+            <h3><span>4.4 </span>Forgot </h3>
+            <p>
+               Pe aceasta pagina, utilizatorul isi poate introduce email-ul pentru a-si reseta parola, in cazul in care a uitat-o.
+            </p>
+
+        </section>
+
+        <section id="learn">
+            <h3><span>4.5 </span>Learn</h3>
+            <p>
+                Aceasta pagina prezinta mai multe aspecte teoretice, scopul fiind familiarizarea utilizatorului cu anumite notiuni relevante.
+               Cu un click pe subiectul principal se gliseaza in jos textul aferent, utilizatorul putand sa deschida sau sa inchida dropdown-ul cu textul aferent unei notiuni.
+            </p>
+
+        </section>
+
+        
+        <section id="practice">
+            <h3><span>4.6 </span>Practice</h3>
+            <p>
+                Pe aceasta pagina utilizatorul are la dispozitie un set de 25 de intrebari, grupate in functie de dificultate (beginner, intermediate, expert).
+                Un raspuns corect la o intrebare (dand click pe un raspuns din cele oferite si apasand pe butonul de submit) ii va aduce un anumit numar de coins, cu care va putea ulterior sa deblocheze hint-uri pentru partea de Play(cu acei coins va putea da click pe hint 
+                la un anumit nivel).
+               
+            </p>
+
+        </section>
+
+        <section id="map">
+            <h3><span>4.7 </span>Map</h3>
+            <p>
+                Pe pagina de Map utilizatorul poate vizualiza cu hover pe fiecare nivel: numarul nivelului si XP, experienta necesara pentru
+                a putea debloca nivelul. Mentionam ca fiecare nivel completat cu succes aduce un plus de XP. Daca are experienta necesara (sau daca a completat deja nivelul), un click pe casuta corespunzatoare
+                nivelului il va directiona pe utilizator spre pagina de Play cu nivelul ales. Altfel, zona va fi gri. Dupa ce termina de rezolvat un nivel, el va fi redirectionat spre pagina Map, de acolo putand sa il
+                aleaga pe urmatorul la care are acces.
+                <br><br>Exista 10 niveluri vizand HTML si CSS, fiecare avand o anumita dificultate si un anumit mod de abordare.
+            </p>
+
+        </section>
+
+        <section id="leaderboard">
+            <h3><span>4.8 </span>Leaderboard</h3>
+            <p>
+                Pagina de leaderboard pune la dispozitia utilizatorului, pe langa progres, numar de coins, XP, mai multe moduri de a-si vedea evolutia comparativ cu alte persoane: 
+                 Pe de o parte, exista leaderboard-ul general, bazat pe experienta acumulata. Pe de alta parte, Get more statistics se va ocupa de generarea intr-un anumit
+                 format a unor grafice (folosind chart Js) per exercitii usoare, medii sau grele, diverse top-uri vizand nivelurile de dificultate, la modul general dar si pentru utilizator.   
+            </p>
+            
+        </section>
+
+
+    </section>
+
+    <section id="referinte">
+        <h2><span>7. </span>Referinte</h2>
+       
+            <ul>
+                <li property="schema:citation" typeof="schema:WebSite" resource="https://developer.mozilla.org/en-US/">
+                    <cite property="schema:name">
+                        <a href="https://developer.mozilla.org/en-US/">MDN</a>
+                    </cite>
+                </li>
+                <li property="schema:citation" typeof="schema:ScholarlyArticle" resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">
+                    <cite property="schema:name"><a
+                            href="https://profs.info.uaic.ro/~busaco/teach/courses/web/web-film.html">Course page
+                        </a></cite>
+                </li>
+
+                <li property="schema:citation" typeof="schema:WebSite" resource="https://www.w3schools.com/">
+                    <cite property="schema:name">
+                        <a href="https://www.w3schools.com/">w3schools</a>
+                    </cite>
+                </li>
+                <li property="schema:citation" typeof="schema:ScholarlyArticle" resource="https://w3c.github.io/scholarly-html/">
+                    <cite property="schema:name"><a
+                            href="https://w3c.github.io/scholarly-html/">Scholarly HTML
+                        </a></cite>
+                    </li>
+            </ul>
+
+    </section>
+
+</body>
+
+</html>
