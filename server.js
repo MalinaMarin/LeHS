@@ -41,8 +41,9 @@ const{getLeaderboard} = require('./controllers/leaderboard.controller.js');
 const{callbackGithub, callbackGithubLogin, pass} = require('./helpers/githelper');
 const { getLevels } = require('./controllers/map.controller');
 const { getLevel, submitLevel, clickOnHint } = require('./controllers/play.controller');
-
-
+const { isAdmin, getUserById, getAllUsers, findAndUpdateUser, deleteUser, getAllData, findAndUpdateData } = require('./services/admin.service');
+const {getPostData} = require('./helpers/utils_fct');
+const { getUserDataById } = require('./services/user.service');
 // cookieSession({
 //     secret: cookie_secret
 // });
@@ -98,6 +99,126 @@ const server = http.createServer( async (req, res) => {
      res.writeHead(201, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify({ message: 'Mainpage Route.' }))
     }
+    else
+    if(newurl.startsWith('/admin/get_user_by_id')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+            let body = await getPostData(req)
+            body = JSON.parse(body)
+           let user = await getUserById(body.id);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ userfound: user }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+    else
+
+    if(newurl.startsWith('/admin/get_all_users')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+           let users = await getAllUsers();
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ users_found: users }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    if(newurl.startsWith('/admin/delete_user')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+            let body = await getPostData(req)
+            body = JSON.parse(body)
+           let answer = await deleteUser(body.id);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ answer: answer }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    else
+    if(newurl.startsWith('/admin/update_user')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+           let updated_user = await findAndUpdateUser(req);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify(updated_user));
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    else
+
+    if(newurl.startsWith('/admin/get_data_by_id')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+            let body = await getPostData(req)
+            body = JSON.parse(body)
+           let answer = await getUserDataById(body.id);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ answer: answer }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    else
+
+    if(newurl.startsWith('/admin/get_all_data')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+        if(check === true){
+           let answer = await getAllData();
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ answer: answer }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    else
+    if(newurl.startsWith('/admin/update_data')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+            //let body = await getPostData(req)
+            //body = JSON.parse(body)
+           let answer = await findAndUpdateData(req);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ answer: answer }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
 
     else
 

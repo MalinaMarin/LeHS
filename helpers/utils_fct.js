@@ -47,8 +47,8 @@ function getPostData(req) {
             req.on('end', () => {
                 resolve(body)
             })
-        } catch (error) {
-            console.log(err)
+        } catch (err) {
+           console.log(err);
         }
     })
 }
