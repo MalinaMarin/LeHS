@@ -5,6 +5,7 @@ const url = require('url');
 const path = require('path');
 const querystring = require('querystring');
 const localStorage = require('node-localstorage');
+const {UserCredentials} = require('./models/user_credentials');
 //var gitdata = require('./services/user.service');
 //var access_token;
 //const cookieSession =require('cookie-session');
@@ -41,11 +42,9 @@ const{getLeaderboard} = require('./controllers/leaderboard.controller.js');
 const{callbackGithub, callbackGithubLogin, pass} = require('./helpers/githelper');
 const { getLevels } = require('./controllers/map.controller');
 const { getLevel, submitLevel, clickOnHint } = require('./controllers/play.controller');
-
-
-// cookieSession({
-//     secret: cookie_secret
-// });
+const { isAdmin, getUserById, getAllUsers, findAndUpdateUser, deleteUser, getAllData, findAndUpdateData } = require('./services/admin.service');
+const {getPostData} = require('./helpers/utils_fct');
+const { getUserDataById } = require('./services/user.service');
 
 const server = http.createServer( async (req, res) => {
     console.log(req.url);
@@ -54,15 +53,6 @@ const server = http.createServer( async (req, res) => {
     res.setHeader('Access-Control-Allow-Methods','OPTIONS,GET,POST,PUT');
     res.setHeader('Access-Control-Allow-Headers','*');
 
-     if(newurl.startsWith('/register/github/callback')){
-        let baseURI = url.parse(req.url, true);
-        let path = baseURI.pathname.split('/');
-        let queryParameter = baseURI.query;
-        const codee = queryParameter.code;
-        console.log("tHE CODE serverside" + codee);
-         callbackGithub(res, codee);
-    }
-    else
 
     if(newurl.startsWith('/login/github/callback')){
         let baseURI = url.parse(req.url, true);
@@ -70,22 +60,9 @@ const server = http.createServer( async (req, res) => {
         let queryParameter = baseURI.query;
         const codee = queryParameter.code;
         console.log("tHE CODE serverside" + codee);
-         callbackGithubLogin(res, codee);
+         callbackGithub(res, codee);
     } 
     else
-
-    if(newurl === '/register/github'){
-       // console.log(client_id);
-       // console.log(client_secret);
-        
-       const redirect_uri2 = 'http://localhost:5000/register/github/callback';
-       var urll = `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri2}`;
-       res.writeHead(302,  {Location: `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri2}` })
-       res.end();
-   }
-
-    else
-
     if(newurl === '/login/github'){
         const redirect_uri = 'http://localhost:5000/login/github/callback';
         var urll = `https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=${redirect_uri}`;
@@ -98,6 +75,126 @@ const server = http.createServer( async (req, res) => {
      res.writeHead(201, { 'Content-Type': 'application/json' })
     res.end(JSON.stringify({ message: 'Mainpage Route.' }))
     }
+    else
+    if(newurl.startsWith('/admin/get_user_by_id')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+            let body = await getPostData(req)
+            body = JSON.parse(body)
+           let user = await getUserById(body.id);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ userfound: user }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+    else
+
+    if(newurl.startsWith('/admin/get_all_users')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+           let users = await getAllUsers();
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ users_found: users }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    if(newurl.startsWith('/admin/delete_user')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+            let body = await getPostData(req)
+            body = JSON.parse(body)
+           let answer = await deleteUser(body.id);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ answer: answer }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    else
+    if(newurl.startsWith('/admin/update_user')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+           let updated_user = await findAndUpdateUser(req);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify(updated_user));
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    else
+
+    if(newurl.startsWith('/admin/get_data_by_id')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+            let body = await getPostData(req)
+            body = JSON.parse(body)
+           let answer = await getUserDataById(body.id);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ answer: answer }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    else
+
+    if(newurl.startsWith('/admin/get_all_data')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+        if(check === true){
+           let answer = await getAllData();
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ answer: answer }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
+    else
+    if(newurl.startsWith('/admin/update_data')){
+        let check = await isAdmin(req.url);
+        console.log(check);
+
+        if(check === true){
+            //let body = await getPostData(req)
+            //body = JSON.parse(body)
+           let answer = await findAndUpdateData(req);
+           res.writeHead(201, { 'Content-Type': 'application/json' })
+           res.end(JSON.stringify({ answer: answer }))
+        }
+        else{
+            res.writeHead(201, { 'Content-Type': 'application/json' })
+            res.end(JSON.stringify({ error: " not admin" }));
+        }
+    }
+
 
     else
 
@@ -141,8 +238,18 @@ const server = http.createServer( async (req, res) => {
     }
       
     else if(newurl === '/success'){
-        registerGithubUser(req, res);
-    
+        let body = await getPostData(req)
+        //console.log(body.login);
+        //body = JSON.parse(body)
+        const userDb = await UserCredentials.findOne({ username: body.login }).exec();
+        console.log(userDb);
+        if(userDb === null){
+        //registerGithubUser(req, res);
+        }
+        else{
+            res.writeHead(302,  {Location: `http://localhost:5000/mainpage` })
+            res.end();
+        }
     }
 
     else if(newurl === '/loginn'){
@@ -153,52 +260,6 @@ const server = http.createServer( async (req, res) => {
         //res.end(JSON.stringify({ message: 'Route Not Found' }))
     }
 })
-
-
-
-
-
-// const {getPostData} = require('../helpers/utils_fct');
-
-// async function getAllUserCredentials(req, res) {
-//     try {
-//         const credentials = await UserCredentials.findAll()
-
-//         res.writeHead(200, { 'Content-Type': 'application/json' })
-//         res.end(JSON.stringify(credentials))
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
-
-
-// const server = http.createServer(async function (req, res) {
-//     res.statusCode = 200
-//     res.setHeader('Content-Type', 'text/html')
-//     let parsedURL = url.parse(req.url, true);
-//     let requestPath = parsedURL.pathname;
-//     requestPath = requestPath.replace(/^\/+|\/+$/g, "");
-//     let queryString = parsedURL.query;
-//     let headers = req.headers;
-//     let method = req.method;
-//     let data = {
-//         requestPath: requestPath,
-//         headers: headers,
-//         method: method,
-//         queryString: queryString,
-//         buffer: '',
-//         request: req
-//     }
-
-//     if (requestPath.startsWith(registerPath)) {
-//         requestPath = requestPath.substr(registerPath.length + 1);
-//         if (data.method === 'POST') {
-//             data.buffer = await getData(req);
-//             AuthController.register(req, res)
-//             return;
-//         }
-//     }
-// })
 
 function getData(req) {
     return new Promise(function(rez, rej) {
@@ -213,30 +274,6 @@ function getData(req) {
     })
 }
 
-
-
-    // const routeMap = {
-        
-	// 	'login': 'login.html',
-		// 'about': 'about.html',
-		// 'services': 'index.html'
-	// }
-    //render(res, routeMap[req.url.slice(1)]);
-// })
-
-// function render(res, htmlFile) {
-//     fs.stat(`./${htmlFile}`,  (err, stats) => {
-//       res.statusCode = 200;
-//       res.setHeader('Content-Type', 'text/html');
-
-//         if(stats) {
-//             fs.createReadStream(htmlFile).pipe(res);
-//         } else {
-//             res.statusCode = 404;
-//             res.end('Sorry, page not found');
-//         }
-//     });
-// }
 
 const PORT = process.env.PORT || 5000
 
