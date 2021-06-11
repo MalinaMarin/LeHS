@@ -1,7 +1,3 @@
-localStorage.setItem("user_coins", 50);
-localStorage.setItem("user_xp", 150);
-localStorage.setItem("user_level", 3);
-
 function status(response) {
     if (response.status === 200) {
         return Promise.resolve(response);
@@ -25,8 +21,9 @@ async function getData() {
 
 async function getLeaderboard() {
     await getData();
+    console.log(data);
     for (var i = 0; i < data.length; i++) {
-        document.getElementById(i + 1).innerHTML = "<div class=\"username\">" + data[i].player.username + "</div><div class=\"score\">" + data[i].player.xp + "xp</div>"
+        document.getElementById(i + 1).innerHTML = "<div class=\"username\">" + data[i].username + "</div><div class=\"score\">" + data[i].xp + "xp</div>"
     }
     let percentage = (localStorage.getItem("user_level") - 1) * 10;
     let percentage_line = localStorage.getItem("user_xp") * 100 / 550;

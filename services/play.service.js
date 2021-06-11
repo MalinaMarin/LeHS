@@ -23,8 +23,8 @@ module.exports = {
             const auxXP = user.xp;
             user.xp = auxXP+level.xp;
             user.current_level++;
-            user.save();
             await refreshLedearboard(auxXP+level.xp);
+            user.save();    
         }
     }
 }

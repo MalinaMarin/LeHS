@@ -8,14 +8,17 @@ module.exports = {
         const user_array = await UserData.find().sort({ xp: -1 }).limit(10).exec();
         return user_array;
     },
-    refreshLedearboard: async xp => {
+    refreshLedearboard: async (xp) => {
         const last = await Leaderboard.findOne({ id: 10 }).exec();
         let leaderboard = await Leaderboard.find().exec();
+        console.log(last);
         if (last.xp <= xp) {
             const array = await this.getTop10();
+            console.log(array);
             for (let index = 0; index < 10; index++) {
                 leaderboard[index].player = array[index];
             }
+            leaderboard.save();
         }
     },
     getLeaderboardService: async () => {

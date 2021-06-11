@@ -14,7 +14,9 @@ function status(response) {
     }
 }
 
-
+document.getElementById("logout.btn").addEventListener("click",()=>{
+    localStorage.clear();
+})
 
 const urll = "http://localhost:5000/all/levels"
 let data;

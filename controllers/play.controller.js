@@ -1,6 +1,8 @@
 const { getLevelData, submit, clickHint } = require("../services/play.service.js")
 const {getPostData} = require("../helpers/utils_fct.js")
 const http = require('http');
+const { UserData } = require("../models/user_data.js");
+const { refreshLedearboard } = require("../services/leaderboard.service.js");
 
 
 module.exports = {
@@ -21,10 +23,9 @@ module.exports = {
         try {
             let body = await getPostData(req)
             body = JSON.parse(body);
-            console.log(" bsandlas");
-            console.log(body);
             await submit(body.level_id, body.user_id);
-            console.log(" i wanna dieeee")
+            const user = await UserData.findOne({id: body.user_id}).exec();
+            await refreshLedearboard(user.xp);
             res.writeHead(200, { 'Content-Type': 'application/json' })
             return res.end("Great!");
             

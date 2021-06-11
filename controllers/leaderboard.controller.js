@@ -1,10 +1,10 @@
-const { getLeaderboardService } = require("../services/leaderboard.service.js")
+const { getLeaderboardService, getTop10 } = require("../services/leaderboard.service.js")
 const http = require('http');
 
 module.exports = {
     getLeaderboard: async (req, res) => {
         try{
-            let leaderboard = await getLeaderboardService();
+            let leaderboard = await getTop10();
             res.writeHead(200, { 'Content-Type': 'application/json' })
             return res.end(JSON.stringify(leaderboard));
         }catch(err){
