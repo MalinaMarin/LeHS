@@ -46,11 +46,7 @@ module.exports =
         registerGithubUser: async (req, res) => {
         const token = parseCookies(req).gittoken;
         console.log("in controller.. token is " + token);
- //res.end();
-//req.session.access_token = access_token;
-//req.session.githubId = user.id;
 
-         //const body = req.body;
         try {
             
             // let body = await getPostData(req)

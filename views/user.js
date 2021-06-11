@@ -7,8 +7,8 @@ function user_populate() {
     var c = document.getElementById("coins");
     var e = document.getElementById("exp");
 
-    name.textContent = username;
-    c.textContent = coins + " coins";
-    e.textContent = xp + " xp";
+    name.textContent.innerHTML = username;
+    c.textContent.innerHTML = coins + " coins";
+    e.textContent.innerHTML = xp + " xp";
 
 };

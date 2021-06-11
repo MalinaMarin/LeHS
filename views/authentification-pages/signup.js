@@ -51,7 +51,9 @@ function goToPage() {
   }
 }
 
-async function register() {
+async function register(e) {
+    e.preventDefault();
+   
     //e.preventDefault();
     var email = document.getElementById("email").value;
     var username = document.getElementById("username").value;

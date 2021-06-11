@@ -29,16 +29,17 @@
                     <a href="./forgot.html">Forgot Password?</a>
                 </div>
                 <div class="btn">
-                    <button onclick="login()">login</button>
+                    <button onclick="login(event)">login</button>
                 </div>
                 <div class="signup-link">Not a member? <a href="./signup.html">Signup now</a></div>
             </form>
             <div class="github">
                 <p>- or -</p>
-                <button id="github-btn"></button>
+                <button id="github-btn" onclick="gitsignup()"></button>
             </div>
         </div>
     </div>
+    <script src="./gitsignup.js"></script>
     <script src="./login.js"></script>
 </body>
 

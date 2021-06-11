@@ -56,18 +56,12 @@ module.exports = {
                 if (err) {
                     res.writeHead(500, { 'Content-Type': 'application/json' })
                     return res.end("An error occurred...") 
-                    // return res.status(500).json({
-                    //     success: 0,
-                    //     message: "Database connection errror"
-                    // });
+            
                 }
                 
             res.writeHead(201, { 'Content-Type': 'application/json' })
             return res.end(JSON.stringify(result))  
-                // return res.status(200).json({
-                //     success: 1,
-                //     message: "user successfully created"
-                // });
+         
             });
         } catch (error) {
             console.log(error)
@@ -75,7 +69,7 @@ module.exports = {
     },
 
     findAndUpdateUser: async (req) => {
-        
+    
         let body = await getPostData(req)
         body = JSON.parse(body)
        // let user = getUserById(body.id);
@@ -134,6 +128,18 @@ module.exports = {
             return "not found";
         } 
     },
+
+    // updateQuestion: (column_name, current, new_data) => {
+    //     PracticeQuestion.findOne({ [column_name]: current }, function (err, doc) {
+    //         doc[column_name] = new_data;
+    //         doc.save();
+    //     });
+    // },
+
+    getAllQuestions: async () =>{
+        return await PracticeQuestion.find().exec();
+    },
+
 
 
 

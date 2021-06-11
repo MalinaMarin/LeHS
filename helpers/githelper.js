@@ -4,7 +4,7 @@ const {UserCredentials} = require("../models/user_credentials.js");
 
 module.exports =
 {
-callbackGithub: async(res, codee) =>{
+callbackGithub: async(codee, res) =>{
 
 console.log("tHE CODE controller side" + codee);
 var access_token = await getAccessToken(codee);

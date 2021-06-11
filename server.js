@@ -61,7 +61,7 @@ const server = http.createServer( async (req, res) => {
         let queryParameter = baseURI.query;
         const codee = queryParameter.code;
         console.log("tHE CODE serverside" + codee);
-         callbackGithub(res, codee);
+         callbackGithub(codee, res);
     } 
     else
     if(newurl === '/login/github'){
