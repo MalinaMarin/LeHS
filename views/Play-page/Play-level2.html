@@ -157,42 +157,7 @@
 </div>
 <script src="./play.js"></script>
 <script src="../Navbar&footer/script.js"></script>
-<script>
-    (function () {
-               "use strict";
-               var load
-               load = function (url) {
-   
-                   var request;
-                   var q = document.getElementById("instructions");
-                   var hint = document.getElementById("text-hint");
-                   var start = document.getElementById("start");
-                   var end = document.getElementById("end");
-                   
-                   request = new XMLHttpRequest();
-   
-                   
-                   request.addEventListener("readystatechange", function (event) {
-   
-                       if (this.readyState == 4 && this.status == 200) {
-   
-                           var json = JSON.parse(this.responseText);
-                           q.innerHTML = json.question
-                           hint.innerHTML = json.hint
-                           start.innerHTML = json.start_part
-                           end.innerHTML = json.end_part
-                           
-                       }
-   
-                   });
-   
-                   request.open("GET", url);
-                   request.send(null);
-   
-               };
-   
-               load("../../source/play/2.json");
-           })();
-       </script>
+<script src="../user.js"></script>
+
 </body>
 </html>
